@@ -1,26 +1,14 @@
 ---
 title: "Get Customer"
-api: "GET /customer/profile/{customerId}"
-description: "This endpoint enables you to retrieve the details of a specific customer that you have generated on the Edge platform."
+api: "GET /customer/get/id/{customerId}"
+description: "This endpoint enables you to retrieve the details of a specific customer that you have generated on the Embedly platform."
 ---
 
 # Get Customer
 
-Use this endpoint to fetch detailed information about a specific customer on the Edge platform.
+Use this endpoint to fetch detailed information about a specific customer on the Embedly platform.
 
 ---
-
-## Request Parameters
-
-<ParamField header="requestId" type="string" required>
-  A unique identifier for the request, used for idempotency.  
-  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
-</ParamField>
-
-<ParamField path="customerId" type="string" required>
-  The unique identifier of the customer whose profile is to be retrieved.  
-  **Example:** `7100987614`
-</ParamField>
 
 <ResponseExample>
 

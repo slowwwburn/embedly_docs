@@ -1,68 +1,80 @@
 ---
-title: "Update Customer"
-api: "PUT /customer/profile/{customerId}"
-description: "This endpoint enables you to update any of your existing customer's details."
+title: "Update Customer Name"
+description: "This endpoint is used to update a customer's name"
+api: "PATCH /customers/customer/{customerId}/updatename"
 ---
 
-# Update Customer
+# Request Parameters
 
-Use this endpoint to update the profile details of an existing customer on the Edge platform.
+{/* {
+  "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "firstName": "string",
+  "lastName": "string",
+  "middleName": "string",
+  "dob": "2025-03-19T19:11:05.302Z",
+  "city": "string",
+  "address": "string",
+  "occupation": "string",
+  "gender": "string",
+  "bvnverified": true,
+  "ninVerified": true,
+  "bvn": "string",
+  "nin": "string"
+} */}
 
----
+<ParamField body="organizationId" type="string" required></ParamField>
 
-## Request Parameters
-
-<ParamField header="requestId" type="string" required>
-  A unique identifier for the request, used for idempotency.  
-  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+<ParamField body="firstName" type="string" required>
+	The first name of the individual. **Example:** `John`
 </ParamField>
 
-<ParamField path="customerId" type="string" required>
-  The unique identifier of the customer whose profile is to be updated.  
-  **Example:** `7100987614`
+<ParamField body="lastName" type="string" required>
+	The last name of the individual. **Example:** `Doe`
 </ParamField>
+
+<ParamField body="middleName" type="string" required>
+	The middle name of the individual. **Example:** `Michael`
+</ParamField>
+
+<ParamField body="dob" type="string" required>
+	The individual's date of birth in `YYYY-MM-DDTHH:MM:SS.000Z` format. **Example:**
+	`2025-03-19T19:11:05.302Z`
+</ParamField>
+
+<ParamField body="city" type="string" required>
+	The individual's residential city
+</ParamField>
+
+<ParamField body="address" type="string" required>
+	The individual's residential address
+</ParamField>
+
+<ParamField body="occupation" type="string" required>
+  The individual's occupation
+</ParamField>
+
+<ParamField body="gender" type="string" required>
+	The individual's gender
+</ParamField>
+
+<ParamField body="bvnVerified" type="boolean" required>
+</ParamField>
+
+<ParamField body="ninVerified" type="boolean" required>
+</ParamField>
+
+<ParamField body="bvn" type="string" required>
+	The individual's BVN. **Example:** `12345678901`
+</ParamField>
+
+<ParamField body="nin" type="string" required>
+	The individual's NIN. **Example:** `23456789012`
+</ParamField>
+
+<ResponseExample>
 
 ```json
-{
-	"statusCode": "00",
-	"message": "Customer Profile Successfully Updated",
-	"data": {
-		"customerId": "7100987614",
-		"firstName": "Olalekan",
-		"otherName": "Yusuf",
-		"surname": "Balogun",
-		"email": "fe3i9@belgianairways.com",
-		"phone": "080271885",
-		"salutation": "Mr",
-		"gender": "Male",
-		"dateOfBirth": "2002-01-01T00:00:00",
-		"bvn": "40455560470",
-		"nationality": "NGA",
-		"classType": "INDIVIDUAL",
-		"status": "Active",
-		"kycTier": "0",
-		"address": {
-			"street": "Apple Close",
-			"localGovernment": "Apple",
-			"city": "Lagos",
-			"country": "NGA"
-		},
-		"nextOfKin": {
-			"gender": "Male",
-			"email": "dawn0791@mailinator.com",
-			"phone": "07098564323",
-			"relationship": "Brother",
-			"address": "2, Apple close",
-			"firstname": "Dawn",
-			"localGovernment": "Akinyele",
-			"street": "Apple",
-			"city": "Apple",
-			"lastName": "Bake",
-			"country": "NGN"
-		}
-	},
-	"errors": []
-}
+{}
 ```
 
 </ResponseExample>
