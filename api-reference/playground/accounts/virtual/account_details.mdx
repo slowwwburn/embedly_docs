@@ -1,0 +1,43 @@
+---
+title: "Get Account Details"
+api: "GET /account/{accountNumber}/details"
+description: "This enables you to retrieve the details of a specific account you had previously generated."
+---
+
+# Get Account Details
+
+Use this endpoint to fetch details of a specific account, including its status and balance.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField path="accountNumber" type="string" required>
+  The account number of the specific account whose details are to be retrieved.  
+  **Example:** `5118745523`
+</ParamField>
+
+---
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Account details successfully retrieved",
+	"data": {
+		"accountNumber": "5118745523",
+		"accountName": "Peter Parker",
+		"status": "active"
+		"balance": "0",
+	},
+	"errors": []
+}
+```
+
+</ResponseExample>

@@ -1,0 +1,56 @@
+---
+title: "Validate BVN"
+api: "POST /kyc/validate/bvn"
+description: "This endpoint enables you to validate a customer's Bank Verification Number (BVN)."
+---
+
+# Validate BVN
+
+Use this endpoint to validate a customer's Bank Verification Number (BVN) along with their personal details.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="bvn" type="string" required>
+  The Bank Verification Number to be validated.  
+  **Example:** `12345678901`
+</ParamField>
+
+<ParamField body="firstName" type="string" required>
+  The first name of the customer.  
+  **Example:** `John`
+</ParamField>
+
+<ParamField body="lastName" type="string" required>
+  The last name of the customer.  
+  **Example:** `Doe`
+</ParamField>
+
+<ParamField body="otherName" type="string">
+  The other names of the customer, if available.  
+  **Example:** `Michael`
+</ParamField>
+
+<ParamField body="dob" type="string" required>
+  The customer's date of birth in `YYYY-MM-DD` format.  
+  **Example:** `1990-01-01`
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Completed successfully"
+	"data": {},
+	"errors": []
+}
+```
+
+</ResponseExample>

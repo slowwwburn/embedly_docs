@@ -1,0 +1,37 @@
+---
+title: "Check Status"
+api: "GET /transfer/status/{transactionId}"
+description: "This endpoint allows you to check the real-time status of a processed transaction."
+---
+
+# Check Status
+
+Use this endpoint to retrieve the real-time status of a specific transaction by providing its unique transaction ID.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField path="transactionId" type="string" required>
+  The unique identifier for the transaction, returned after initiating a transfer request.  
+  **Example:** `txn_0011223344`
+</ParamField>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Completed successfully"
+	"data": {
+      "status": "PENDING",
+      "transactionId": "txn_0011223344",
+    },
+	"errors": []
+}
+```
+
+</ResponseExample>

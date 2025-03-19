@@ -1,0 +1,46 @@
+---
+title: "Name Enquiry"
+api: "POST /transfer/name-enquiry"
+description: "This endpoint allows you to validate the name on an account."
+---
+
+# Name Enquiry
+
+Use this endpoint to validate the name associated with a specific NUBAN account number in a specified bank.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="accountNumber" type="string" required>
+  The NUBAN account number to validate.  
+  **Example:** `1234567890`
+</ParamField>
+
+<ParamField body="bankCode" type="string" required>
+  The code of the bank where the account is domiciled.  
+  **Example:** `001001`
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Completed successfully"
+	"data": {
+      "sessionId": "1234787090",
+      "accountName": "Bruce Banner",
+      "accountNumber": "1234567890",
+      "bank": "Sterling Bank"
+    },
+	"errors": []
+}
+```
+
+</ResponseExample>

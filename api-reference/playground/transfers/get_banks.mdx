@@ -1,0 +1,30 @@
+---
+title: "Retrieve Active Banks"
+api: "GET /transfer/banks"
+description: "This endpoint allows you to retrieve a list of active banks eligible for fund transfers."
+---
+
+# Retrieve Active Banks
+
+Use this endpoint to fetch a list of active banks that are eligible for fund transfer operations.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+```json
+{
+	"status": "00",
+	"message": "Completed successfully",
+	"data": {
+		"banks": []
+	}
+}
+```
+
+</ResponseExample>

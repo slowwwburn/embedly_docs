@@ -1,0 +1,58 @@
+---
+title: "Freeze/Unfreeze Account"
+description: "This endpoint is used to send a request to freeze or unfreeze a customer's account."
+api: "POST /account/bank/freeze"
+---
+
+# Freeze/Unfreeze Account
+
+Use this endpoint to freeze or unfreeze a customer's account. The freeze field determines whether the account will be frozen or reverted to active status.
+
+---
+
+## Additional Information
+
+<Info>
+  - When the **freeze** field is passed as `true`, the account will be frozen, updating the status to inactive.  
+  - When the **freeze** field is passed as `false`, the account status will be reverted to active.
+</Info>
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="accountNumber" type="string" required>
+  The account number for which the freeze or unfreeze action is to be performed.  
+  **Example:** `5118745523`
+</ParamField>
+
+<ParamField body="reason" type="string" required>
+  The reason for the freeze or unfreeze request.  
+  **Example:** `Suspicious activity detected`
+</ParamField>
+
+<ParamField body="freeze" type="boolean" required>
+  Indicates the action to be taken on the account:  
+  - `true`: Freeze the account.  
+  - `false`: Unfreeze the account.  
+  **Example:** `true`
+</ParamField>
+---
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Account successdully frozen",
+	"data": {},
+	"errors": []
+}
+```
+
+</ResponseExample>

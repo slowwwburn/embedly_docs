@@ -1,0 +1,52 @@
+---
+title: "Validate OTP"
+api: "POST /utils/otp-validation"
+description: "This endpoint allows you to validate a transfer request using the provided OTP."
+---
+
+# Validate OTP
+
+Use this endpoint to validate a transfer request by providing the OTP sent to the customer's phone number.
+
+---
+
+## Additional Information
+
+<Info>
+  **Note**  
+  - Use the default OTP **123456** when validating OTP requests on sandbox.  
+  - All OTPs generated expire after 5 minutes.  
+  - Any active OTP on an account will expire once a new OTP request is made for the same account number.
+</Info>
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="otpReferenceId" type="string" required>
+  The unique identifier for the OTP, returned after successfully initiating a transfer request.  
+  **Example:** `1234567890`
+</ParamField>
+
+<ParamField body="OTP" type="string" required>
+  The One-Time Password sent to the customer's phone number.  
+  **Example:** `123456`
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Completed successfully"
+	"data": {},
+	"errors": []
+}
+```
+
+</ResponseExample>

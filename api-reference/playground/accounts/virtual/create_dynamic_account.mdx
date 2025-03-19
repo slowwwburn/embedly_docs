@@ -1,0 +1,62 @@
+---
+title: "Dynamic Account"
+api: "POST /account/virtual/create/dynamic"
+description: "This endpoint allows you to create a dynamic virtual account with customizable expiry time or expiry date."
+---
+
+# Create Dynamic Account
+
+Use this endpoint to create a dynamic virtual account. The account can have a defined expiration time or expiration date, but only one of these parameters should be passed.
+
+---
+
+## Additional Information
+
+<Info>
+  Please note that you are to either pass **expTime** or **expDate** and not both.
+</Info>
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  Name to be displayed to the customer upon name enquiry on the account number via their bank app.  
+  **Example:** `Tony Stark/Avengers`
+</ParamField>
+
+<ParamField body="expTime" type="string">
+  The expiry time, in seconds, for which the dynamic virtual account is to be active. The minimum time allowed is **600 seconds (10 minutes)**.  
+  **Example:** `3600`
+</ParamField>
+
+<ParamField body="expDate" type="string">
+  The expiry date at which the dynamic virtual account is to become inactive.  
+  **Format:** `YYYY-MM-DDThh:mm:ss`  
+  **Example:** `2024-12-31T23:59:59`
+</ParamField>
+<ParamField body="settlementAccount" type="string" required>
+	**Example:** `0012345678`
+</ParamField>
+
+---
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Account successfully created",
+	"data": {
+		"accountNumber": "1951145523",
+		"accountName": "Tony Stark"
+	},
+	"errors": []
+}
+```
+
+</ResponseExample>

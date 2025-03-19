@@ -1,0 +1,58 @@
+---
+title: "Overview"
+description: "Overview page to integrating Embedly apis"
+---
+
+To enable you access the full Embedly api services a staging environment has been created for you.
+
+In other to proceed with integrating any of the below endpoints, you need to first retrieve your api key via your dashboard using the steps below.
+
+<ol>
+	<li> Log into your dashboard</li>
+	<li> Navigate to APIs & Integrations</li>
+	<li>...</li>
+	<li>...</li>
+</ol>
+
+## Base URL
+
+The base URL for all API requests on the production environment is:
+
+```
+https://api.embedly.co/v1
+```
+
+While the base URL for all API requests on the staging environment is:
+
+```
+https://waas-staging.cafeone.ng/api/v1
+```
+
+## Authentication
+
+You are to pass your API-KEY as a header in all your requests on the platform.
+
+**Endpoint:** `GET /auth/token`
+
+**Headers**
+
+```https
+Content-Type: application/json
+Authorization: Bearer {{Base64 encoded client+secret}}
+```
+
+**Sample Response:**
+
+```json
+{
+	"data": {
+		"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPcmdhbml6YXRpb25JZCI6ImUwODU5YWYzLWQ1ZjMtNDA5MC05YjY4LWE5OTBmZDcxYjg3MiIsIkFjdG9yIjoiQ2xpZW50IiwiQ2xpZW50SWQiOiIyYzkxNWNkMS0zYzM4LTQ5YjgtYWFlMS05MjFkMjRiM2I3NzYiLCJqdGkiOiJkNjBkZGNjNy1kNDBkLTRhZDUtYTcxYi1mYWUyMmM3OWFmNzgiLCJTY29wZSI6WyJBY2NvdW50LkNyZWF0ZSIsIkN1c3RvbWVyLkNyZWF0ZSIsIktZQi5DcmVhdGUiLCJUcmFuc2FjdGlvbi5DcmVhdGUiXSwiZXhwIjoxNzIxMjE4NTU5LCJpc3MiOiJodHRwczovL3N0ZXJsaW5nZWRnZS1hdXRoLWFwaS1kZXYuc3RlcmxpbmdhcHBzLnAuYXp1cmV3ZWJzaXRlcy5uZXQvIn0.g475CjbgAOUr1E8O_RgM0yNl76P_4kiIAoFiTpEX-AA",
+		"tokenType": "Bearer",
+		"expiresAt": "3600"
+	},
+	"message": "Completed successfully",
+	"status": "success",
+	"statusCode": 200,
+	"errors": []
+}
+```

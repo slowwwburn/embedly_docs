@@ -1,0 +1,88 @@
+---
+title: "Authentication"
+description: "To interact with the Edge API, you’ll need to authenticate your requests using a token. This token is generated from your API credentials and is required for all API calls."
+---
+
+## Getting Your Token
+
+To generate your authentication <Tooltip tip="A token is a string of characters used to authenticate API requests.">token</Tooltip>, follow these steps:
+
+1. **Navigate to Your API Credentials Page:**  
+   Log in to your Edge dashboard and go to the <Tooltip tip="API credentials consist of a client key and a secret key, both required for generating tokens.">API Credentials</Tooltip> section to retrieve your <Tooltip tip="A client key is one part of the credentials required to generate the token for API authentication.">client</Tooltip> and <Tooltip tip="A secret key is the second part of the credentials used to generate the token for secure access.">secret keys</Tooltip>.
+
+2. **Generate the Token:**  
+   Combine your client and secret keys, and encode them in <Tooltip tip="Base64 is a binary-to-text encoding scheme used to encode binary data into ASCII text format.">Base64 format</Tooltip>. This will create the token you need for authentication.
+
+3. **Include the Token in Your Requests:**  
+   Add the generated token to the <Tooltip tip="The Authorization header is used to pass the token in API requests for authentication.">`Authorization`</Tooltip> header of your API requests.
+
+---
+
+## Example Request
+Here’s a sample request to help you get started:
+**Endpoint:**  
+`/users`
+**Method:**  
+`POST`
+**Headers:**
+```http
+Host: api.withedge.co
+Content-Type: application/json
+Authorization: Bearer {Base64 encoded client+secret}
+X-Encryption-Type: AES256
+```
+---
+### Sample Response
+**Response Body:**
+```json
+{
+	"data": {
+		"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPcmdhbml6YXRpb25JZCI6ImUwODU5YWYzLWQ1ZjMtNDA5MC05YjY4LWE5OTBmZDcxYjg3MiIsIkFjdG9yIjoiQ2xpZW50IiwiQ2xpZW50SWQiOiIyYzkxNWNkMS0zYzM4LTQ5YjgtYWFlMS05MjFkMjRiM2I3NzYiLCJqdGkiOiJkNjBkZGNjNy1kNDBkLTRhZDUtYTcxYi1mYWUyMmM3OWFmNzgiLCJTY29wZSI6WyJBY2NvdW50LkNyZWF0ZSIsIkN1c3RvbWVyLkNyZWF0ZSIsIktZQi5DcmVhdGUiLCJUcmFuc2FjdGlvbi5DcmVhdGUiXSwiZXhwIjoxNzIxMjE4NTU5LCJpc3MiOiJodHRwczovL3N0ZXJsaW5nZWRnZS1hdXRoLWFwaS1kZXYuc3RlcmxpbmdhcHBzLnAuYXp1cmV3ZWJzaXRlcy5uZXQvIn0.g475CjbgAOUr1E8O_RgM0yNl76P_4kiIAoFiTpEX-AA",
+		"tokenType": "Bearer",
+		"expiresAt": "3600"
+	},
+	"message": "Completed successfully",
+	"status": "success",
+	"statusCode": 200,
+	"errors": []
+}
+```
+
+---
+
+### Key Terms Used:
+
+- <Tooltip tip="A token used for authentication. Must be included in the Authorization header for API calls.">**`accessToken`**</Tooltip>: The token used for authenticating API requests. This token should be included in the `Authorization` header of subsequent API requests.
+- <Tooltip tip="Bearer tokens are a type of token that can be used to authenticate API requests.">**`tokenType`**</Tooltip>: Indicates the type of token, typically `Bearer`.
+- <Tooltip tip="The time (in seconds) after which the token will expire.">**`expiresAt`**</Tooltip>: The duration (in seconds) before the token expires and needs to be refreshed.
+- **`message`**: A message indicating the result of the request, here showing `"Completed successfully"`.
+- **`status`**: The status of the request, with `"success"` indicating the request was processed correctly.
+- **`statusCode`**: The HTTP status code, `200` for a successful request.
+- **`errors`**: An array of errors, empty here indicating no errors occurred.
+
+---
+
+## Base URL
+
+When making API requests, you'll need to use the appropriate <Tooltip tip="The base URL is the main address that serves as the entry point for all API requests. It can differ for production and sandbox environments.">base URL</Tooltip> depending on the environment:
+
+- **Production Environment:**  
+  Use this URL for live, production-level operations:
+
+  ```http
+  https://api.withedge.co/
+  ```
+
+- **Sandbox environment:**  
+  Use this URL for testing and development purposes. The sandbox environment mirrors the production environment but is intended for safe testing without affecting real data:
+  ```http
+  https://sandbox.withedge.co/v1
+  ```
+
+<Info>
+	Ensure that you are using the correct base URL for your environment to avoid unintended data manipulation or errors. For testing, always start with the sandbox environment before moving to production.
+</Info>
+
+<Warning>
+	For security reasons, ensure that your token is stored securely and never shared publicly. Tokens should be refreshed regularly to maintain secure access to the API.
+</Warning>

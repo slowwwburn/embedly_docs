@@ -1,0 +1,99 @@
+---
+title: "Environment"
+description: "When integrating with the Edge API, understanding the different environments available is crucial for smooth development and deployment. Edge provides two distinct environments—**Sandbox** and **Production**—each tailored for specific stages of your integration process. This guide will walk you through the purpose of each environment, how to use them effectively, and best practices for transitioning from testing to live operations."
+---
+
+### Sandbox Environment
+
+<Accordion title="What is the Sandbox Environment?">
+  The Sandbox environment is a safe, simulated version of the Edge API, designed for testing and development. It mirrors the Production environment in terms of functionality and API behavior, but with one key difference: actions performed in the Sandbox do not affect real data or financial transactions.
+</Accordion>
+
+<Accordion title="Why Use the Sandbox Environment?">
+  <ul>
+    <li><strong>Safe Testing:</strong> The Sandbox allows you to test your integration without the risk of impacting real users or data. You can freely experiment with API calls, validate your workflows, and troubleshoot issues in a controlled setting.</li>
+    <li><strong>Development Flexibility:</strong> Use the Sandbox to build and refine your application, ensuring all API interactions function as expected before going live.</li>
+  </ul>
+</Accordion>
+
+<Accordion title="How to Access the Sandbox Environment">
+  To start using the Sandbox environment, direct your API requests to the following base URL:
+  <CodeBlock language="http">
+    https://sandbox.api.withedge.co/v1
+  </CodeBlock>
+</Accordion>
+
+<Accordion title="Best Practices for Using the Sandbox">
+  <ul>
+    <li><strong>Test Thoroughly:</strong> Before moving to Production, ensure you’ve tested all possible scenarios in the Sandbox, including edge cases and error handling.</li>
+    <li><strong>Simulate Real-world Conditions:</strong> Mimic the conditions your application will face in Production as closely as possible to uncover potential issues early.</li>
+  </ul>
+</Accordion>
+
+---
+
+### Production Environment
+
+<Accordion title="What is the Production Environment?">
+  The Production environment is where your application interacts with real users and live data. Once your integration has been thoroughly tested in the Sandbox, you’ll transition to Production to begin live operations.
+</Accordion>
+
+<Accordion title="Why Use the Production Environment?">
+  <ul>
+    <li><strong>Live Operations:</strong> This environment is for real transactions, data processing, and user interactions. Everything that happens here is part of your live service, affecting actual business operations.</li>
+  </ul>
+</Accordion>
+
+<Accordion title="How to Access the Production Environment">
+  Once you're ready to go live, switch your API requests to the following base URL:
+  <CodeBlock language="http">
+    https://api.withedge.co/v1
+  </CodeBlock>
+</Accordion>
+
+<Accordion title="Best Practices for Using the Production Environment">
+  <ul>
+    <li><strong>Ensure Readiness:</strong> Double-check that all tests have been completed in the Sandbox, and that your integration is fully prepared for live use.</li>
+    <li><strong>Monitor Performance:</strong> Keep a close eye on your application’s performance in Production, particularly in the initial phase, to quickly identify and address any issues.</li>
+  </ul>
+</Accordion>
+
+---
+
+### Transitioning from Sandbox to Production
+
+<Steps>
+  <Step title="Final Testing in Sandbox">
+    Perform a final round of testing in the Sandbox to ensure all functionality works as intended.
+  </Step>
+  
+  <Step title="Update Configuration">
+    Modify your application’s configuration to point to the Production environment URL. Ensure that all authentication tokens and environment-specific settings are updated accordingly.
+  </Step>
+  
+  <Step title="Perform a Controlled Launch">
+    Consider rolling out your integration gradually in Production to monitor its performance and make adjustments as needed.
+  </Step>
+  
+  <Step title="Ongoing Monitoring">
+    After moving to Production, continue to monitor your integration closely, particularly in the early stages of deployment.
+  </Step>
+</Steps>
+
+---
+
+### Important Considerations
+
+<Warning>
+  Remember that API tokens are environment-specific. Ensure that you are using the correct tokens for each environment to avoid authentication errors.
+</Warning>
+
+<Warning>
+  Always store your tokens securely and follow best practices for API security, especially in the Production environment.
+</Warning>
+
+<Warning>
+  Keep in mind that data in the Sandbox is separate from Production. Actions in the Sandbox will not affect your live data or operations.
+</Warning>
+
+---

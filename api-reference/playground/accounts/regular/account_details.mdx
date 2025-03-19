@@ -1,0 +1,62 @@
+---
+title: "Get Account Details"
+api: "GET /account/bank/details/{accountNumber}"
+description: "This endpoint enables you to retrieve the details of a specific bank account."
+---
+
+# Get Account Details
+
+Use this endpoint to fetch the details of a specific bank account, including account balance, status, and other relevant information.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency. This ensures that repeated requests with the same "requestId" are not processed multiple times. Example: "e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9"
+</ParamField>
+
+<ParamField query="page" type="integer" required>
+  The page number to retrieve for paginated results. Use this parameter to control which set of results is returned. Example: 1
+</ParamField>
+
+<ParamField query="pageSize" type="integer" required>
+  The number of results to return per page. This parameter controls the size of each paginated response. Example: 15
+</ParamField>
+
+<ParamField path="accountNumber" type="string" required>
+  The unique account number of the user or entity for which the request is made. This parameter is used to identify the relevant account. Example: 5118745523
+</ParamField>
+
+---
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Account Statement Successfully Retrieved",
+	"data": [
+		{
+      "accountNumber": "5118745523",
+      "accountName": "John Doe",
+      "balance": 10000.00
+      "currency": "NGN"
+      "status": "active"
+    },
+    {
+      "accountNumber": "1951145523",
+      "accountName": "Jane Doe",
+      "balance": 25000.00
+      "currency": "NGN"
+      "status": "active"
+    }
+	],
+	"errors": [],
+	"currentPage": 1,
+	"pageSize": 10,
+	"previousPage": 0,
+	"total": 2
+}
+```
+
+</ResponseExample>

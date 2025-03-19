@@ -1,0 +1,182 @@
+{
+	"$schema": "https://mintlify.com/schema.json",
+	"name": "Embedly API Documentation",
+	"logo": {
+		"light": "/images/logo/logo.svg",
+		"dark": "/images/logo/logo.svg"
+	},
+	"favicon": "/e.svg",
+	"colors": {
+		"primary": "#725AC1",
+		"light": "#9B84DA",
+		"dark": "#4B3A91",
+		"background": {
+			"light": "#F7F5FF",
+			"dark": "#1B1523"
+		}
+	},
+	"topbarLinks": [
+		{
+			"name": "Join The Community",
+			"url": "aa"
+		}
+	],
+	"topbarCtaButton": {
+		"name": "Get Started",
+		"url": "https://embedly.com/"
+	},
+	"tabs": [
+		{
+			"name": "API Reference",
+			"url": "api-reference"
+		}
+	],
+	"navigation": [
+		{
+			"group": "Home",
+			"pages": [
+				"home/introduction",
+				"home/onboarding",
+				"home/authentication",
+				"home/encryption",
+				"home/environments",
+				"home/response",
+				"home/webhook",
+				"home/idempotency",
+				"home/fees",
+				{
+					"group": "Going Live",
+					"pages": [
+						"home/live/going-live",
+						"home/live/checklist",
+						"home/live/compliance",
+						"home/live/security"
+					]
+				}
+			]
+		},
+		{
+			"group": "API Documentation",
+			"pages": [
+				{
+					"group": "Getting Started",
+					"pages": [
+						"api-reference/authentication",
+						"api-reference/playground/auth/get_token",
+						"api-reference/playground/auth/revoke_token"
+					]
+				},
+				{
+					"group": "Customer",
+					"pages": [
+						"api-reference/customers",
+						"api-reference/playground/customer/profile_customer",
+						"api-reference/playground/customer/profile_business",
+						"api-reference/playground/customer/get_customer",
+						"api-reference/playground/customer/get_customers",
+						"api-reference/playground/customer/toggle_customer",
+						"api-reference/playground/customer/customerKYC"
+					]
+				},
+				{
+					"group": "Account",
+					"pages": [
+						"api-reference/accounts",
+						{
+							"group": "Bank Accounts",
+							"pages": [
+								{
+									"group": "Open Bank Accounts",
+									"pages": [
+										"api-reference/playground/accounts/regular/create_personal_account",
+										"api-reference/playground/accounts/regular/create_corp_account"
+									]
+								},
+								"api-reference/playground/accounts/regular/account_details",
+								"api-reference/playground/accounts/regular/account_statement",
+								"api-reference/playground/accounts/regular/get_accounts",
+								"api-reference/playground/accounts/regular/freeze_account"
+							]
+						},
+						{
+							"group": "Virtual Accounts",
+							"pages": [
+								{
+									"group": "Create Virtual Accounts",
+									"pages": [
+										"api-reference/playground/accounts/virtual/create_dynamic_account",
+										"api-reference/playground/accounts/virtual/create_dedicated_account"
+									]
+								},
+								"api-reference/playground/accounts/virtual/account_details",
+								"api-reference/playground/accounts/virtual/get_accounts",
+								"api-reference/playground/accounts/virtual/transaction_hist",
+								"api-reference/playground/accounts/virtual/initiate_reversal",
+								"api-reference/playground/accounts/virtual/sweep"
+							]
+						},
+						{
+							"group": "Shared Functions",
+							"pages": [
+								"api-reference/playground/accounts/shared/close_accounts"
+							]
+						}
+					]
+				},
+				{
+					"group": "Transfers",
+					"pages": [
+						"api-reference/transfers",
+						"api-reference/playground/transfers/get_banks",
+						"api-reference/playground/transfers/name_enquiry",
+						"api-reference/playground/transfers/customer_transfer",
+						"api-reference/playground/transfers/process_transfer",
+						"api-reference/playground/transfers/collection_transfer",
+						"api-reference/playground/transfers/check_status"
+					]
+				},
+				{
+					"group": "Know Your Customer",
+					"pages": [
+						"api-reference/playground/kyc/bvn",
+						"api-reference/playground/kyc/nin",
+						"api-reference/playground/kyc/bvn_nin",
+						"api-reference/playground/kyc/identity_doc",
+						"api-reference/playground/kyc/identity_doc_wface",
+						"api-reference/playground/kyc/cac",
+						"api-reference/playground/kyc/cac_advanced",
+						"api-reference/playground/kyc/tin"
+					]
+				},
+				{
+					"group": "Utilities",
+					"pages": [
+						"api-reference/playground/util/req_otp",
+						"api-reference/playground/util/val_otp"
+					]
+				}
+			]
+		}
+	],
+	"footerSocials": {
+		"twitter": "https://x.com/buildwithedge",
+		"linkedin": "https://www.linkedin.com/company/buildwithedge",
+		"website": "https://withedge.co/",
+		"youtube": "https://youtube.com/@buildwithedge"
+	},
+	"api": {
+		"baseUrl": "https://devapi.withedge.co/gateway/api/v1",
+		"auth": {
+			"method": "bearer"
+		}
+	},
+	"feedback": {
+		"thumbsRating": true
+	},
+	"pageedit": {
+		"suggestEdit": true,
+		"raiseIssue": true,
+		"thumbsRating": true
+	},
+	"versions": ["1.0.0-Beta"]
+}

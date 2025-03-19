@@ -1,0 +1,45 @@
+---
+title: "Sweep Collection"
+api: "POST /account/virtual/sweep"
+description: "This allows you to sweep funds out of any of your profiled pool accounts into your profiled corporate account."
+---
+
+# Sweep Collection
+
+Use this endpoint to transfer funds from a designated pool account into a corporate account associated with your profile.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="settlementAccount" type="string" required>
+  The account number of the pool account from which funds will be swept.  
+  **Example:** `5118745523`
+</ParamField>
+
+<ParamField body="amount" type="double" required>
+  The amount to be swept from the pool account.  
+  **Example:** `100000.00`
+</ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Completed successfully"
+	"data": {
+		"amount": 1231241241
+		"transactionId": "1214241241"
+	},
+	"errors": []
+}
+```
+
+</ResponseExample>

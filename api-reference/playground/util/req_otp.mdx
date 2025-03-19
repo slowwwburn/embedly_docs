@@ -1,0 +1,51 @@
+---
+title: "Request OTP"
+api: "POST /utils/otp-request"
+description: "This endpoint generates a One-Time Password (OTP) and sends it to the phone number linked to the provided account number."
+---
+
+# Request OTP
+
+Use this endpoint to generate a One-Time Password (OTP) for a specific account. The OTP will be sent to the phone number associated with the account.
+
+---
+
+## Additional Information
+
+<Info>
+  **Note**  
+  - Use the default OTP **123456** when validating OTP requests on sandbox.  
+  - All OTPs generated expire after 5 minutes.  
+  - Any active OTP on an account will expire once a new OTP request is made for the same account number.
+</Info>
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="accountNumber" type="string" required>
+  The account number for which the OTP is being generated.  
+  **Example:** `0987654321`
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "OTP has been sent to the account holder's phone number"
+	"data": {
+    "accountNumber": "0987654321",
+		"otpReferenceId": "1234567890",
+    "expTime": "300"
+	},
+	"errors": []
+}
+```
+
+</ResponseExample>

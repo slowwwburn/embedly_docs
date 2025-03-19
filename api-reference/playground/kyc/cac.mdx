@@ -1,0 +1,47 @@
+---
+title: "Verify Company CAC"
+api: "POST /kyc/verify/cac"
+description: "This endpoint enables you to verify a company's CAC (Corporate Affairs Commission) information."
+---
+
+# Verify Company CAC
+
+Use this endpoint to validate a company's details against its CAC (Corporate Affairs Commission) registration information.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="rcNumber" type="string" required>
+  The unique identification number assigned to the company by the CAC.  
+  **Example:** `RC123456`
+</ParamField>
+
+<ParamField body="companyType" type="string" required>
+  The type of company (e.g., Limited Liability Company, Public Company).  
+  **Example:** `Limited Liability Company`
+</ParamField>
+
+<ParamField body="companyName" type="string" required>
+  The registered name of the company.  
+  **Example:** `Doe Enterprises Ltd.`
+</ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Completed successfully"
+	"data": {},
+	"errors": []
+}
+```
+
+</ResponseExample>

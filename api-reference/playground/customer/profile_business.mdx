@@ -1,0 +1,192 @@
+---
+title: "Profile Business"
+api: "POST /customer/profile/business"
+description: "This endpoint enables you to profile a business."
+---
+
+# Profile Business
+
+Use this endpoint to profile a business by providing detailed business and personal information.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+  A unique identifier for the request, used for idempotency.  
+  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="firstName" type="string" required>
+  The first name of the customer.  
+  **Example:** `John`
+</ParamField>
+
+<ParamField body="lastName" type="string" required>
+  The last name of the customer.  
+  **Example:** `Doe`
+</ParamField>
+
+<ParamField body="otherName" type="string" required>
+  Any other names of the customer.  
+  **Example:** `Michael`
+</ParamField>
+
+<ParamField body="email" type="string" required>
+  The customer's email address.  
+  **Example:** `john.doe@example.com`
+</ParamField>
+
+<ParamField body="phone" type="string" required>
+  The customer's phone number.  
+  **Example:** `08012345678`
+</ParamField>
+
+<ParamField body="salutation" type="string" required>
+  The salutation of the customer.  
+  **Example:** `Mr`
+</ParamField>
+
+<ParamField body="gender" type="string" required>
+  The gender of the customer.  
+  **Example:** `Male`
+</ParamField>
+
+<ParamField body="dateOfBirth" type="string" required>
+  The customer's date of birth in `YYYY-MM-DD` format.  
+  **Example:** `1980-01-01`
+</ParamField>
+
+<ParamField body="bvn" type="string" required>
+  The customer's Bank Verification Number.  
+  **Example:** `12345678901`
+</ParamField>
+
+<ParamField body="nationality" type="string" required>
+  The nationality of the customer.  
+  **Example:** `NGA`
+</ParamField>
+
+<ParamField body="address" type="object" required>
+  <ParamField body="address" type="string" required>
+    The address details of the customer.  
+    **Example:** `123 Main Street`
+  </ParamField>
+  <ParamField body="street" type="string" required>
+    The street of the address.  
+    **Example:** `Main Street`
+  </ParamField>
+  <ParamField body="localGovernment" type="string" required>
+    The local government of the address.  
+    **Example:** `Ikeja`
+  </ParamField>
+  <ParamField body="city" type="string" required>
+    The city of the address.  
+    **Example:** `Lagos`
+  </ParamField>
+  <ParamField body="country" type="string" required>
+    The country of the address.  
+    **Example:** `NGA`
+  </ParamField>
+</ParamField>
+
+<ParamField body="businessName" type="string" required>
+  The name of the business.  
+  **Example:** `Doe Enterprises`
+</ParamField>
+
+<ParamField body="countryOfResidence" type="string" required>
+  The country where the business resides.  
+  **Example:** `NGA`
+</ParamField>
+
+<ParamField body="dateOfIncorporation" type="string" required>
+  The date the business was incorporated in `YYYY-MM-DD` format.  
+  **Example:** `2020-01-01`
+</ParamField>
+
+<ParamField body="taxId" type="string" required>
+  The tax identification number of the business.  
+  **Example:** `TX12345`
+</ParamField>
+
+<ParamField body="stateOfResidence" type="string" required>
+  The state where the business resides.  
+  **Example:** `Lagos`
+</ParamField>
+
+<ParamField body="stateOfRegistration" type="string" required>
+  The state where the business is registered.  
+  **Example:** `Ogun`
+</ParamField>
+
+<ParamField body="rcNumber" type="string" required>
+  The RC (Registration Certificate) number of the business.  
+  **Example:** `RC12345`
+</ParamField>
+
+<ParamField body="directorFullName" type="string" required>
+  The full name of the director.  
+  **Example:** `John Doe`
+</ParamField>
+
+<ParamField body="directorBvn" type="string" required>
+  The BVN of the director.  
+  **Example:** `98765432101`
+</ParamField>
+
+<ParamField body="directorIdDocumentType" type="string" required>
+  The ID document type of the director (e.g., CAC).  
+  **Example:** `CAC`
+</ParamField>
+
+<ParamField body="directorIdDocumentNumber" type="string" required>
+  The ID document number of the director.  
+  **Example:** `ID12345`
+</ParamField>
+
+<ParamField body="directorPoliticalAffiliationRelationship" type="string" required>
+  The political affiliation relationship of the director.  
+  **Example:** `None`
+</ParamField>
+
+<ParamField body="shareholderShareholderBvn" type="string" required>
+  The BVN of the shareholder.  
+  **Example:** `12345678901`
+</ParamField>
+
+<ParamField body="shareholderPercentShareholder" type="string" required>
+  The percentage of shares held by the shareholder.  
+  **Example:** `10`
+</ParamField>
+
+<ParamField body="shareholderIdDocumentType" type="string" required>
+  The ID document type of the shareholder (e.g., CAC).  
+  **Example:** `CAC`
+</ParamField>
+
+<ParamField body="shareholderIdDocumentNumber" type="string" required>
+  The ID document number of the shareholder.  
+  **Example:** `ID67890`
+</ParamField>
+
+<ParamField body="shareholderPoliticalAffiliationRelationship" type="string" required>
+  The political affiliation relationship of the shareholder.  
+  **Example:** `None`
+</ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+    "statuscode": "00",
+    "message": "Customer successfully profiled",
+    "data": {
+      "customerId": "7120739910",
+    }
+    "errors": [],
+}
+```
+
+</ResponseExample>

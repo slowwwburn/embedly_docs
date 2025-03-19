@@ -1,0 +1,43 @@
+---
+title: "Dedicated Account"
+api: "POST /account/virtual/create/dedicated"
+description: "This endpoint is used to create a dedicated virtual account for a specific customer on the Edge platform.
+"
+---
+
+# Create Dedicated Account
+
+This endpoint allows you to create a dedicated virtual account for a specific customer on the Edge platform.
+
+---
+
+## Request Parameters
+
+<ParamField header="requestId" type="string" required>
+	A unique identifier for the request, used for idempotency. **Example:**
+	`e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
+</ParamField>
+
+<ParamField body="customerId" type="string" required>
+	The unique identifier for the customer on the Edge platform. **Example:**
+	`CUS1234567890`
+</ParamField>
+<ParamField body="settlementAccount" type="string" required>
+	**Example:** `0012345678`
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	"statusCode": 00,
+	"message": "Account successfully created",
+	"data": {
+		"accountNumber": "1951145523",
+		"accountName": "Tony Stark"
+	},
+	"errors": []
+}
+```
+
+</ResponseExample>
