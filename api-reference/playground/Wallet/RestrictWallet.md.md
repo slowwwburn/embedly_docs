@@ -28,14 +28,14 @@ The `PATCH /api/v1/wallets/wallet/restrict` endpoint restricts a specified walle
   "currencyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "isInternal": true,
   "isDefault": true,
-  "name": "string",
+  "name": "Victor Imah",
   "overdraft": 0,
   "virtualAccount": {
-    "accountNumber": "string",
-    "bankCode": "string",
-    "bankName": "string"
+    "accountNumber": "30235699911",
+    "bankCode": "040",
+    "bankName": "Polaris Bank"
   },
-  "mobNum": "string",
+  "mobNum": "09030355074",
   "customerTypeId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 }
 ```

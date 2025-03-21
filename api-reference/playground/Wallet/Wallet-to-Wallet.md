@@ -10,11 +10,11 @@ The `PUT /api/v1/wallets/wallet/transaction/v2/wallet-to-wallet` endpoint facili
 
 ```json
 {
-  "fromAccount": "string",
-  "toAccount": "string",
-  "amount": 0,
-  "transactionReference": "string",
-  "remarks": "string",
+  "fromAccount": "3025831139",
+  "toAccount": "211651183",
+  "amount": 100000,
+  "transactionReference": "retw33344556670900",
+  "remarks": "For Holiday",
   "transactionTypeId": 0
 }
 ```

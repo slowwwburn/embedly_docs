@@ -13,19 +13,19 @@ The `PUT /api/v1/wallets/wallet/transaction/account-number/post` endpoint posts 
   "id": 0,
   "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "amount": 0,
-  "fee": 0,
+  "amount": 200,
+  "fee": 1.0,
   "postedDate": "2025-03-20T18:28:13.015Z",
   "valueDate": "2025-03-20T18:28:13.015Z",
-  "transactionReference": "string",
+  "transactionReference": "Rf399596950",
   "walletId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "isPosted": true,
-  "direction": "string",
-  "remarks": "string",
-  "currency": "string",
-  "batchReference": "string",
-  "accountNumber": "string"
+  "direction": "ROOO",
+  "remarks": "Dog food",
+  "currency": "USD",
+  "batchReference": "5869999",
+  "accountNumber": "3025831129"
 }
 ```
 

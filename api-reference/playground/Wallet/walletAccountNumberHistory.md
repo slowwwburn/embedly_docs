@@ -18,7 +18,7 @@ The `POST /api/v1/wallets/account-number/history` endpoint retrieves the transac
 
 ```json
 {
-  "accountNumber": "string",
+  "accountNumber": "211651123",
   "from": "2025-03-19T17:11:52.488Z",
   "to": "2025-03-19T17:11:52.488Z"
 }

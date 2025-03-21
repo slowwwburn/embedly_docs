@@ -16,7 +16,7 @@ The `PUT /api/v1/wallets/wallet/transaction/post/complete` endpoint completes a 
   "walletId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
   "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "amount": 0,
+  "amount": 4999940,
   "accountNumber": "string",
   "isPosted": true
 }

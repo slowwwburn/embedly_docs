@@ -16,7 +16,7 @@ The `POST /api/v1/wallets/close` endpoint allows you to close a specified wallet
 
 ```json
 {
-  "accountNumber": "string",
+  "accountNumber": "3023563113",
   "accountClosureReasonId": 0,
   "tellerId": 0,
   "closeOrDelete": true,

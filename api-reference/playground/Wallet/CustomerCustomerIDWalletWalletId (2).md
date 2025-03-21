@@ -34,8 +34,8 @@ The `GET /api/v1/wallets/get/customer/{customerId}/wallet/{walletId}` endpoint r
   "success": true,
   "message": "Wallet details retrieved successfully.",
   "data": {
-    "walletId": "rrrr",
-    "customerId": "rr",
+    "walletId": "ID3457",
+    "customerId": "1234",
     "availableBalance": 10000,
     "ledgerBalance": 12000,
     "currency": "USD",

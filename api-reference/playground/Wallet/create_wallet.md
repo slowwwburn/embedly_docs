@@ -11,4 +11,3 @@ Use this endpoint to create profile for an individual.
 ---
 
 ## Request Parameters
-
