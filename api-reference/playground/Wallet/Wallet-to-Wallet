@@ -1,0 +1,67 @@
+# Wallet-to-Wallet Transaction API
+
+The `PUT /api/v1/wallets/wallet/transaction/v2/wallet-to-wallet` endpoint facilitates transferring funds from one wallet to another.
+
+## Request
+
+### **URL**
+
+`https://api/v1/wallets/wallet/transaction/v2/wallet-to-wallet`
+
+```json
+{
+  "fromAccount": "string",
+  "toAccount": "string",
+  "amount": 0,
+  "transactionReference": "string",
+  "remarks": "string",
+  "transactionTypeId": 0
+}
+```
+
+## Response
+
+✅ Success Response
+Status Code: 200 OK
+
+```json
+{
+  "code": "200",
+  "success": true,
+  "message": "Transaction completed successfully.",
+  "data": {
+    // Additional transaction details if applicable
+  }
+}
+```
+
+## ❌ Error Responses
+
+```json
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "x-api-key is missing in the header",
+  "data": null
+}
+
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid request data",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}
+```

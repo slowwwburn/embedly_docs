@@ -1,0 +1,82 @@
+# Close Wallet API
+
+The `POST /api/v1/wallets/close` endpoint allows you to close a specified wallet using the account number and associated details.
+
+## Request
+
+### **URL**
+
+`https://api/v1/wallets/close`
+
+### **Request Method**
+
+`POST`
+
+### **Request Body**
+
+```json
+{
+  "accountNumber": "string",
+  "accountClosureReasonId": 0,
+  "tellerId": 0,
+  "closeOrDelete": true,
+  "customerOrAccount": true
+}
+```
+
+## Response
+
+```json
+✅ Success Response
+Status Code: 200 OK
+
+{
+  "code": "200",
+  "success": true,
+  "message": "Wallet closed successfully.",
+  "data": {
+    // Additional data fields if applicable
+  }
+}
+
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid request data",
+  "data": null
+}
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "You do not have rights to access this account",
+  "data": null
+}
+
+Status Code: 403 Forbidden
+
+{
+  "code": "403",
+  "success": false,
+  "message": "Access denied for this operation",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

@@ -1,0 +1,77 @@
+# Restrict Wallet by Account and Type API
+
+## Overview  
+
+The `PATCH /api/v1/wallets/wallet/restrict/account/{accountId}/type/{restrictionType}` endpoint restricts a specified wallet based on the account ID and restriction type.
+
+## Request
+
+### **URL**
+
+`https://waas-staging.cafeone.ng/api/v1/wallets/wallet/restrict/account/{accountId}/type/{restrictionType}`
+
+### **Request Method**
+
+`PATCH`
+
+### **Path Parameters**
+
+| Parameter          | Type   | Description                              |
+|--------------------|--------|------------------------------------------|
+| `accountId`        | string | Unique identifier for the account (required). |
+| `restrictionType`  | string | Type of restriction to apply (required).   |
+
+## Sample Response
+
+```json
+✅ Success Response
+Status Code: 200 OK
+
+
+{
+  "code": "200",
+  "success": true,
+  "message": "Wallet restriction applied successfully.",
+  "data": {
+    // Additional data fields if applicable
+  }
+}
+```
+
+## ❌ Error Responses
+
+```json
+Status Code: 400 Bad Request
+{
+  "code": "-1",
+  "success": false,
+  "message": "The restriction type is invalid",
+  "data": null
+}
+
+Status Code: 404 Not Found
+
+{
+  "code": "404",
+  "success": false,
+  "message": "Account not found",
+  "data": null
+}
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Unauthorized access",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}
