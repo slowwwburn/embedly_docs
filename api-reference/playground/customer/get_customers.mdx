@@ -6,26 +6,9 @@ description: "This endpoint enables you to retrieve all customers you have succe
 
 # Get All Customers
 
-Use this endpoint to fetch all customer profiles created on the Edge platform. Pagination parameters are supported to manage large datasets.
+Use this endpoint to fetch all customer profiles created by you on the Embedly platform.
 
 ---
-
-## Request Parameters
-
-<ParamField header="requestId" type="string" required>
-  A unique identifier for the request, used for idempotency.  
-  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
-</ParamField>
-
-<ParamField query="page" type="string" required>
-  The page number to retrieve for paginated results.  
-  **Example:** `1`
-</ParamField>
-
-<ParamField query="pageSize" type="string" required>
-  The number of customers to retrieve per page.  
-  **Example:** `10`
-</ParamField>
 
 <ResponseExample>
 
@@ -49,69 +32,26 @@ Use this endpoint to fetch all customer profiles created on the Edge platform. P
 			"classType": "INDIVIDUAL",
 			"status": "Active",
 			"kycTier": "0",
-			"address": {
-				"street": "Apple Close",
-				"localGovernment": "Apple",
-				"city": "Lagos",
-				"country": "NGA"
-			},
-			"nextOfKin": {
-				"gender": "Male",
-				"email": "dawn0791@mailinator.com",
-				"phone": "07098564323",
-				"relationship": "Brother",
-				"address": "2, Apple close",
-				"firstname": "Dawn",
-				"localGovernment": "Akinyele",
-				"street": "Apple",
-				"city": "Apple",
-				"lastName": "Bake",
-				"country": "NGN"
-			},
 			"dateAdded": "2024-07-10T10:16:11.047"
 		},
 		{
-			"customerNumber": "7120739910",
+			"customerId": "7100987614",
 			"firstName": "Olalekan",
 			"otherName": "Yusuf",
 			"surname": "Balogun",
-			"email": "onahv@mailinator.com",
-			"phone": "080559162",
+			"email": "fe3i9@belgianairways.com",
+			"phone": "080271885",
 			"salutation": "Mr",
 			"gender": "Male",
 			"dateOfBirth": "2002-01-01T00:00:00",
-			"bvn": "19209004559",
+			"bvn": "40455560470",
 			"nationality": "NGA",
-			"classType": "BUSINESS",
+			"classType": "INDIVIDUAL",
 			"status": "Active",
-			"businessName": "Proxy",
-			"sectorT24Code": "Y569",
-			"industryT24Code": "P90",
-			"countryOfResidence": "NGA",
-			"dateOfIncorporation": "2024-05-10T11:06:32.35",
-			"taxId": "RO123",
-			"stateOfResidence": "Kano",
-			"stateOfRegistration": "Kaduna",
-			"rcNumber": "205RT890",
-			"directorFullName": "MacMillian",
-			"directorBvn": "2209043343",
-			"directorIdDocumentType": "CAC",
-			"directorIdDocumentNumber": "WEP909",
-			"directorPoliticalAffiliationRelationship": "Non",
-			"shareholderShareholderBvn": "222290128909",
-			"shareholderPercentShareholder": "5",
-			"shareholderIdDocumentType": "CAC",
-			"shareholderIdDocumentNumber": "56TEL0",
-			"shareholderPoliticalAffiliationRelationship": "Non",
-			"customerRole": null,
-			"dateAdded": "2024-07-12T03:13:17.777"
+			"kycTier": "0",
+			"dateAdded": "2024-07-10T10:16:11.047"
 		}
-	],
-	"errors": [],
-	"currentPage": 1,
-	"pageSize": 10,
-	"previousPage": 0,
-	"total": 2
+	]
 }
 ```
 

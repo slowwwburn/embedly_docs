@@ -1,156 +1,62 @@
 ---
-title: "Profile Individual"
-api: "POST /customer/profile/individual"
-description: "This endpoint enables you to profile an individual."
+title: "Create Customer"
+api: "POST /customer/add"
+description: "This endpoint enables you to create a customer profile"
 ---
 
-# Profile Individual
+# Create Customer
 
-Use this endpoint to create a profile for an individual on the Edge platform. Providing the customer's BVN is mandatory to ensure they are immediately KYCed for Tier 1 account creation. Optionally, including the NIN will enable KYC for Tier 2.
-
----
-
-## Additional Information
-
-<Info>
-  - To successfully create a customer profile on Edge, the customer's **BVN** (Bank Verification Number) must be provided. This ensures the customer is KYCed for Tier 1 account creation.
-  - Optionally, you can provide the customer's **NIN** (National Identification Number) along with the BVN. Supplying both identifiers enables KYC up to Tier 2.
-</Info>
+Use this endpoint to create profile for an individual.
 
 ---
 
 ## Request Parameters
 
-<ParamField header="requestId" type="string" required>
-  A unique identifier for the request, used for idempotency.  
-  **Example:** `e0b9f8d0-7a57-4a67-a8b2-4d7c7b5a37c9`
-</ParamField>
+<ParamField body="id" type="string" required></ParamField>
+
+<ParamField body="organizationId" type="string" required></ParamField>
 
 <ParamField body="firstName" type="string" required>
-  The first name of the individual.  
-  **Example:** `John`
+	The first name of the individual. **Example:** `John`
 </ParamField>
 
 <ParamField body="lastName" type="string" required>
-  The last name of the individual.  
-  **Example:** `Doe`
+	The last name of the individual. **Example:** `Doe`
 </ParamField>
 
-<ParamField body="otherName" type="string" required>
-  The other names of the individual.  
-  **Example:** `Michael`
+<ParamField body="middleName" type="string" required>
+	The middle name of the individual. **Example:** `Michael`
 </ParamField>
 
-<ParamField body="email" type="string" required>
-  The individual's email address.  
-  **Example:** `john.doe@example.com`
+<ParamField body="emailAddress" type="string" required>
+	The individual's email address. **Example:** `john.doe@example.com`
 </ParamField>
 
-<ParamField body="phone" type="string" required>
-  The individual's phone number.  
-  **Example:** `08012345678`
+<ParamField body="mobileNumber" type="string" required>
+	The individual's phone number. **Example:** `08012345678`
 </ParamField>
 
-<ParamField body="salutation" type="string" required>
-  The salutation of the individual.  
-  **Example:** `Mr`
+<ParamField body="dob" type="string" required>
+	The individual's date of birth in `YYYY-MM-DD` format. **Example:**
+	`1980-01-01`
 </ParamField>
 
-<ParamField body="gender" type="string" required>
-  The gender of the individual.  
-  **Example:** `Male`
+<ParamField body="customerTypeId" type="string" required>
 </ParamField>
 
-<ParamField body="dateOfBirth" type="string" required>
-  The individual's date of birth in `YYYY-MM-DD` format.  
-  **Example:** `1980-01-01`
+<ParamField body="alias" type="string">
 </ParamField>
 
-<ParamField body="bvn" type="string" required>
-  The individual's Bank Verification Number (BVN).  
-  **Example:** `12345678901`
+<ParamField body="countryId" type="string" required>
 </ParamField>
 
-<ParamField body="nin" type="string">
-  The individual's National Identification Number (NIN).  
-  **Example:** `987654321`
+<ParamField body="city" type="string" required>
 </ParamField>
 
-<ParamField body="nationality" type="string" required>
-  The nationality of the individual.  
-  **Example:** `NGA`
+<ParamField body="address" type="string" required>
 </ParamField>
 
-<ParamField body="address" type="object" required>
-  The address of the individual.  
-  <ParamField body="address" type="string" required>
-    The complete address.  
-    **Example:** `123 Main Street`
-  </ParamField>
-  <ParamField body="street" type="string" required>
-    The street of the address.  
-    **Example:** `Main Street`
-  </ParamField>
-  <ParamField body="localGovernment" type="string" required>
-    The local government area.  
-    **Example:** `Ikeja`
-  </ParamField>
-  <ParamField body="city" type="string" required>
-    The city of the address.  
-    **Example:** `Lagos`
-  </ParamField>
-  <ParamField body="country" type="string" required>
-    The country of the address.  
-    **Example:** `NGA`
-  </ParamField>
-</ParamField>
-
-<ParamField body="nextOfKin" type="object" required>
-  Details of the individual's next of kin.  
-  <ParamField body="firstName" type="string" required>
-    The first name of the next of kin.  
-    **Example:** `Jane`
-  </ParamField>
-  <ParamField body="lastName" type="string" required>
-    The last name of the next of kin.  
-    **Example:** `Doe`
-  </ParamField>
-  <ParamField body="gender" type="string" required>
-    The gender of the next of kin.  
-    **Example:** `Female`
-  </ParamField>
-  <ParamField body="email" type="string" required>
-    The email address of the next of kin.  
-    **Example:** `jane.doe@example.com`
-  </ParamField>
-  <ParamField body="phone" type="string" required>
-    The phone number of the next of kin.  
-    **Example:** `07012345678`
-  </ParamField>
-  <ParamField body="relationship" type="string" required>
-    The relationship between the individual and the next of kin.  
-    **Example:** `Sister`
-  </ParamField>
-  <ParamField body="address" type="string" required>
-    The address of the next of kin.  
-    **Example:** `456 Elm Street`
-  </ParamField>
-  <ParamField body="street" type="string" required>
-    The street of the address.  
-    **Example:** `Elm Street`
-  </ParamField>
-  <ParamField body="city" type="string" required>
-    The city of the address.  
-    **Example:** `Abuja`
-  </ParamField>
-  <ParamField body="country" type="string" required>
-    The country of the address.  
-    **Example:** `NGA`
-  </ParamField>
-  <ParamField body="localGovernment" type="string" required>
-    The local government area.  
-    **Example:** `Garki`
-  </ParamField>
+<ParamField body="dateCreated" type="string" required>
 </ParamField>
 
 <ResponseExample>
