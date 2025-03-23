@@ -1,4 +1,4 @@
-# Wallet-to-Wallet Transaction API
+# Wallet-to-Wallet Transaction
 
 The `PUT /api/v1/wallets/wallet/transaction/v2/wallet-to-wallet` endpoint facilitates transferring funds from one wallet to another.
 
@@ -14,7 +14,7 @@ The `PUT /api/v1/wallets/wallet/transaction/v2/wallet-to-wallet` endpoint facili
   "toAccount": "211651183",
   "amount": 100000,
   "transactionReference": "retw33344556670900",
-  "remarks": "For Holiday",
+  "remarks": "For Holidayls",
   "transactionTypeId": 0
 }
 ```
@@ -22,9 +22,9 @@ The `PUT /api/v1/wallets/wallet/transaction/v2/wallet-to-wallet` endpoint facili
 ## Response
 
 ✅ Success Response
-Status Code: 200 OK
 
 ```json
+Status Code: 200 OK
 {
   "code": "200",
   "success": true,

@@ -1,0 +1,58 @@
+## Add Wallet Group Feature
+
+The `POST /api/v1/walletgroups/feature/add` endpoint allows you to add a feature to a specified wallet group.
+
+## Request
+
+### **URL**
+
+`https://api/v1/walletgroups/feature/add`
+
+### **Request Body**
+
+```json
+{
+  "groupId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "featureId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "param1": 0,
+  "param2": 0
+}
+```
+
+## Response
+
+✅ Success Response
+
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Feature added successfully.",
+  "data": {
+    // Additional details if applicable
+  }
+}
+```
+
+## ❌ Error Responses
+
+```json
+Status Code: 400 Bad Request
+
+{
+  "code": "-3000",
+  "success": false,
+  "message": "The wallet feature you have specified does not exist",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

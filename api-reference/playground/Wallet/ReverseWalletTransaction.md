@@ -1,4 +1,4 @@
-# Reverse Wallet Transaction API
+# Reverse Wallet Transaction
 
 The `PUT /api/v1/wallets/wallet/transaction/reverse` endpoint allows you to reverse a specified wallet transaction.
 
