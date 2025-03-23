@@ -1,4 +1,4 @@
-# Get Wallet Features API
+# Get Wallet Features
 
 The `GET /api/v1/walletgroups/walletfeatures/get` endpoint retrieves a list of available wallet features.
 
