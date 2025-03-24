@@ -33,21 +33,6 @@
 	],
 	"navigation": [
 		{
-			"group": "Home",
-			"pages": [
-				"home/introduction",
-				"home/onboarding",
-				"home/authentication",
-				"home/environments",
-				"home/response",
-				"home/webhook",
-				{
-					"group": "Going Live",
-					"pages": ["home/live/going-live", "home/live/checklist"]
-				}
-			]
-		},
-		{
 			"group": "API Documentation",
 			"pages": [
 				{
