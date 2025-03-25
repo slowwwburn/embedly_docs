@@ -1,0 +1,65 @@
+## Get Organization by ID
+
+The `GET /api/v1/organizations/get/{id}` endpoint retrieves details of an organization by its ID.
+
+## Request
+
+### **URL**
+
+`https://api/v1/organizations/get/{id}`
+
+### **Path Parameter**
+
+- **id**: The unique identifier of the organization
+
+## Response
+
+✅ Success Response
+
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Organization retrieved successfully.",
+  "data": {
+    "id": "5555555555555555",
+    "name": "Organization Name",
+    "key": "Organization Key",
+    "dateCreated": "2025-03-24T22:53:37.080Z"
+    // Additional organization details
+  }
+}
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Invalid Key for admin APIs",
+  "data": null
+}
+
+Status Code: 404 Not Found
+
+{
+  "code": "404",
+  "success": false,
+  "message": "Organization not found",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

@@ -1,0 +1,60 @@
+# Get Organizations
+
+The `GET /api/v1/organizations/get` endpoint retrieves a list of all organizations.
+
+## Request
+
+### **URL**
+
+`https://api/v1/organizations/get`
+
+## Response
+
+✅ Success Response
+
+```json
+
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Organizations retrieved successfully.",
+  "data": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "name": "Organization A",
+      "key": "KeyA",
+      "dateCreated": "2025-03-24T22:53:37.080Z"
+    },
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+      "name": "Organization B",
+      "key": "KeyB",
+      "dateCreated": "2025-03-24T22:53:37.080Z"
+    }
+    // Additional organizations here
+  ]
+}
+```
+
+## ❌ Error Responses
+
+```json
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Invalid Key for admin APIs",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

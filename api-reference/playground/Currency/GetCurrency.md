@@ -1,0 +1,58 @@
+# Get Currencies
+
+The `GET /api/v1/currencies/get` endpoint retrieves a list of available currencies.
+
+## Request
+
+### **URL**
+
+`https://api/v1/currencies/get`
+
+## Response
+
+✅ Success Response
+
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Retrieved Successfully",
+  "data": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "name": "USD",
+      "shortName": "USD"
+    },
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+      "name": "EUR",
+      "shortName": "EUR"
+    }
+    // Additional currencies here
+  ]
+}
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Invalid Key for admin APIs",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}
