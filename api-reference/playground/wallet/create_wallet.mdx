@@ -1,5 +1,5 @@
 ---
-title: "Create Customer"
+title: "Create Wallet"
 api: "/customer/add"
 description: "This endpoint enables you to create a customer profile"
 ---

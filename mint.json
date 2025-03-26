@@ -43,9 +43,13 @@
 					"group": "Customer",
 					"pages": [
 						"api-reference/customers",
+						"api-reference/playground/customer/add_customers",
 						"api-reference/playground/customer/profile_customer",
-						"api-reference/playground/customer/get_customer",
-						"api-reference/playground/customer/get_customers",
+						"api-reference/playground/customer/create_customers_kyc",
+						"api-reference/playground/customer/create_customers_kyc_monnify",
+						"api-reference/playground/customer/get_all_customers",
+						"api-reference/playground/customer/get_customers_countries",
+						"api-reference/playground/customer/get_all_customer_types",
 						"api-reference/playground/customer/update_customer",
 						"api-reference/playground/customer/update_customer_type"
 					]
@@ -53,7 +57,7 @@
 				{
 					"group": "Wallet",
 					"pages": [
-						"api-reference/wallets",
+						"api-reference/Wallets",
 						"api-reference/playground/wallet/create_wallet",
 						"api-reference/playground/wallet/get_wallet",
 						"api-reference/playground/wallet/get_wallets"
