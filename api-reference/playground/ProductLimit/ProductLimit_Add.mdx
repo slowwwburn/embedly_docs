@@ -1,0 +1,56 @@
+The `PUT api/v1/limits/default/add` endpoint allows you to update default transaction limits.
+
+### Request Method
+
+`PUT`
+
+### **Request Body**
+
+```json
+{
+  "currencyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "singleTransactionLimit": 0,
+  "frequency": 0,
+  "dailyTransactionLimit": 0,
+  "monthlyTransactionLimit": 0,
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+```
+
+
+## Response
+
+✅ Success Response
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Limits updated successfully",
+  "data": {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "currencyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "singleTransactionLimit": 0,
+    "frequency": 0,
+    "dailyTransactionLimit": 0,
+    "monthlyTransactionLimit": 0
+  }
+}
+```
+
+## ❌ Error Responses
+```json
+Status Code: 400 Bad Request
+
+
+{
+  "code": "-32",
+  "success": false,
+  "message": "Invalid Frequency specified",
+  "data": null
+}

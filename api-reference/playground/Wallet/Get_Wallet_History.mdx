@@ -1,0 +1,44 @@
+The `POST api/v1/wallets/history` endpoint displays the transaction history for a specific wallet within an organization over a specified time range.
+
+### Request Method
+`POST`
+
+### **Request Body**  
+
+```json
+{
+  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "walletId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "from": "2025-03-19T16:18:37.676Z",
+  "to": "2025-03-19T16:18:37.676Z"
+}
+```
+
+## Response
+
+✅ Success Response
+Status Code: `200 OK`
+
+```json
+{
+    "success": true,
+    "status": "success",
+    "data": {
+             "id": 1,
+            "name": "John Doe",
+            "email": "john.doe@example.com"
+    },
+    "timestamp": "2023-09-20T14:30:45Z"
+}
+```
+
+### ❌ Error Responses
+
+{
+  "code": "404",
+  "success": false,
+  "message": "Wallet not found",
+  "data": null
+}
+```

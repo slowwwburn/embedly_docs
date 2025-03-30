@@ -1,0 +1,46 @@
+The `PATCH /api/v1/products/deactivate/{productId}` endpoint allows you to deactivate a product by its ID.
+
+
+### Request Method
+
+`PATCH`
+
+### **Path Parameter**
+
+- `productId`: The ID of the product to deactivate (e.g., `1404e81a-0bf1-11f0-a8a9-6045bd97b81d`).
+
+---
+
+## Response
+✅ Success Response
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Updated Successfully",
+  "data": {
+    "id": "a52f7163-ff67-11ef-a8a9-6045bd97b81d",
+    "name": "TO_WALLET_TRANSFER",
+    "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+    "description": "For wallet to wallet transfer",
+    "direction": "C",
+    "isActive": false,
+    "dateCreated": "2025-03-12T17:30:08"
+  }
+}
+
+```
+
+
+### ❌ Error Responses
+```json
+- **Status Code**: **400 Bad Request**
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid product ID specified",
+  "data": null
+}

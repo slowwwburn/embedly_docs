@@ -1,0 +1,50 @@
+The `PUT api/v1/wallets/wallet/transaction/reverse` endpoint allows you to reverse a specified wallet transaction.
+
+## Request Method
+`GET`
+
+```json
+{
+  "transactionReference": "string",
+  "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+```
+
+## Response
+
+✅ Success Response
+
+```json
+Status Code: 200 OK
+
+{
+  "code": "200",
+  "success": true,
+  "message": "Transaction reversed successfully.",
+  "data": {
+    // Additional data fields if applicable
+  }
+}
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 400 Bad Request
+
+{
+  "code": "-3",
+  "success": false,
+  "message": "The transaction reference you have specified does not exist",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

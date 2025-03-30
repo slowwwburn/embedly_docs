@@ -37,7 +37,17 @@
 			"pages": [
 				{
 					"group": "Getting Started",
-					"pages": ["api-reference/authentication"]
+					"pages": [
+						"api-reference/authentication"
+					]
+				},
+				{
+					"group": "Currency",
+					"pages": [
+						"api-reference/customers",
+						"api-reference/playground/Currency/Add_Currency",
+						"api-reference/playground/Currency/Get_Currency"
+					]
 				},
 				{
 					"group": "Customer",
@@ -51,12 +61,73 @@
 					]
 				},
 				{
+					"group": "Organization",
+					"pages": [
+						"api-reference/Organization",
+						"api-reference/playground/Organization/Add_Organization_Wallet",
+						"api-reference/playground/Organization/Add_Organization",
+						"api-reference/playground/Organization/Add_Wallet_to_Organization",
+						"api-reference/playground/Organization/Get_Organization",
+						"api-reference/playground/Organization/Get_Organization_by_ID"
+					]
+				},
+				{
+					"group": "Product",
+					"pages": [
+						"api-reference/Product",
+						"api-reference/playground/Product/Activate_Id",
+						"api-reference/playground/Product/Deactivate_Id",
+						"api-reference/playground/Product/Update_Product",
+						"api-reference/playground/Product/Get_Product",
+						"api-reference/playground/Product/Add_Product"
+					]
+				},
+				{
+					"group": "ProductLimit",
+					"pages": [
+						"api-reference/ProductLimit",
+						"api-reference/playground/ProductLimit/Customer_Limit",
+						"api-reference/playground/ProductLimit/Customer_Limit_Patch",
+						"api-reference/playground/ProductLimit/Product_Currency_Limit",
+						"api-reference/playground/ProductLimit/Product_Limit_Default",
+						"api-reference/playground/ProductLimit/Product_Limit_Patch",
+						"api-reference/playground/ProductLimit/ProductLimit_add",
+						"api-reference/playground/ProductLimit/ProductLimit_Customer_Currency"
+					]
+				},
+				{
 					"group": "Wallet",
 					"pages": [
 						"api-reference/wallets",
-						"api-reference/playground/wallet/create_wallet",
-						"api-reference/playground/wallet/get_wallet",
-						"api-reference/playground/wallet/get_wallets"
+						"api-reference/playground/wallet/Add_Wallet",
+						"api-reference/playground/wallet/Close_Wallet",
+						"api-reference/playground/wallet/Close_Wallet_by_Account",
+						"api-reference/playground/wallet/Customer_CustomerID_Wallet_WalletID",
+						"api-reference/playground/wallet/Customer_Wallet",
+						"api-reference/playground/wallet/Get_Account_Closure_Reasons",
+						"api-reference/playground/wallet/Post_Wallet_Transaction_by_Account_Number",
+						"api-reference/playground/wallet/Restrict_Wallet",
+						"api-reference/playground/wallet/Restrict_Wallet_by_Account",
+						"api-reference/playground/wallet/Reverse_Wallet_Transaction",
+						"api-reference/playground/wallet/Search_Wallet_by_Email",
+						"api-reference/playground/wallet/Search_Wallet_by_Mobile",
+						"api-reference/playground/wallet/Wallet_Account_Number_History",
+						"api-reference/playground/wallet/Wallet_by_Account_Number",
+						"api-reference/playground/wallet/Get_Wallet_History",
+						"api-reference/playground/wallet/Wallet_ID",
+						"api-reference/playground/wallet/Wallet_to_Wallet"
+					]
+				},
+				{
+					"group": "Wallet Group",
+					"pages": [
+						"api-reference/WalletGroup",
+						"api-reference/playground/WalletGroup/Add_WalletGroup_Feature",
+						"api-reference/playground/WalletGroup/Add_Wallet_to_WalletGroup",
+						"api-reference/playground/WalletGroup/Get_Wallet_Features",
+						"api-reference/playground/WalletGroup/Get_Wallet_Group",
+						"api-reference/playground/WalletGroup/Add_Wallet_Group",
+						"api-reference/playground/WalletGroup/Get_Wallet_Group_ID"
 					]
 				}
 			]
@@ -72,10 +143,7 @@
 	"feedback": {
 		"thumbsRating": true
 	},
-	"pageedit": {
-		"suggestEdit": true,
-		"raiseIssue": true,
-		"thumbsRating": true
-	},
-	"versions": ["1.0.0-Beta"]
+	"versions": [
+		"1.0.0-Beta"
+	]
 }

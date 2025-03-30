@@ -1,0 +1,62 @@
+The `POST /api/v1/products/add` endpoint allows you to create a new product.
+
+### **Request Method**
+
+`POST`
+
+### **Request Body**
+
+```json
+{
+  "name": "Loan",
+  "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+  "description": "Loan",
+  "direction": "D",
+  "isActive": true
+}
+```
+
+
+## Response
+
+✅ Success Response
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Created Successfully",
+  "data": {
+    "id": "ed639208-0be4-11f0-a8a9-6045bd97b81d",
+    "name": "Loan",
+    "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+    "description": "Loan",
+    "direction": "D",
+    "isActive": true,
+    "dateCreated": "2025-03-28T14:57:11"
+  }
+}
+
+```
+
+## ❌ Error Responses
+
+```json
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid input data",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

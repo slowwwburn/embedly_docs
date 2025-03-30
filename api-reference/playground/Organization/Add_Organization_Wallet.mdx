@@ -1,0 +1,63 @@
+The `POST /api/v1/organizations/add/with/wallet` endpoint allows you to add a new organization along with a wallet.
+
+## **Request Method**
+`POST`
+
+### **Request Body**
+
+```json
+{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "name": "string",
+  "key": "string",
+  "dateCreated": "2025-03-24T22:53:37.080Z"
+}
+```
+
+## Response
+
+✅ Success Response
+
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Organization with wallet added successfully.",
+  "data": {
+    // Additional details if applicable
+  }
+}
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Invalid Key for admin APIs",
+  "data": null
+}
+
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid request data",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

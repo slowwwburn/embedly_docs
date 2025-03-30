@@ -1,0 +1,43 @@
+The `GET api/v1/limits/default` endpoint allows you to retrieve the default transaction limits.
+
+### Request Method
+
+`GET`
+
+---
+
+## Response
+
+### ✅ Success Response
+```json
+
+- **Status Code**: **200 OK**
+
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Retrieved successfully",
+  "data": {
+    "id": "769dca4b-7d42-43b5-ade6-bcc10d611f6f",
+    "productCurrencyId": null,
+    "singleTransactionLimit": 10000000,
+    "frequency": 10000,
+    "dailyTransactionLimit": 500000000,
+    "monthlyTransactionLimit": 500000000,
+    "customerId": null
+  }
+}
+```
+
+
+## ❌ Error Responses
+```json
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid request",
+  "data": null
+}

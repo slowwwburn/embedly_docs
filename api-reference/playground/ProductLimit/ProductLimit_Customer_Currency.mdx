@@ -1,0 +1,48 @@
+The `GET api/v1/limits/product/{productId}/currency/{currencyId}/customer/{customerId}` endpoint allows you to retrieve limits for a specific product and currency for a given customer.
+
+### Request Method
+
+`GET`
+
+### **Path Parameters**
+
+- `productId`: The ID of the product (e.g., `a529a0c8-ff67-11ef-a8a9-6045bd97b81d`).
+- `currencyId`: The ID of the currency (e.g., `a529a0c8-ff67-11ef-a8a9-6045bd97b81d`).
+- `customerId`: The ID of the customer (e.g., `08dd5d6c-a9b4-452d-8872-4ada3d46b506`).
+
+
+## Response
+
+
+✅ Success Response
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Retrieved successfully",
+  "data": {
+    "id": "a529a0c8-ff67-11ef-a8a9-6045bd97b81d",
+    "productCurrencyId": "a529a0c8-ff67-11ef-a8a9-6045bd97b81d",
+    "singleTransactionLimit": 10000000,
+    "frequency": 10000,
+    "dailyTransactionLimit": 500000000,
+    "monthlyTransactionLimit": 500000000,
+    "customerId": "08dd5d6c-a9b4-452d-8872-4ada3d46b506"
+  }
+}
+```
+
+
+## ❌ Error Responses
+```json
+- **Status Code**: **400 Bad Request**
+
+
+{
+  "code": "-3",
+  "success": false,
+  "message": "Currency not found",
+  "data": null
+}

@@ -1,0 +1,76 @@
+ The `GET api/v1/wallets/get/customer/{customerId}/wallet/{walletId}` endpoint retrieves the details of a specific wallet associated with a customer using their unique identifiers.
+
+### **Request Method**
+
+`GET`
+
+### **Path Parameters**
+
+| Parameter   | Type   | Description                              |
+|-------------|--------|------------------------------------------|
+| `customerId`| string | Unique identifier for the customer (required). |
+| `walletId`  | string | Unique identifier for the wallet (required).   |
+
+## Response
+
+### ✅ Success Response
+
+- **Status Code**: `200 OK`
+- **Response Body**:
+
+```json:
+{
+  "code": "200",
+  "success": true,
+  "message": "Wallet details retrieved successfully.",
+  "data": {
+    "walletId": "ID3457",
+    "customerId": "1234",
+    "availableBalance": 10000,
+    "ledgerBalance": 12000,
+    "currency": "USD",
+    "status": "active"
+  }
+}
+```
+
+### ❌ Error Responses
+
+```json
+Status Code: 400 Bad Request
+
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid customer ID specified",
+  "data": null
+}
+
+Status Code: 404 Not Found
+
+{
+  "code": "404",
+  "success": false,
+  "message": "Wallet not found",
+  "data": null
+}
+
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Unauthorized access",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

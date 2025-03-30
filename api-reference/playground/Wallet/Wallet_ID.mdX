@@ -1,0 +1,42 @@
+The `GET api/v1/wallets/get/wallet/{walletId}` endpoint retrieves the details of a specific wallet using its unique wallet ID.
+
+## Request Method
+`GET`
+
+
+### **Path Parameters**
+
+| Parameter  | Type   | Description                              |
+|------------|--------|------------------------------------------|
+| `walletId` | string | Unique identifier for the wallet (required). |
+
+## Response
+
+```json
+{
+  "code": "200",
+  "success": true,
+  "message": "Wallet details retrieved successfully.",
+  "data": {
+    "walletId": "eee",
+    "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "availableBalance": 5000,
+    "ledgerBalance": 7500,
+    "currency": "USD",
+    "status": "active"
+  }
+}
+```
+
+## ❌ Error Responses
+
+Status Code: 400 Bad Request
+
+```json
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid Wallet ID specified",
+  "data": null
+}
+```

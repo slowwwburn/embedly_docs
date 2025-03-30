@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Edge APIs",
+    "title": "WAAS APIs",
     "description": "API documentation for authentication, customer, and accounts services",
     "version": "1.0.0"
   },
@@ -19,9 +19,9 @@
       "description": "Sandbox server"
     }
   ],
-  "components":{
-    "securitySchemes":{
-      "basicAuth":{
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
         "type": "http",
         "scheme": "basic"
       }
@@ -134,7 +134,9 @@
           }
         }
       },
-      "security": {"basicAuth": []}
+      "security": {
+        "basicAuth": []
+      }
     }
   }
 }

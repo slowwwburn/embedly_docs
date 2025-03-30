@@ -1,0 +1,50 @@
+The `PATCH /api/v1/products/update` endpoint allows you to update an existing product.
+
+### **Request Method**
+
+`PATCH`
+
+### **Request Body**
+
+```json
+{
+  "id": "ed639208-0be4-11f0-a8a9-6045bd97b81d",
+  "name": "Updated Loan",
+  "description": "Updated Loan Description",
+  "direction": "D",
+  "isActive": true
+}
+
+```
+
+## Response
+✅ Success Response
+```json
+Status Code: 200 OK
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Updated Successfully",
+  "data": {
+    "id": "ed639208-0be4-11f0-a8a9-6045bd97b81d",
+    "name": "Updated Loan",
+    "description": "Updated Loan Description",
+    "direction": "D",
+    "isActive": true,
+    "dateUpdated": "2025-03-28T14:57:11"
+  }
+}
+
+```
+
+## ❌ Error Responses
+Status Code: 400 Bad Request
+```json
+
+{
+  "code": "404",
+  "success": false,
+  "message": "The product you have specified does not exist",
+  "data": null
+}

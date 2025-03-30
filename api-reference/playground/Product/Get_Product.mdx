@@ -1,0 +1,94 @@
+The `GET /api/v1/products/get` endpoint allows you to retrieve a list of products.
+
+### **Request Method**
+`GET`
+
+## Response
+
+### ✅ Success Response
+```json
+- **Status Code**: **200 OK**
+
+{
+  "code": "00",
+  "success": true,
+  "message": "Retrieved Successfully",
+  "data": [
+    {
+      "id": "a529a0c8-ff67-11ef-a8a9-6045bd97b81d",
+      "name": "FROM_WALLET_TRANSFER",
+      "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+      "description": "For wallet to wallet transfer",
+      "direction": "D",
+      "isActive": true,
+      "dateCreated": "2025-03-12T17:30:08"
+    },
+    {
+      "id": "2dd531ab-ff60-11ef-a8a9-6045bd97b81d",
+      "name": "haptic Product",
+      "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+      "description": "Describing Stand-alone global support Product",
+      "direction": "D",
+      "isActive": true,
+      "dateCreated": "2025-03-12T16:36:42"
+    },
+    {
+      "id": "2ff5cbcb-ff66-11ef-a8a9-6045bd97b81d",
+      "name": "INTRA OPS",
+      "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+      "description": "Intra wallet operations",
+      "direction": "D",
+      "isActive": true,
+      "dateCreated": "2025-03-12T17:19:42"
+    },
+    {
+      "id": "ed639208-0be4-11f0-a8a9-6045bd97b81d",
+      "name": "Loan",
+      "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+      "description": "Loan",
+      "direction": "D",
+      "isActive": true,
+      "dateCreated": "2025-03-28T14:57:11"
+    },
+    {
+      "id": "8570aaef-0191-11f0-a8a9-6045bd97b81d",
+      "name": "NIP INFLOW",
+      "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+      "description": "NIP inflow into wallets",
+      "direction": "C",
+      "isActive": true,
+      "dateCreated": "2025-03-15T11:34:56"
+    },
+    {
+      "id": "1404e81a-0bf1-11f0-a8a9-6045bd97b81d",
+      "name": "string",
+      "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+      "description": "string",
+      "direction": "C",
+      "isActive": true,
+      "dateCreated": "2025-03-28T16:24:09"
+    },
+    {
+      "id": "a52f7163-ff67-11ef-a8a9-6045bd97b81d",
+      "name": "TO_WALLET_TRANSFER",
+      "organizationId": "e678b629-fb56-11ef-a8a9-6045bd97b81d",
+      "description": "For wallet to wallet transfer",
+      "direction": "C",
+      "isActive": true,
+      "dateCreated": "2025-03-12T17:30:08"
+    }
+  ]
+}
+
+```
+
+## ❌ Error Responses
+```json
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid request",
+  "data": null
+}
