@@ -1,0 +1,27 @@
+---
+title: "Add Customers kyc"
+api: "POST /customers/kyc/premium-kyc"
+description: "This endpoint enables you to add a customer kyc"
+---
+
+# Add Customers Kyc
+
+<ParamField body="customerId" type="string" required>
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="bvn" type="string" required>
+</ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "bvn": "string"
+}
+
+```
+
+</ResponseExample>
