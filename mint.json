@@ -113,7 +113,7 @@
 						"api-reference/playground/Wallet/Customer_CustomerID_Wallet_WalletId",
 						"api-reference/playground/Wallet/Customer_Wallet",
 						"api-reference/playground/Wallet/Account_Closure_Reasons",
-						"api-reference/playground/Wallet/Wallet_ID",
+						"api-reference/playground/Wallet/Retrieve_Wallet_ID",
 						"api-reference/playground/Wallet/Post_Wallet_Transaction_by_Account_Number",
 						"api-reference/playground/Wallet/Complete_Wallet_Transaction",
 						"api-reference/playground/Wallet/Reverse_Wallet_Transaction",
