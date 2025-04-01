@@ -125,7 +125,7 @@
 				{
 					"group": "WalletGroup",
 					"pages": [
-						"api-reference/Wallet",
+						"api-reference/WalletGroup",
 						"api-reference/playground/WalletGroup/Add_Wallet_Group_add",
 						"api-reference/playground/WalletGroup/Add_Wallet_to_WalletGroup",
 						"api-reference/playground/WalletGroup/Add_WalletGroup_Feature",
