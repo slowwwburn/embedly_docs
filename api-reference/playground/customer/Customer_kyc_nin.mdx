@@ -1,0 +1,38 @@
+---
+title: "Customer KYC NIN"
+api: "POST /api/v1/customers/kyc/customer/nin"
+description: "This endpoint allows organizations to verify customer identity using their National Identification Number (NIN).."
+---
+
+### **Query Parameters**
+
+- `customerId` (string): The unique identifier for the customer.
+  - Example: `626c2b15-0498-11f0-a8a9-6045bd97b81`
+  
+- `nin` (string): The National Identification Number of the customer.
+  - Example: `2222222222`
+
+
+### **Request Body**
+
+```json
+{
+  "firstname": "John",
+  "lastname": "Wick",
+  "dob": "45/09/2019"
+}
+```
+
+
+## Response
+
+## **❌ Error Responses**
+```json
+
+Status Code: 400 Bad Request
+{
+  "code": "01",
+  "success": false,
+  "message": "Invalid customer Id",
+  "data": null
+}
