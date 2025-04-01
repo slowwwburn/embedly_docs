@@ -95,22 +95,59 @@
 						"api-reference/playground/ProductLimit/Product_Currency_Limit",
 						"api-reference/playground/ProductLimit/Product_Limit_Default",
 						"api-reference/playground/ProductLimit/Product_Limit_Patch",
-						"api-reference/playground/ProductLimit/ProductLimit_add",
+						"api-reference/playground/ProductLimit/ProductLimit_Add",
 						"api-reference/playground/ProductLimit/ProductLimit_Customer_Currency"
 					]
 				},
 				{
-					"api": {
-						"baseUrl": "https://waas-staging.cafeone.ng/api/v1",
-						"auth": {
-							"method": "key",
-							"name": "x-api-key"
-						}
-					},
-					"feedback": {
-						"thumbsRating": true
-					},
-					"versions": [
-						"1.0.0-Beta"
+					"group": "Wallet",
+					"pages": [
+						"api-reference/Wallet",
+						"api-reference/playground/Wallet/Add_Wallet",
+						"api-reference/playground/Wallet/Close_Wallet_by_Account",
+						"api-reference/playground/Wallet/Close_Wallet",
+						"api-reference/playground/Wallet/Complete_Wallet_Transaction",
+						"api-reference/playground/Wallet/Customer_CustomerID_Wallet_WalletId",
+						"api-reference/playground/Wallet/Customer_Wallet",
+						"api-reference/playground/Wallet/Account_Closure_Reasons",
+						"api-reference/playground/Wallet/Wallet_History",
+						"api-reference/playground/Wallet/Post_Wallet_Transaction_by_Account_Number",
+						"api-reference/playground/Wallet/Restrict_Wallet_by_Account",
+						"api-reference/playground/Wallet/Restrict_Wallet",
+						"api-reference/playground/Wallet/Reverse_Wallet_Transaction",
+						"api-reference/playground/Wallet/Search_Wallet_by_Email",
+						"api-reference/playground/Wallet/Search_Wallet_by_Mobile",
+						"api-reference/playground/Wallet/Wallet_Account_Number_History",
+						"api-reference/playground/Wallet/Wallet_ID",
+						"api-reference/playground/Wallet/Wallet_to_Wallet"
+					]
+				},
+				{
+					"group": "WalletGroup",
+					"pages": [
+						"api-reference/Wallet",
+						"api-reference/playground/WalletGroup/Add_Wallet_Group",
+						"api-reference/playground/WalletGroup/Add_Wallet_to_WalletGroup",
+						"api-reference/playground/WalletGroup/Add_WalletGroup_Feature",
+						"api-reference/playground/WalletGroup/Get_Wallet_Features",
+						"api-reference/playground/WalletGroup/Get_Wallet_Group_ID",
+						"api-reference/playground/WalletGroup/Get_Wallet_Group"
 					]
 				}
+			]
+		}
+	],
+	"api": {
+		"baseUrl": "https://waas-staging.cafeone.ng/api/v1",
+		"auth": {
+			"method": "key",
+			"name": "x-api-key"
+		}
+	},
+	"feedback": {
+		"thumbsRating": true
+	},
+	"versions": [
+		"1.0.0-Beta"
+	]
+}
