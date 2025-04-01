@@ -1,10 +1,10 @@
- The `POST api/v1/wallets/account-number/history` endpoint retrieves the transaction history for a specific account number over a specified time range.
+---
+title: "Retrieve transaction history for an account number"
+api: "POST api/v1/wallets/account-number/history"
+description: "The endpoint retrieves the transaction history for a specific account number over a specified time range"
+---
 
-### Request Method
-
-`POST`
-
-### **Request Body**
+### Request Body
 
 ```json
 {
@@ -12,11 +12,59 @@
   "from": "2025-03-19T17:11:52.488Z",
   "to": "2025-03-19T17:11:52.488Z"
 }
+```
 
 
-Response
+## Response
+```json
 
-❌ Error Responses
+{
+  "code": "200",
+  "success": true,
+  "message": "Transaction history retrieved successfully.",
+  "data": {
+    "accountNumber": "211651123",
+    "currency": "NGN",
+    "transactions": [
+      {
+        "transactionId": "TXN123456",
+        "timestamp": "2025-03-19T17:11:52.488Z",
+        "amount": 5000,
+        "currency": "NGN",
+        "transactionType": "credit",
+        "paymentChannel": "Bank Transfer",
+        "status": "successful",
+        "description": "Salary Payment",
+        "beneficiary": {
+          "name": "John Doe",
+          "accountNumber": "3020158746",
+          "bank": "Zenith Bank"
+        }
+      },
+      {
+        "transactionId": "TXN654321",
+        "timestamp": "2025-03-19T16:45:30.123Z",
+        "amount": 2000,
+        "currency": "NGN",
+        "transactionType": "debit",
+        "paymentChannel": "POS",
+        "status": "pending",
+        "description": "Grocery Shopping",
+        "beneficiary": {
+          "name": "ABC Supermarket",
+          "accountNumber": "1234567890",
+          "bank": "GTBank"
+        }
+      }
+    ]
+  }
+}
+```
+
+
+
+## ❌ Error Responses
+```json
 Status Code: 404 Not Found
 
 {
