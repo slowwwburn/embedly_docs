@@ -7,10 +7,14 @@ description: "The endpoint allows you to add a wallet to a specified wallet grou
 ## Request
 ### **Path Parameters**
 
-| Parameter  | Type   | Description                               |
-|------------|--------|-------------------------------------------|
-| `groupId`  | string | The ID of the wallet group (required).   |
-| `walletId` | string | The ID of the wallet to add (required).  |
+<ParamField body="groupid" type="string" required>
+  The unique identifier for the wallet group.  
+</ParamField>
+
+<ParamField body="walletid" type="string" required>
+  The id of the wallet to add.
+</ParamField>
+
 
 ## Response
 

@@ -1,19 +1,56 @@
 ---
-title: "Add Organization with Wallet"
-api: "POST /organizations/add/with/wallet"
-description: "This endpoint allows you to add a new organization along with a wallet."
+title: "Organization Add Wallet"
+api: "POST /organizations/add/wallet"
+description: "This endpoint allows allows organizations to create a wallet configuration, specifying details such as wallet type, virtual account type, and associated prefixes."
 ---
 
-### **Request Body**
+## Request Body
 
-```json
-{
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "name": "string",
-  "key": "string",
-  "dateCreated": "2025-03-24T22:53:37.080Z"
-}
-```
+<ParamField body="id" type="string" required>
+	The unique identifier for the wallet configuration.  
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="name" type="string" required>
+	The name of the wallet configuration.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="key" type="string" required>
+	A key associated with the wallet configuration.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="dateCreated" type="string" required>
+	The date and time the wallet configuration was created (ISO 8601 format).  
+	**Example:** '2025-04-06T16:56:39.357Z'
+</ParamField>
+
+<ParamField body="walletTypeId" type="string" required>
+	The unique identifier for the wallet type.  
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="virtualAccountTypeId" type="string" required>
+	The unique identifier for the virtual account type.  
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="prefixes" type="array[string]" required>
+	An array of prefixes associated with the wallet configuration.  
+	**Example:** ['string']
+</ParamField>
+
+<ParamField body="walletType" type="string" required>
+	The type of wallet.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="virtualAccountType" type="string" required>
+	The type of virtual account.  
+	**Example:** 'string'
+</ParamField>
+
 
 ## Response
 

@@ -3,30 +3,32 @@ title: "Get Organization by its ID"
 api: "GET /organizations/get/{id}"
 description: "The endpoint retrieves details of an organization by its ID."
 ---
+### Path Parameters
 
-## Request
-### **Path Parameter**
+<ParamField body="id" type="string" required>
+	The ID of the organization you want to retrieve.  
+</ParamField>
 
-- **id**: The unique identifier of the organization
 
-## Response
-
-✅ Success Response
-
+## ✅ Success Response
 ```json
-Status Code: 200 OK
-
 {
   "code": "00",
   "success": true,
-  "message": "Organization retrieved successfully.",
-  "data": {
-    "id": "5555555555555555",
-    "name": "Organization Name",
-    "key": "Organization Key",
-    "dateCreated": "2025-03-24T22:53:37.080Z"
-    // Additional organization details
-  }
+  "message": "Retrieved Successfully",
+  "data": [
+    {
+      "id": "02811bb6-031e-11f0-a8a9-6045bd97b81d",
+      "name": "Conner25 Organization",
+      "key": "String",
+      "dateCreated": "2025-03-17T10:53:07",
+      "walletTypeId": null,
+      "virtualAccountTypeId": null,
+      "prefixes": [],
+      "walletType": "Open",
+      "virtualAccountType": "Internally Generated"
+    }
+  ]
 }
 ```
 

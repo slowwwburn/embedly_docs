@@ -4,21 +4,40 @@ api: "POST /walletgroups/add"
 description: "The endpoint allows you to create a new wallet group."
 ---
 
-### **Request Body**
+## Request Body
 
-```json
-{
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "name": "string",
-  "walletGroupFeatureDto": [
-    {
-      "featureName": "string",
-      "featurePropertyName": "string",
-      "featurePropertyValue": "string"
-    }
-  ]
-}
-```
+
+<ParamField body="id" type="string" required>
+  The unique identifier for the wallet group.  
+  **Example:** "d1d0e7a1-0830-11f0-a8a9-6045bd97b81d"
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  The name of a wallet group.  
+  **Example:** "string"
+</ParamField>
+
+
+<ParamField body="walletGroupFeatureDto" type="string" required>
+  An array of feature  object associated with the wallet group.
+</ParamField>
+
+<Expandable title="walletGroupFeatureDto properties">
+  <ParamField body="walletGroupFeatureDto[].featureName" type="string">
+    Name of the feature
+  </ParamField>
+  
+  <ParamField body="walletGroupFeatureDto[].featurePropertyName" type="string">
+    Name of the feature property
+  </ParamField>
+  
+  <ParamField body="walletGroupFeatureDto[].featurePropertyValue" type="string">
+    Value of the feature
+    </ParamField>
+
+</Expandable>
+
+
 
 ## Response
 

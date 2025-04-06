@@ -1,28 +1,32 @@
 ---
 title: "Customer KYC NIN"
 api: "POST /api/v1/customers/kyc/customer/nin"
-description: "This endpoint allows organizations to verify customer identity using their National Identification Number (NIN).."
+description: "This endpoint allows organizations to verify customer identity using their National Identification Number (NIN)."
 ---
 
-### **Query Parameters**
+### Query Parameters
 
-- `customerId` (string): The unique identifier for the customer.
-  - Example: `626c2b15-0498-11f0-a8a9-6045bd97b81`
-  
-- `nin` (string): The National Identification Number of the customer.
-  - Example: `2222222222`
+<ParamField body="customerId" type="string" required>
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
 
+<ParamField body="nin" type="string" required>
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
 
-### **Request Body**
+### Request Body
 
-```json
-{
-  "firstname": "John",
-  "lastname": "Wick",
-  "dob": "45/09/2019"
-}
-```
+<ParamField body="firstname" type="string" required>
+	**Example:** 'John'
+</ParamField>
 
+<ParamField body="lastname" type="string" required>
+	**Example:** 'Callister'
+</ParamField>
+
+<ParamField body="dob" type="string" required>
+	**Example:**'2025-04-28T14:58:01'
+</ParamField>
 
 ## Response
 

@@ -4,11 +4,21 @@ api: "GET /limits/product/{productId}/currency/{currencyId}/customer/{customerId
 description: "The endpoint allows you to retrieve limits for a specific product and currency for a given customer."
 ---
 
-### **Path Parameters**
+## Path Parameters
 
-- `productId`: The ID of the product (e.g., `a529a0c8-ff67-11ef-a8a9-6045bd97b81d`).
-- `currencyId`: The ID of the currency (e.g., `a529a0c8-ff67-11ef-a8a9-6045bd97b81d`).
-- `customerId`: The ID of the customer (e.g., `08dd5d6c-a9b4-452d-8872-4ada3d46b506`).
+<ParamField body="productId" type="string" required>
+  The unique identifier for the product associated with the limit.
+</ParamField>
+
+<ParamField body="currencyId" type="string" required>
+  The unique identifier for the currency (e.g., "USD", "EUR").
+</ParamField>
+
+<ParamField body="customerId" type="string" required>
+  The unique identifier for the customer to whom the limit applies.
+</ParamField>
+
+
 
 
 ## Response

@@ -10,10 +10,27 @@ Use this endpoint to update the type mapped to a customer
 
 ---
 
+### Path Parameters
+
+<ParamField body="customerId" type="string" required>
+	The unique identifier for the customer.  
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="customerTypeId" type="string" required>
+	The unique identifier for the customer type.  
+	**Example:** 'customerTypeId'
+</ParamField>
+
 <ResponseExample>
 
 ```json
-{}
+{
+  "code": "500",
+  "success": false,
+  "message": "PROCEDURE bankify.Change_Cust_Type does not exist",
+  "data": null
+}
 ```
 
 </ResponseExample>

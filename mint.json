@@ -72,7 +72,6 @@
 						"api-reference/Organization",
 						"api-reference/playground/Organization/Add_Organization_Wallet",
 						"api-reference/playground/Organization/Add_Organization",
-						"api-reference/playground/Organization/Add_Wallet_to_Organization",
 						"api-reference/playground/Organization/Get_Organization",
 						"api-reference/playground/Organization/Get_Organization_by_ID"
 					]

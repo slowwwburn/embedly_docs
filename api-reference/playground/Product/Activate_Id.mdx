@@ -4,9 +4,12 @@ api: "PATCH /products/activate/{productId}"
 description: "The endpoint allows you to activate a product by its ID."
 ---
 
-### **Path Parameter**
-- `productId`: The ID of the product to activate (e.g., `1404e81a-0bf1-11f0-a8a9-6045bd97b81d`).
----
+### Path Parameter
+
+<ParamField body="productId" type="string" required>
+	The ID of the product to activate.  
+	**Example:** '1404e81a-0bf1-11f0-a8a9-6045bd97b81d'
+</ParamField>
 
 ## Response
 ✅ Success Response

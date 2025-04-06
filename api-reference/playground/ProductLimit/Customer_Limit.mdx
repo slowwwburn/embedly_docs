@@ -1,26 +1,45 @@
 ---
 title: "Customer Limit"
 api: "PUT /limits/customer/add"
-description: "The endpoint allows you to add limits for a specific customer..."
+description: "The endpoint allows you to add limits for a specific customer."
 ---
 
+## Request Body
 
-### **Request Body**
+<ParamField body="currencyId" type="string" required>
+  The unique identifier for the currency (e.g., "USD", "EUR").
+</ParamField>
 
-```json
-{
-  "currencyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "singleTransactionLimit": 0,
-  "frequency": 0,
-  "dailyTransactionLimit": 0,
-  "monthlyTransactionLimit": 0,
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-}
+<ParamField body="productId" type="string" required>
+  The unique identifier for the product associated with the limit.
+</ParamField>
+
+<ParamField body="customerId" type="string" required>
+  The unique identifier for the customer to whom the limit applies.
+</ParamField>
+
+<ParamField body="singleTransactionLimit" type="number" required>
+  The maximum amount allowed for a single transaction.
+</ParamField>
+
+<ParamField body="frequency" type="number" required>
+  The number of transactions allowed within the specified period.
+</ParamField>
+
+<ParamField body="dailyTransactionLimit" type="number" required>
+  The maximum total amount allowed for transactions in a single day.
+</ParamField>
+
+<ParamField body="monthlyTransactionLimit" type="number" required>
+  The maximum total amount allowed for transactions in a single month.
+</ParamField>
+
+<ParamField body="id" type="string" required>
+  The unique identifier for the limit being added.
+</ParamField>
 
 
-```
+
 ## Response
 ✅ Success Response
 ```json

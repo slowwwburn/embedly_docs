@@ -4,21 +4,45 @@ api: "PATCH /limits/default/update"
 description: "The endpoint allows you to update default transaction limits.."
 ---
 
-### **Request Body**
+## Request Body
 
-```json
-{
-  "currencyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "singleTransactionLimit": 0,
-  "frequency": 0,
-  "dailyTransactionLimit": 0,
-  "monthlyTransactionLimit": 0,
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-}
+<ParamField body="currencyid" type="string" required>
+	The unique identifier of the currency 
+	**Example:** 'e678b629-fb56-11ef-a8a9-6045bd97b81d'
+</ParamField>
 
-```
+<ParamField body="productid" type="string" required>
+	The unique identifier of the product  
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="customerid" type="string" required>
+	The unique identifier of the product  
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="singleTransactionLimit" type="string" required>
+	The unique identifier of the product  
+	**Example:** 500
+</ParamField>
+
+<ParamField body="frequency" type="number" required>
+  **Example:** 0
+</ParamField>
+
+<ParamField body="dailyTransactionLimit" type="number" required>
+  **Example:** 0
+</ParamField>
+
+<ParamField body="monthlyTransactionLimit" type="number" required>
+  **Example:** 0
+</ParamField>
+
+<ParamField body="id" type="string" required>
+  **Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+
 
 ## Response
 ✅ Success Response

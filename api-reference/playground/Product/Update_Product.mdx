@@ -4,19 +4,33 @@ api: "PATCH /products/update"
 description: "The endpoint allows you to update an existing product.."
 ---
 
+## Request Body
 
-### **Request Body**
+<ParamField body="id" type="string" required>
+	The unique identifier of the product  
+	**Example:** 'e678b629-fb56-11ef-a8a9-6045bd97b81d'
+</ParamField>
 
-```json
-{
-  "id": "ed639208-0be4-11f0-a8a9-6045bd97b81d",
-  "name": "Updated Loan",
-  "description": "Updated Loan Description",
-  "direction": "D",
-  "isActive": true
-}
+<ParamField body="name" type="string" required>
+	A name of the resource.  
+	**Example:** 'School Loan'
+  </ParamField>
 
-```
+<ParamField body="description" type="string" required>
+	A description of the resource.  
+	**Example:** 'Loan'
+</ParamField>
+
+
+<ParamField body="direction" type="string" required>
+	The direction of the resource (e.g., 'D' for debit).  
+	**Example:** 'D'
+</ParamField>
+
+<ParamField body="isActive" type="boolean" required>
+	Indicates whether the resource is active.  
+	**Example:** true
+</ParamField>
 
 ## Response
 ✅ Success Response

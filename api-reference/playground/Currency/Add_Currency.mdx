@@ -1,18 +1,24 @@
 ---
 title: "Add Currencies"
-api: "POST /currencies/add`"
+api: "POST /currencies/add"
 description: "This endpoint enables you to add a currency"
 ---
 
 ### **Request Body**
 
-```json
-{
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "name": "string",
-  "shortName": "string"
-}
-```
+<ParamField body="Id" type="string" required>
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+
+<ParamField body="name" type="string" required>
+	**Example:** 'Naira'
+</ParamField>
+
+
+<ParamField body="shortName" type="string" required>
+	**Example:** 'NGN'
+</ParamField>
 
 ## Response
 ✅ Success Response
