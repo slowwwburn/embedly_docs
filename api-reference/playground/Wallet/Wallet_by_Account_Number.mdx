@@ -4,12 +4,11 @@ api: "GET /wallets/get/wallet/account/{accountNumber}"
 description: "The endpoint retrieves the details of a specific wallet using its associated account number.."
 ---
 
+## Path Parameters
 
-### **Path Parameters**
-
-| Parameter      | Type   | Description                              |
-|----------------|--------|------------------------------------------|
-| `accountNumber`| string | Unique identifier for the account (required). |
+<ParamField path="accountNumber" type="string" required>
+  Unique identifier for the account
+</ParamField>
 
 ## Response
 

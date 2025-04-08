@@ -7,12 +7,16 @@ description: "The endpoint allows you to reverse a specified wallet transaction.
 
 ## Request Body
 
-```json
-{
-  "transactionReference": "string",
-  "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-}
-```
+<ParamField body="transactionReference" type="string">
+  ID referencing the transaction reference.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="organizationId" type="string">
+ The unique identifier for the organization.  
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
 
 ## Response
 

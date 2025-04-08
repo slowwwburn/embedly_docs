@@ -4,15 +4,31 @@ api: "POST /wallets/account-number/history"
 description: "The endpoint retrieves the transaction history for a specific account number over a specified time range"
 ---
 
-### Request Body
+## Request Body
 
-```json
-{
-  "accountNumber": "211651123",
-  "from": "2025-03-19T17:11:52.488Z",
-  "to": "2025-03-19T17:11:52.488Z"
-}
-```
+<ParamField body="accountNumber" type="string" required>
+
+  The account number to retrieve transactions for.
+
+  Example: "211651123"
+
+</ParamField>
+
+<ParamField body="from" type="string" format="date-time" required>
+
+  Start date and time for the transaction history period.
+
+  Example: "2025-03-19T17:11:52.488Z"
+
+</ParamField>
+
+<ParamField body="to" type="string" format="date-time" required>
+
+  End date and time for the transaction history period.
+
+  Example: "2025-03-19T17:11:52.488Z"
+
+</ParamField>
 
 
 ## Response

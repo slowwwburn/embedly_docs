@@ -5,12 +5,16 @@ description: "The endpoint retrieves the details of a specific wallet associated
 ---
 
 
-### **Path Parameters**
+## Path Parameters
 
-| Parameter   | Type   | Description                              |
-|-------------|--------|------------------------------------------|
-| `customerId`| string | Unique identifier for the customer (required). |
-| `walletId`  | string | Unique identifier for the wallet (required).   |
+<ParamField path="customerId" type="string" required>
+  Unique identifier for the customer
+</ParamField>
+
+<ParamField path="walletId" type="string" required>
+  Unique identifier for the wallet
+</ParamField>
+
 
 ## Response
 

@@ -4,12 +4,15 @@ api: "GET /wallets/get/customer/{customerId}/wallet/{walletId}"
 description: "The endpoint allows you to retrieves the details of a specific wallet associated with a customer."
 ---
 
-### **Path Parameters**
+## Path Parameters
 
-| Parameter     | Type   | Description                              |
-|---------------|--------|------------------------------------------|
-| `customerId`  | string | Unique identifier for the customer (required). |
-| `walletId`    | string | Unique identifier for the wallet (required).   |
+<ParamField path="customerId" type="string" required>
+  Unique identifier for the customer
+</ParamField>
+
+<ParamField path="walletId" type="string" required>
+  Unique identifier for the wallet
+</ParamField>
 
 ## Response
 

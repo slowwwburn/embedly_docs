@@ -4,17 +4,34 @@ api: "POST /wallets/close"
 description: "The endpoint allows you to close a specified wallet using the account number and associated details."
 ---
 
-### **Request Body**
+## Request Body
 
-```json
-{
-  "accountNumber": "3023563113",
-  "accountClosureReasonId": 0,
-  "tellerId": 0,
-  "closeOrDelete": true,
-  "customerOrAccount": true
-}
-```
+<ParamField body="accountNumber" type="string" required>
+  The account number to be closed or deleted.
+  **Example:** "3023563113"
+</ParamField>
+
+<ParamField body="accountClosureReasonId" type="number" required>
+  The ID representing the reason for account closure.
+  **Example:** 0
+</ParamField>
+
+<ParamField body="tellerId" type="number">
+  The ID of the teller processing the closure.
+  **Example:** 0
+</ParamField>
+
+<ParamField body="closeOrDelete" type="boolean" required>
+  Specifies whether to close or delete the account.
+  - `true`: Delete the account
+  - `false`: Close the account
+</ParamField>
+
+<ParamField body="customerOrAccount" type="boolean" required>
+  Specifies whether the operation is for a customer or an account.
+  - `true`: Customer
+  - `false`: Account
+</ParamField>
 
 ## Response
 

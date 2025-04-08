@@ -4,19 +4,43 @@ api: "PUT /wallets/wallet/transaction/post/complete"
 description: "The endpoint allows you to completes a specified wallet transaction."
 ---
 
-### **Request Body**
+## Request Body
 
-```json
-{
-  "transactionReference": "string",
-  "walletId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "amount": 4999940,
-  "accountNumber": "string",
-  "isPosted": true
-}
-```
+<ParamField body="transactionReference" type="string" required>
+  A unique reference for the transaction.
+  **Example:** "TRX-2025-04-07-12345"
+</ParamField>
+
+<ParamField body="walletId" type="string" required>
+  The unique identifier of the wallet involved in the transaction.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="customerId" type="string" required>
+  The unique identifier of the customer who owns the wallet.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="organizationId" type="string" required>
+  The unique identifier of the organization processing the transaction.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="amount" type="number" required>
+  The transaction amount.
+  **Example:** 4999940
+</ParamField>
+
+<ParamField body="accountNumber" type="string" required>
+  The account number for the transaction.
+  **Example:** "3023563113"
+</ParamField>
+
+<ParamField body="isPosted" type="boolean">
+  Indicates whether the transaction has been posted.
+  - `true`: Transaction has been posted
+  - `false`: Transaction is pending
+</ParamField>
 
 ## Response
 

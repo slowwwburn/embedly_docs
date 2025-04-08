@@ -5,28 +5,88 @@ description: "The endpoint posts a transaction to a specified wallet using the a
 ---
 
 
-### **Request Body**
+## Request Body
 
-```json
-{
-  "id": 0,
-  "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "amount": 200,
-  "fee": 1.0,
-  "postedDate": "2025-03-20T18:28:13.015Z",
-  "valueDate": "2025-03-20T18:28:13.015Z",
-  "transactionReference": "Rf399596950",
-  "walletId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "isPosted": true,
-  "direction": "ROOO",
-  "remarks": "Dog food",
-  "currency": "USD",
-  "batchReference": "5869999",
-  "accountNumber": "3025831129"
-}
-```
+<ParamField body="id" type="number" required>
+  Internal identifier for the transaction.
+  **Example:** 0
+</ParamField>
+
+<ParamField body="productId" type="string" required>
+  Unique identifier for the product associated with the transaction.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="organizationId" type="string" required>
+  Unique identifier for the organization processing the transaction.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="amount" type="number" required>
+  The amount of the transaction.
+  **Example:** 200
+</ParamField>
+
+<ParamField body="fee" type="number">
+  The fee charged for the transaction.
+  **Example:** 1.0
+</ParamField>
+
+<ParamField body="postedDate" type="string" format="date-time">
+  The date and time when the transaction was posted.
+  **Example:** "2025-03-20T18:28:13.015Z"
+</ParamField>
+
+<ParamField body="valueDate" type="string" format="date-time">
+  The date and time when the transaction takes effect.
+  **Example:** "2025-03-20T18:28:13.015Z"
+</ParamField>
+
+<ParamField body="transactionReference" type="string" required>
+  A unique reference identifier for the transaction.
+  **Example:** "Rf399596950"
+</ParamField>
+
+<ParamField body="walletId" type="string" required>
+  Unique identifier for the wallet involved in the transaction.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="customerId" type="string" required>
+  Unique identifier for the customer who owns the wallet.
+  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="isPosted" type="boolean">
+  Indicates whether the transaction has been posted.
+  **Example:** true
+</ParamField>
+
+<ParamField body="direction" type="string" required>
+  The direction of the transaction (e.g., CREDIT, DEBIT).
+  **Example:** "ROOO"
+</ParamField>
+
+<ParamField body="remarks" type="string">
+  Additional notes or description for the transaction.
+  **Example:** "Dog food"
+</ParamField>
+
+<ParamField body="currency" type="string" required>
+  The currency code for the transaction.
+  **Example:** "USD"
+</ParamField>
+
+<ParamField body="batchReference" type="string">
+  Reference number for batch transactions.
+  **Example:** "5869999"
+</ParamField>
+
+<ParamField body="accountNumber" type="string">
+  The account number associated with the transaction.
+  **Example:** "3025831129"
+</ParamField>
+
 
 ## Sample Response
 

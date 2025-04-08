@@ -5,11 +5,13 @@ description: "The endpoint allows you to search for a wallet associated with a s
 ---
 
 
-### **Query Parameters**
+## Query Parameters
 
-| Parameter     | Type   | Description                               |
-|---------------|--------|-------------------------------------------|
-| `mobile`      | string | Mobile number to search for (required).  |
+<ParamField body="mobNum" type="string" required>
+  Mobile number associated with the wallet.
+  **Example:** "2345678880"
+</ParamField>
+
 
 ## Response
 

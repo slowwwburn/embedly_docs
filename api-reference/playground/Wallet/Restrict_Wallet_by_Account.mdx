@@ -5,12 +5,17 @@ description: "The endpoint restricts a specified wallet based on the account ID 
 ---
 
 
-### **Path Parameters**
+## Path Parameters
 
-| Parameter          | Type   | Description                              |
-|--------------------|--------|------------------------------------------|
-| `accountId`        | string | Unique identifier for the account (required). |
-| `restrictionType`  | string | Type of restriction to apply (required).   |
+<ParamField path="accountId" type="string" required>
+  Unique identifier for the account
+</ParamField>
+
+<ParamField path="restrictionType" type="string" required>
+  Type of restriction to apply
+</ParamField>
+
+
 
 ## Sample Response
 

@@ -4,19 +4,38 @@ api: "PUT /wallets/wallet/transaction/v2/wallet-to-wallet"
 description: "The endpoint facilitates transferring funds from one wallet to another."
 ---
 
-
 ## Request Body
- 
-```json
-{
-  "fromAccount": "3025831139",
-  "toAccount": "211651183",
-  "amount": 100000,
-  "transactionReference": "retw33344556670900",
-  "remarks": "For Holidayls",
-  "transactionTypeId": 0
-}
-```
+
+<ParamField body="fromAccount" type="string" required>
+  The source account number for the transfer.
+  **Example:** "3025831139"
+</ParamField>
+
+<ParamField body="toAccount" type="string" required>
+  The destination account number for the transfer.
+  **Example:** "211651183"
+</ParamField>
+
+<ParamField body="amount" type="number" required>
+  The amount to transfer.
+  **Example:** 100000
+</ParamField>
+
+<ParamField body="transactionReference" type="string" required>
+  A unique reference identifier for the transaction.
+  **Example:** "retw33344556670900"
+</ParamField>
+
+<ParamField body="remarks" type="string">
+  Additional notes or description for the transaction.
+  **Example:** "For Holidays"
+</ParamField>
+
+<ParamField body="transactionTypeId" type="number">
+  Identifier for the type of transaction.
+  **Example:** 0
+</ParamField>
+
 
 ## Response
 
