@@ -1,0 +1,56 @@
+---
+title: "Retrieve Countries"
+api: "GET countries/get"
+description: "The endpoint allows you to retrieves the list and details of Countries."
+---
+
+## Response
+
+## ✅ Success Response
+
+- **Status Code**: `200 OK`
+
+```json
+{
+  "code": "00",
+  "success": true,
+  "message": "Retrieved successfully",
+  "data": [
+    {
+      "id": "08dd5d6c-a9b4-452d-8872-4ada3d46b506",
+      "name": "United States",
+      "countryCodeTwo": "US",
+      "countryCodeThree": "USA"
+    },
+    {
+      "id": "c15ad9ae-c4d7-4342-b70f-de5508627e3b",
+      "name": "Nigeria",
+      "countryCodeTwo": "NG",
+      "countryCodeThree": "NGA"
+    }
+  ]
+}
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid Admin Key",
+  "data": null
+}
+
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}
