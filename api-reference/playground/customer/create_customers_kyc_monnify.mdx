@@ -1,0 +1,39 @@
+---
+title: "Add Customers kyc"
+api: "POST /customers/kyc/monnify/kyc/customer/{customerId}"
+description: "This endpoint enables you to add a customer kyc monnify"
+---
+
+## Query Parameter
+<ParamField body="customerId" type="string" required>
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+## Request Body
+<ParamField body="bvn" type="string" required>
+</ParamField>
+
+<ParamField body="name" type="string" required>
+</ParamField>
+
+<ParamField body="dateOfBirth" type="string" required>
+    `YYYY-MM-DDTHH:mm:ss.sssZ` format. **Example:**
+    `2025-03-26T09:51:54.017Z`
+</ParamField>
+
+<ParamField body="mobileNumber" type="string" required></ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+  "bvn": "string",
+  "name": "string",
+  "dateOfBirth": "string",
+  "mobileNo": "string"
+}
+
+```
+
+</ResponseExample>

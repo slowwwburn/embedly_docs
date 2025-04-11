@@ -4,23 +4,14 @@ description: "This endpoint is used to update a customer's name"
 api: "PATCH /customers/customer/{customerId}/updatename"
 ---
 
-# Request Parameters
 
-{/* {
-  "organizationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "firstName": "string",
-  "lastName": "string",
-  "middleName": "string",
-  "dob": "2025-03-19T19:11:05.302Z",
-  "city": "string",
-  "address": "string",
-  "occupation": "string",
-  "gender": "string",
-  "bvnverified": true,
-  "ninVerified": true,
-  "bvn": "string",
-  "nin": "string"
-} */}
+## Query Parameter
+<ParamField body="customerId" type="string" required>
+</ParamField>
+
+
+
+# Request Parameters
 
 <ParamField body="organizationId" type="string" required></ParamField>
 

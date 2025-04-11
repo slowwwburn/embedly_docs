@@ -6,11 +6,11 @@ description: "This endpoint enables you to add a customer"
 
 # Add Customer
 
-<ParamField body="Id" type="string" required>
+<ParamField body="Id" type="string">
 	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
 </ParamField>
 
-<ParamField body="organizationId" type="string" required>
+<ParamField body="organizationId" type="string">
 	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
 </ParamField>
 
@@ -22,11 +22,11 @@ description: "This endpoint enables you to add a customer"
 	**Example:** `Luke`
 </ParamField>
 
-<ParamField body="middleName" type="string" required>
+<ParamField body="middleName" type="string">
 	**Example:** `James`
 </ParamField>
 
-<ParamField body="dateOfBirth" type="string" required>
+<ParamField body="dob" type="string" required>
     `YYYY-MM-DDTHH:mm:ss.sssZ` format. **Example:**
     `2025-03-26T09:51:54.017Z`
 </ParamField>
@@ -52,7 +52,7 @@ description: "This endpoint enables you to add a customer"
     **Example:** `user@example.com`
 </ParamField>
 
-<ParamField body="dateCreated" type="string" required>
+<ParamField body="dateCreated" type="string">
      `YYYY-MM-DDTHH:mm:ss.sssZ` format. **Example:**
     `2025-03-26T09:51:54.017Z`
 </ParamField>

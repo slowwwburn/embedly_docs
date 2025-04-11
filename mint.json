@@ -70,6 +70,7 @@
 						"api-reference/playground/customer/get_all_customers",
 						"api-reference/playground/customer/get_customers_countries",
 						"api-reference/playground/customer/get_all_customer_types",
+						"api-reference/playground/customer/Get_Id",
 						"api-reference/playground/customer/update_customer",
 						"api-reference/playground/customer/update_customer_type"
 					]

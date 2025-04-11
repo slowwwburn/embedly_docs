@@ -1,0 +1,23 @@
+---
+title: "Get Customer by ID"
+description: "This endpoint retrieves customer  using their unique identifier"
+api: "GET /customers/get/id/{id}"
+---
+
+<ParamField path="id" type="string" required>
+  The unique identifier for the customer.  
+  **Example:** 'f6210a05-fb5b-11ef-a8a9-6045bd97b81d'
+</ParamField>
+
+
+## Response
+
+```json
+{
+  "code": "00",
+  "success": true,
+  "message": "Retrieved Successfully",
+  "data": null
+}
+```
+
