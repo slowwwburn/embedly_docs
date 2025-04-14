@@ -4,8 +4,13 @@ api: "POST /customers/kyc/premium-kyc"
 description: "This endpoint enables you to add a customer kyc"
 ---
 
-# Add Customers Kyc
+## Query Parameter
+<ParamField body="verify" type="string" required>
+	**Example:** 'You can pass verify=1, so that you can use the same bvn/nin multiple times'
+</ParamField>
 
+
+## Request Parameter
 <ParamField body="customerId" type="string" required>
 	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
 </ParamField>
