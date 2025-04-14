@@ -1,20 +1,20 @@
 ---
 title: "Customer KYC NIN"
-api: "POST customers/kyc/customer/nin"
+api: "POST /customers/kyc/customer/nin?customerId={customerId}&nin={nin}&verify=1"
 description: "This endpoint allows organizations to verify customer identity using their National Identification Number (NIN)."
 ---
 
-### Query Parameters
+## Query Parameters
 
-<ParamField body="customerId" type="string" required>
+<ParamField path="customerId" type="string" required>
 	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
 </ParamField>
 
-<ParamField body="nin" type="string" required>
+<ParamField path="nin" type="string" required>
 	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
 </ParamField>
 
-<ParamField body="verify" type="string">
+<ParamField path="verify" type="string">
 	**Example:** 'You can pass verify=1, so that you can use the same bvn/nin multiple times'
 </ParamField>
 

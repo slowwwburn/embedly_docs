@@ -6,42 +6,42 @@ description: "The endpoint is designed to create a new wallet for a customer."
 
 ## Request Body
 
-<ParamField body="id" type="string" required>
+<ParamField body="id" type="string">
   Unique identifier for the wallet.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-<ParamField body="walletGroupId" type="string" required>
+<ParamField body="walletGroupId" type="string">
   The ID of the wallet group this wallet belongs to.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-<ParamField body="customerId" type="string" required>
+<ParamField body="customerId" type="string">
   The ID of the customer who owns this wallet.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-<ParamField body="availableBalance" type="number" required>
+<ParamField body="availableBalance" type="number">
   The balance available for transactions.
   **Example:** 23444440
 </ParamField>
 
-<ParamField body="ledgerBalance" type="number" required>
+<ParamField body="ledgerBalance" type="number">
   The total balance including pending transactions.
   **Example:** 500000
 </ParamField>
 
-<ParamField body="walletRestrictionId" type="string" required>
+<ParamField body="walletRestrictionId" type="string">
   ID referencing wallet restrictions.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-<ParamField body="walletClassificationId" type="string" required>
+<ParamField body="walletClassificationId" type="string">
   ID referencing wallet classification.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-<ParamField body="currencyId" type="string" required>
+<ParamField body="currencyId" type="string">
   ID of the currency for this wallet.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
@@ -56,7 +56,7 @@ description: "The endpoint is designed to create a new wallet for a customer."
   **Example:** true
 </ParamField>
 
-<ParamField body="name" type="string" required>
+<ParamField body="name" type="string" equired>
   Name of the wallet or wallet owner.
   **Example:** "Emmanuel Emah"
 </ParamField>
@@ -70,7 +70,7 @@ description: "The endpoint is designed to create a new wallet for a customer."
   Virtual account details associated with the wallet.
 </ParamField>
 
-<Expandable title="virtualAccount properties" required>
+<Expandable title="virtualAccount properties">
   <ParamField body="virtualAccount.accountNumber" type="string">
     The virtual account number.
     **Example:** "0330000045"
@@ -81,18 +81,18 @@ description: "The endpoint is designed to create a new wallet for a customer."
     **Example:** "504"
   </ParamField>
   
-  <ParamField body="virtualAccount.bankName" type="string" required>
+  <ParamField body="virtualAccount.bankName" type="string">
     The name of the bank for the virtual account.
     **Example:** "Union"
   </ParamField>
 </Expandable>
 
-<ParamField body="mobNum" type="string" required>
+<ParamField body="mobNum" type="string">
   Mobile number associated with the wallet.
   **Example:** "2345678880"
 </ParamField>
 
-<ParamField body="customerTypeId" type="string" required>
+<ParamField body="customerTypeId" type="string">
   ID referencing the customer type.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
