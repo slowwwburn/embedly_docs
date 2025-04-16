@@ -1,0 +1,149 @@
+---
+title: "Inflow Transaction"
+api: "POST /nip/inflow"
+description: "This endpoint allows you to initiate an inflow transaction, specifying details about the beneficiary and originator."
+---
+
+## Request Body
+
+<ParamField body="api_key" type="string" required>
+	The API key for authentication.  
+	**Example:** 'FDBD8F4467F0713207710E4F1607C51FED14FE76'
+</ParamField>
+
+<ParamField body="SessionID" type="string" required>
+	The unique session identifier for the transaction.  
+	**Example:** '90909098909890983'
+</ParamField>
+
+<ParamField body="NameEnquiryRef" type="string">
+	Reference for the name enquiry.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="DestinationInstitutionCode" type="string" required>
+	The code of the destination institution.  
+	**Example:** '232'
+</ParamField>
+
+<ParamField body="ChannelCode" type="string" required>
+	The channel code for the transaction.  
+	**Example:** '1'
+</ParamField>
+
+<ParamField body="BeneficiaryAccountName" type="string" required>
+	The name of the beneficiary's account.  
+	**Example:** 'EMB/ClassicalAitem'
+</ParamField>
+
+<ParamField body="BeneficiaryAccountNumber" type="string" required>
+	The account number of the beneficiary.  
+	**Example:** '9710000498'
+</ParamField>
+
+<ParamField body="BeneficiaryBankVerificationNumber" type="string" required>
+	The bank verification number of the beneficiary.  
+	**Example:** '22222222221'
+</ParamField>
+
+<ParamField body="BeneficiaryKYCLevel" type="string" required>
+	The KYC level of the beneficiary.  
+	**Example:** '1'
+</ParamField>
+
+<ParamField body="OriginatorAccountName" type="string">
+	The name of the originator's account.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="OriginatorAccountNumber" type="string">
+	The account number of the originator.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="OriginatorBankVerificationNumber" type="string">
+	The bank verification number of the originator.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="OriginatorKYCLevel" type="string">
+	The KYC level of the originator.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="TransactionLocation" type="string">
+	The location of the transaction.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="Narration" type="string">
+	A narration for the transaction.  
+	**Example:** 'string'
+</ParamField>
+
+<ParamField body="PaymentReference" type="string" required>
+	A reference for the payment.  
+	**Example:** 'string-001-NIP8'
+</ParamField>
+
+<ParamField body="Amount" type="string" required>
+	The amount for the transaction.  
+	**Example:** '23000'
+</ParamField>
+
+
+## Response
+
+```json
+{
+  "sessionID": "90909098909890983",
+  "nameEnquiryRef": "string",
+  "destinationInstitutionCode": "232",
+  "channelCode": "1",
+  "beneficiaryAccountName": "EMB/ClassicalAitem",
+  "beneficiaryAccountNumber": "9710000498",
+  "beneficiaryKYCLevel": "1",
+  "beneficiaryBankVerificationNumber": "22222222221",
+  "originatorAccountName": "string",
+  "originatorAccountNumber": "string",
+  "originatorBankVerificationNumber": "string",
+  "originatorKYCLevel": "string",
+  "transactionLocation": "string",
+  "narration": "string",
+  "paymentReference": "string-001-NIP8",
+  "amount": "23000",
+  "responseCode": "00"
+}
+
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Invalid Key for admin APIs",
+  "data": null
+}
+
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid request data",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}

@@ -1,0 +1,80 @@
+---
+title: "Account Inquiry"
+api: "POST /nip/account/inquiry"
+description: "This endpoint allows you to inquire about an account, retrieving details such as account name and KYC level."
+---
+
+## Request Body
+
+<ParamField body="api_key" type="string" required>
+	The API key for authentication.  
+	**Example:** 'FDBD8F4467F0713207710E4F1607C51FED14FE76'
+</ParamField>
+
+<ParamField body="SessionId" type="string" required>
+	The unique session identifier for the inquiry.  
+	**Example:** '90909098909890983'
+</ParamField>
+
+<ParamField body="DestinationInstitutionCode" type="string" required>
+	The code of the destination institution.  
+	**Example:** '232'
+</ParamField>
+
+<ParamField body="AccountNumber" type="string" required>
+	The account number to be inquired.  
+	**Example:** '9710000498'
+</ParamField>
+
+<ParamField body="ChannelCode" type="string" required>
+	The channel code used for the inquiry.  
+	**Example:** '1'
+</ParamField>
+
+## Response
+✅ Success Response
+
+```json
+{
+  "sessionId": "90909098909890983",
+  "destinationInstitutionCode": "232",
+  "accountNumber": "9710000498",
+  "channelCode": "1",
+  "accountName": "EMB/ClassicalAitem",
+  "bankVerificationNumber": "",
+  "kycLevel": "1",
+  "responseCode": "00"
+}
+
+```
+
+## ❌ Error Responses
+
+```json
+
+Status Code: 401 Unauthorized
+
+{
+  "code": "401",
+  "success": false,
+  "message": "Invalid Key for admin APIs",
+  "data": null
+}
+
+Status Code: 400 Bad Request
+
+{
+  "code": "400",
+  "success": false,
+  "message": "Invalid request data",
+  "data": null
+}
+
+Status Code: 500 Internal Server Error
+
+{
+  "code": "500",
+  "success": false,
+  "message": "An unexpected error occurred",
+  "data": null
+}
