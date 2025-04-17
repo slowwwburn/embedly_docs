@@ -7,7 +7,7 @@ description: "The endpoint posts a transaction to a specified wallet using the a
 
 ## Request Body
 
-<ParamField body="id" type="number" required>
+<ParamField body="id" type="number">
   Internal identifier for the transaction.
   **Example:** 0
 </ParamField>
@@ -17,7 +17,7 @@ description: "The endpoint posts a transaction to a specified wallet using the a
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-<ParamField body="organizationId" type="string" required>
+<ParamField body="organizationId" type="string">
   Unique identifier for the organization processing the transaction.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
@@ -42,17 +42,17 @@ description: "The endpoint posts a transaction to a specified wallet using the a
   **Example:** "2025-03-20T18:28:13.015Z"
 </ParamField>
 
-<ParamField body="transactionReference" type="string" required>
+<ParamField body="transactionReference" type="string">
   A unique reference identifier for the transaction.
   **Example:** "Rf399596950"
 </ParamField>
 
-<ParamField body="walletId" type="string" required>
+<ParamField body="walletId" type="string">
   Unique identifier for the wallet involved in the transaction.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-<ParamField body="customerId" type="string" required>
+<ParamField body="customerId" type="string">
   Unique identifier for the customer who owns the wallet.
   **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>

@@ -100,13 +100,17 @@ description: "The endpoint is designed to create a new wallet for a customer."
 ## Response
 
 ✅ Success Response
-
 Status Code: `201 Created`
-Response Body:  
-
+  
 ```json
 {
   "message": "Wallet created successfully.",
-  "walletId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  "walletId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "virtualAccount": {
+    "accountNumber": "9710000498",
+    "bankCode": "232",
+    "bankName": "Sterling"
+  },
+  "mobNum": "2345678880"
 }
-```
+
