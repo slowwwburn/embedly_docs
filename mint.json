@@ -75,14 +75,6 @@
 					]
 				},
 				{
-					"group": "Nip-Inflow",
-					"pages": [
-						"api-reference/Nip-Inflow",
-						"api-reference/playground/Nip-Inflow/Account_Inquiry",
-						"api-reference/playground/Nip-Inflow/In-flow_Transaction"
-					]
-				},
-				{
 					"group": "Product",
 					"pages": [
 						"api-reference/Product",
