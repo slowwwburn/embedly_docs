@@ -2,8 +2,8 @@
 	"$schema": "https://mintlify.com/schema.json",
 	"name": "Embedly API Documentation",
 	"logo": {
-		"light": "/images/logo/logo.svg",
-		"dark": "/images/logo/logo.svg"
+		"light": "/images/logo/embedlight.svg",
+		"dark": "/images/logo/embeddark.svg"
 	},
 	"favicon": "/e.svg",
 	"colors": {
@@ -37,25 +37,7 @@
 			"pages": [
 				{
 					"group": "Getting Started",
-					"pages": [
-						"api-reference/authentication"
-					]
-				},
-				{
-					"group": "Country",
-					"pages": [
-						"api-reference/Country",
-						"api-reference/playground/Country/Add_Countries",
-						"api-reference/playground/Country/Get_Countries"
-					]
-				},
-				{
-					"group": "Currency",
-					"pages": [
-						"api-reference/Currency",
-						"api-reference/playground/Currency/Add_Currency",
-						"api-reference/playground/Currency/Get_Currency"
-					]
+					"pages": ["api-reference/authentication"]
 				},
 				{
 					"group": "Customer",
@@ -63,15 +45,25 @@
 						"api-reference/customers",
 						"api-reference/playground/customer/add_customers",
 						"api-reference/playground/customer/profile_customer",
-						"api-reference/playground/customer/create_customers_kyc",
-						"api-reference/playground/customer/Customer_kyc_nin",
-						"api-reference/playground/customer/customer_kyc_facenin",
-						"api-reference/playground/customer/get_all_customers",
-						"api-reference/playground/customer/get_customers_countries",
-						"api-reference/playground/customer/get_all_customer_types",
 						"api-reference/playground/customer/Get_Id",
+						"api-reference/playground/customer/get_all_customers",
+						"api-reference/playground/customer/get_all_customer_types",
 						"api-reference/playground/customer/update_customer",
-						"api-reference/playground/customer/update_customer_type"
+						{
+							"group": "KYC",
+							"pages": [
+								"api-reference/playground/customer/kyc/create_customers_kyc",
+								"api-reference/playground/customer/kyc/kyc_nin",
+								"api-reference/playground/customer/kyc/kyc_face_nin"
+							]
+						},
+						{
+							"group": "Utils",
+							"pages": [
+								"api-reference/playground/customer/utils/get_countries",
+								"api-reference/playground/customer/utils/get_currency"
+							]
+						}
 					]
 				},
 				{
@@ -146,7 +138,5 @@
 	"feedback": {
 		"thumbsRating": true
 	},
-	"versions": [
-		"1.0.0-Beta"
-	]
+	"versions": ["1.0.0-Beta"]
 }
