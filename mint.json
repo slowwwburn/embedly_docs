@@ -124,12 +124,26 @@
 						"api-reference/playground/WalletGroup/Get_Wallet_Group_ID",
 						"api-reference/playground/WalletGroup/Get_Wallet_Group"
 					]
+				},
+				{
+					"group": "Payout",
+					"pages": [
+						"api-reference/payout",
+						"api-reference/playground/payout/get_banks",
+						"api-reference/playground/payout/interbank_enquiry",
+						"api-reference/playground/payout/intrabank_enquiry",
+						"api-reference/playground/payout/interbank_transfer",
+						"api-reference/playground/payout/intrabank_transfer"
+					]
 				}
 			]
 		}
 	],
 	"api": {
-		"baseUrl": "https://waas-staging.cafeone.ng/api/v1",
+		"baseUrl": [
+			"https://waas-staging.cafeone.ng/api/v1",
+			"https://payout-staging.cafeone.ng/api/payouts"
+		],
 		"auth": {
 			"method": "key",
 			"name": "x-api-key"

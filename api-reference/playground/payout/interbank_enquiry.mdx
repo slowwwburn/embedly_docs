@@ -1,0 +1,32 @@
+---
+title: "Inter Bank Account Name Enquiry"
+api: "GET https://payout-staging.cafeone.ng/api/Payout/inter-bank-enquiry"
+description: "Endpoint for validating external bank accounts."
+---
+
+<ParamField query="BankCode" type="string" required>
+	**Example:** `000010`
+</ParamField>
+<ParamField query="AccountNumber" type="string" required>
+	**Example:** `1111111111`
+</ParamField>
+
+<ResponseExample>
+  ```json
+  {
+    "data": {
+      "status": "success",
+      "data": {
+        "destinationBankCode": "000010",
+        "accountNumber": "1111111111",
+        "accountName": "CHECKING ACCOUNT"
+      },
+      "code": null,
+      "message": null
+    },
+    "statusCode": 200,
+    "message": "Success",
+    "succeeded": true
+  }
+```
+</ResponseExample>

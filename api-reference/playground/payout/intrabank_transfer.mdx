@@ -1,0 +1,37 @@
+---
+title: "Intra Bank Transfer"
+api: "POST https://payout-staging.cafeone.ng/api/Payout/intrabank-funds-transfer"
+description: "This endpoint initiate an intra-bank funds transfer."
+---
+
+<ParamField body="destinationBankCode" type="string" required>
+	**Example:** `000010`
+</ParamField>
+<ParamField body="destinationAccountNumber" type="string" required>
+	**Example:** `1111111111`
+</ParamField>
+<ParamField body="destinationAccountName" type="string" required>
+	**Example:** `Bruce Banner`
+</ParamField>
+<ParamField body="sourceAccountNumber" type="string" required>
+	**Example:** `9666055662`
+</ParamField>
+<ParamField body="sourceAccountName" type="string" required>
+	**Example:** `Tony Stark`
+</ParamField>
+<ParamField body="remarks" type="string" required>
+	**Example:** `Hello World`
+</ParamField>
+<ParamField body="amount" type="integer" required>
+	**Example:** `1000000000`
+</ParamField>
+
+<ResponseExample>
+  ```json
+  {
+    "statusCode": 200,
+    "message": "Successfully initiated payout",
+    "succeeded": true
+  }
+```
+</ResponseExample>
