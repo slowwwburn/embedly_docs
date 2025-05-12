@@ -5,7 +5,7 @@
 		"light": "/images/logo/embedlight.svg",
 		"dark": "/images/logo/embeddark.svg"
 	},
-	"favicon": "/e.svg",
+	"favicon": "/favicon.svg",
 	"colors": {
 		"primary": "#725AC1",
 		"light": "#9B84DA",
@@ -23,7 +23,7 @@
 	],
 	"topbarCtaButton": {
 		"name": "Get Started",
-		"url": "https://embedly.com/"
+		"url": "https://merchant-waas-dashboard.embedly.ng/"
 	},
 	"tabs": [
 		{
