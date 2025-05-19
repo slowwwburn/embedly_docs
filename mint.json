@@ -135,6 +135,10 @@
 						"api-reference/playground/payout/interbank_transfer",
 						"api-reference/playground/payout/intrabank_transfer"
 					]
+				},
+				{
+					"group": "Webhook",
+					"pages": ["api-reference/webhooks"]
 				}
 			]
 		}

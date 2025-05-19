@@ -1,0 +1,62 @@
+---
+title: Webhooks
+description:
+---
+
+## Overview
+
+Webhooks allow your system to receive real-time updates from our platform. Instead of constantly checking (polling) for updates, we notify your system as soon as something happens — like a payment being made or a user completing a form.
+
+It’s like getting a text message when a delivery arrives, instead of refreshing the tracking page every 5 minutes!
+
+---
+
+## How It Works
+
+1. You give us a webhook URL (an API endpoint on your server).
+2. We send a `POST` request to that URL when a payment is made.
+3. You process the transaction data on your end — e.g., mark an order as paid.
+
+Here is simple example of a webhook URL
+
+```json
+app.post('/webhooks', (req, res) => {
+  const event = req.body;
+    // Handle the event
+  res.status(200).send('OK');
+});
+```
+
+---
+
+## Sample Notification Payload
+
+Whenever a wallet account receives a credit, your webhook endpoint will receive a JSON payload as seen below;
+
+```json
+{
+	"AccountNumber": "9710003075",
+	"transactionReference": "100004250517071546132898381664",
+	"TransactionAmount": 2000.0,
+	"Fee": 0.0,
+	"SenderName": "John Doe",
+	"SenderBank": "Sterling Bank",
+	"DateOfTransaction": "2025-01-01T00:00:00",
+	"Source": "NIP",
+	"Description": "Transfer from Mary Wilson",
+	"DC": "C"
+}
+```
+
+| Field Name           | Description                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------- |
+| AccountNumber        | The virtual account that received the payment. This belongs to your customer or business.      |
+| transactionReference | A unique ID for the transaction. Use this to avoid duplicate processing.                       |
+| TransactionAmount    | The amount paid (in NGN).                                                                      |
+| Fee                  | Transaction fee (if any). In most cases this may be 0.                                         |
+| SenderName           | The name of the person who sent the money.                                                     |
+| SenderBank           | The sender’s bank name.                                                                        |
+| DateOfTransaction    | The timestamp of the transaction (in ISO format).                                              |
+| Source               | The payment channel used (e.g., NIP for real-time transfers).                                  |
+| Description          | The transfer message or narration, if any.                                                     |
+| DC                   | "C" for credit (money in), "D" for debit (money out). In this context, it will usually be "C". |
