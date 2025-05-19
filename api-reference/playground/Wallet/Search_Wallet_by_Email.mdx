@@ -1,49 +1,26 @@
 ---
 title: "Search Wallet by Email"
-api: "GET /wallets/search/email"
+api: "POST /wallets/search/email"
 description: "The endpoint allows you to search for a wallet associated with a specified email address."
 ---
 
-## Query Parameters
-
-<ParamField query="email" type="string" required>
-  Email address to search for
+<ParamField body="emailAddress" type="string" required>
+	Email address to search for
 </ParamField>
 
-## Response
+<ResponseExample>
 
-``` json
-✅ Success Response
+```json Success
 
-Status Code: 200 OK
+```
 
+```json Error
 {
-  "code": "200",
-  "success": true,
-  "message": "Wallet found.",
-  "data": {
-    // Details of the wallet associated with the email
-  }
-
-  ```
-
-## ❌ Error Responses
-
-Status Code: 400 Bad Request
-
-``` json
-{
-  "code": "400",
-  "success": false,
-  "message": "Invalid request data",
-  "data": null
+	"code": "400",
+	"success": false,
+	"message": "The Email address does not exist",
+	"data": null
 }
+```
 
-Status Code: 500 Internal Server Error
-
-{
-  "code": "500",
-  "success": false,
-  "message": "The key value at position 0 of the call to 'DbSet<VirtualAccountProvider>.Find' was of type 'int', which does not match the property type of 'Guid'.",
-  "data": null
-}
+</ResponseExample>
