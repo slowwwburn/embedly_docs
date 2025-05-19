@@ -19,8 +19,14 @@ To access the full Embedly API services, you’ll need an API key. Follow these 
 4. **Copy Your API Key:** Save the generated key securely—you’ll need it for all API requests.
 
 <Info>
-	The APIs on the staging environment are currently open and do not require an API key for authentication. For testing purposes, you can use the default key `BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm, AdminTest(For Currency & Organization API) and 'BSK-GB9S3Ln7FUfGL1pWAOYDvLYnGyGeLRwfZ5A6e9pdTo6S8Xac25SAHp9VtNXeknMTtp50ncNyRezW`(For nin-kyc for the customer). This is subject to change with prior notice, so we recommend using your own API key to prepare for production.
-  Use 02600494-1a3c-11f0-a818-6045bd97b81d as your OrganizationId for test.
+	The APIs on the staging environment are currently open and do not require an
+	API key for authentication. For testing purposes, you can use the default key
+	`BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm,
+	AdminTest(For Currency & Organization API) and
+	'BSK-GB9S3Ln7FUfGL1pWAOYDvLYnGyGeLRwfZ5A6e9pdTo6S8Xac25SAHp9VtNXeknMTtp50ncNyRezW`(For
+	nin-kyc for the customer). This is subject to change with prior notice, so we
+	recommend using your own API key to prepare for production. Use
+	02600494-1a3c-11f0-a818-6045bd97b81d as your OrganizationId for test.
 </Info>
 
 ### Base URLs
@@ -28,14 +34,14 @@ To access the full Embedly API services, you’ll need an API key. Follow these 
 Use the following base URLs for your API requests:
 
 - **Staging Environment:**  
-https://waas-staging.cafeone.ng/api/v1
+  https://waas-staging.embedly.ng/api/v1
 
 - **Production Environment:**  
-https://waas-prod.cafeone.ng/api/v1
-
+  https://waas-prod.embedly.ng/api/v1
 
 <Warning>
-  Ensure you’re using the correct base URL for your environment. Requests to the production environment require a valid API key.
+	Ensure you’re using the correct base URL for your environment. Requests to the
+	production environment require a valid API key.
 </Warning>
 
 ### Authentication
@@ -49,7 +55,9 @@ x-api-key: {{API-KEY}}
 ```
 
 ## API Endpoints
+
 The Embedly API provides a powerful set of tools to manage organizations, customers, wallets, products, and more. Explore the following endpoint categories:
+
 - **[Authentication](/api-reference/authentication):** Authenticate with the API to obtain a token.
 - **[Country](/api-reference/Country):** Create and add Countries
 - **[Currency](/api-reference/Currency):** Manage currency-related operations.
@@ -62,6 +70,7 @@ The Embedly API provides a powerful set of tools to manage organizations, custom
 The Embedly API uses standard HTTP status codes to indicate the success or failure of a request. Common error responses include:
 
 ## Error Handling
+
 The Embedly API uses standard HTTP status codes to indicate the success or failure of a request. Common error responses include:
 
 - **401 Unauthorized:** Invalid or missing API key.
@@ -73,5 +82,6 @@ Each endpoint’s documentation includes specific error responses and examples.
 ## Need Help?
 
 If you encounter issues or have questions, reach out to our support team:
+
 - **Email:** [hello@embedly.ng](mailto:hello@embedly.ng)
 - **Community:** Join our [community forum](https://join.slack.com/t/embedly-workspace/shared_invite/zt-338e6sefm-~_Ys~dDtXuLFR~KMS~Z36g) to connect with other developers.
