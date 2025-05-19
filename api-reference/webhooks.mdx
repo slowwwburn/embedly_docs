@@ -20,7 +20,7 @@ It’s like getting a text message when a delivery arrives, instead of refreshin
 Here is simple example of a webhook URL
 
 ```json
-app.post('/webhooks', (req, res) => {
+app.post('/your-url/webhook', (req, res) => {
   const event = req.body;
     // Handle the event
   res.status(200).send('OK');
@@ -50,7 +50,7 @@ Whenever a wallet account receives a credit, your webhook endpoint will receive 
 
 | Field Name           | Description                                                                                    |
 | -------------------- | ---------------------------------------------------------------------------------------------- |
-| AccountNumber        | The virtual account that received the payment. This belongs to your customer or business.      |
+| AccountNumber        | The wallet account that received the payment. This belongs to your customer or business.      |
 | transactionReference | A unique ID for the transaction. Use this to avoid duplicate processing.                       |
 | TransactionAmount    | The amount paid (in NGN).                                                                      |
 | Fee                  | Transaction fee (if any). In most cases this may be 0.                                         |
