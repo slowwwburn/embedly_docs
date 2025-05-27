@@ -1,13 +1,13 @@
 ---
-title: "Inter Bank Account Name Enquiry"
-api: "GET https://payout-staging.cafeone.ng/api/Payout/inter-bank-enquiry"
+title: "Bank Account Name Enquiry"
+api: "POST https://payout-staging.cafeone.ng/api/Payout/name-enquiry"
 description: "Endpoint for validating external bank accounts."
 ---
 
-<ParamField query="BankCode" type="string" required>
+<ParamField body="bankCode" type="string" required>
 	**Example:** `000010`
 </ParamField>
-<ParamField query="AccountNumber" type="string" required>
+<ParamField body="accountNumber" type="string" required>
 	**Example:** `1111111111`
 </ParamField>
 

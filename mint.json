@@ -130,10 +130,9 @@
 					"pages": [
 						"api-reference/payout",
 						"api-reference/playground/payout/get_banks",
-						"api-reference/playground/payout/interbank_enquiry",
-						"api-reference/playground/payout/intrabank_enquiry",
+						"api-reference/playground/payout/name_enquiry",
 						"api-reference/playground/payout/interbank_transfer",
-						"api-reference/playground/payout/intrabank_transfer"
+						"api-reference/playground/payout/check_status"
 					]
 				},
 				{

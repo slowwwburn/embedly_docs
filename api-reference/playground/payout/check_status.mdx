@@ -1,0 +1,10 @@
+---
+title: Transaction Status Re-Query
+api: "GET /api/Payout/status/{transactionRef}"
+description: "Endpoint for re-querying the status of a transaction using its reference number."
+---
+
+<ParamField path="transactionRef" type="string" required>
+	The unique reference number of the transaction whose status you want to check.
+	Exmaple: `3212-1234-5678-9101`
+</ParamField>
