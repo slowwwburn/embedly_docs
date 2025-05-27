@@ -1,85 +1,73 @@
 ---
-title: "Restrict Wallet"
-api: "PUT /wallets/wallet/transaction/v2/wallet-to-wallet"
-description: "The endpoint facilitates transferring funds from one wallet to another."
+title: "Post Wallet to Wallet Transfers"
+api: "POST /wallets/wallet/transaction/v2/wallet-to-wallet"
+description: "The endpoint facilitates transferring funds from one embedly wallet to another embedly wallet."
 ---
 
 ## Request Body
 
 <ParamField body="fromAccount" type="string" required>
-  The source account number for the transfer.
-  **Example:** "3025831139"
+	The source account number for the transfer. **Example:** "3025831139"
 </ParamField>
 
 <ParamField body="toAccount" type="string" required>
-  The destination account number for the transfer.
-  **Example:** "211651183"
+	The destination account number for the transfer. **Example:** "211651183"
 </ParamField>
 
 <ParamField body="amount" type="number" required>
-  The amount to transfer.
-  **Example:** 100000
+	The amount to transfer. **Example:** 100000
 </ParamField>
 
 <ParamField body="transactionReference" type="string" required>
-  A unique reference identifier for the transaction.
-  **Example:** "retw33344556670900"
+	A unique reference identifier for the transaction. **Example:**
+	"retw33344556670900"
 </ParamField>
 
 <ParamField body="remarks" type="string">
-  Additional notes or description for the transaction.
-  **Example:** "For Holidays"
+	Additional notes or description for the transaction. **Example:** "For
+	Holidays"
 </ParamField>
 
 <ParamField body="transactionTypeId" type="number">
-  Identifier for the type of transaction.
-  **Example:** 0
+	Unique identifier for the type of transaction. **Example:** 0
 </ParamField>
 
+<ResponseExample>
 
-## Response
-
-✅ Success Response
-
-```json
-Status Code: 200 OK
+```json 200 OK
 {
-  "code": "200",
-  "success": true,
-  "message": "Transaction completed successfully.",
-  "data": {
-    // Additional transaction details if applicable
-  }
+	"code": "200",
+	"success": true,
+	"message": "Transaction completed successfully.",
+	"data": {
+		// Additional transaction details if applicable
+	}
 }
 ```
 
-## ❌ Error Responses
-
-```json
-Status Code: 401 Unauthorized
-
+```json 401 Unauthorized
 {
-  "code": "401",
-  "success": false,
-  "message": "x-api-key is missing in the header",
-  "data": null
+	"code": "401",
+	"success": false,
+	"message": "x-api-key is missing in the header",
+	"data": null
 }
+```
 
-Status Code: 400 Bad Request
-
+```json 400 Bad Request
 {
-  "code": "400",
-  "success": false,
-  "message": "Invalid request data",
-  "data": null
+	"code": "400",
+	"success": false,
+	"message": "Invalid request data",
+	"data": null
 }
+```
 
-Status Code: 500 Internal Server Error
-
+```json 500 Internal Server Error
 {
-  "code": "500",
-  "success": false,
-  "message": "An unexpected error occurred",
-  "data": null
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
 }
 ```
