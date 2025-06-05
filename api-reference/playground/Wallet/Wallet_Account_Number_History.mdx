@@ -8,32 +8,31 @@ description: "The endpoint retrieves the transaction history for a specific acco
 
 <ParamField body="accountNumber" type="string" required>
 
-  The account number to retrieve transactions for.
+The account number to retrieve transactions for.
 
-  Example: "211651123"
+Example: "211651123"
 
 </ParamField>
 
 <ParamField body="from" type="string" format="date-time" required>
 
-  Start date and time for the transaction history period.
+Start date and time for the transaction history period.
 
-  Example: "2025-03-19T17:11:52.488Z"
+Example: "2025-03-19T17:11:52.488Z"
 
 </ParamField>
 
 <ParamField body="to" type="string" format="date-time" required>
 
-  End date and time for the transaction history period.
+End date and time for the transaction history period.
 
-  Example: "2025-03-19T17:11:52.488Z"
+Example: "2025-03-19T17:11:52.488Z"
 
 </ParamField>
 
-
-## Response
-```json
-
+<ResponseExample>
+  
+```json Success
 {
   "code": "200",
   "success": true,
@@ -77,15 +76,13 @@ description: "The endpoint retrieves the transaction history for a specific acco
 }
 ```
 
-
-
-## ❌ Error Responses
-```json
-Status Code: 404 Not Found
-
+```json Failed
 {
-  "code": "404",
-  "success": false,
-  "message": "Wallet not found",
-  "data": null
+	"code": "404",
+	"success": false,
+	"message": "Wallet not found",
+	"data": null
 }
+```
+
+</ResponseExample>

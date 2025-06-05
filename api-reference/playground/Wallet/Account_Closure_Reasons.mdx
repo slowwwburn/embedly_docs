@@ -4,50 +4,43 @@ api: "GET /wallets/account/closure/reasons"
 description: "The endpoint allows you to retrieves the reasons available for closing an account."
 ---
 
-## Response 
+<ResponseExample>
 
-✅ Success Response
-
-```json
-
-Status Code: 200 OK
-
+```json 200 Success
 {
-  "code": "200",
-  "success": true,
-  "message": "Account closure reasons retrieved successfully.",
-  "data": [
-    {
-      "id": 1,
-      "reason": "No longer needed"
-    },
-    {
-      "id": 2,
-      "reason": "Moving to a different bank"
-    }
-    // Additional reasons may be listed
-  ]
+	"code": "200",
+	"success": true,
+	"message": "Account closure reasons retrieved successfully.",
+	"data": [
+		{
+			"id": 1,
+			"reason": "No longer needed"
+		},
+		{
+			"id": 2,
+			"reason": "Moving to a different bank"
+		}
+		// Additional reasons may be listed
+	]
 }
-
 ```
 
-## ❌ Error Responses
-
-Status Code: 400 Bad Request
-
-``` json
+```json 400 Bad Request
 {
-  "code": "400",
-  "success": false,
-  "message": "Invalid request data",
-  "data": null
+	"code": "400",
+	"success": false,
+	"message": "Invalid request data",
+	"data": null
 }
+```
 
-Status Code: 500 Internal Server Error
-
+```json 500 Internal Server Error
 {
-  "code": "500",
-  "success": false,
-  "message": "PROCEDURE bankify GET_ACCOUNT_CLOSURE_REASONS does not exist",
-  "data": null
+	"code": "500",
+	"success": false,
+	"message": "PROCEDURE bankify GET_ACCOUNT_CLOSURE_REASONS does not exist",
+	"data": null
 }
+```
+
+</ResponseExample>

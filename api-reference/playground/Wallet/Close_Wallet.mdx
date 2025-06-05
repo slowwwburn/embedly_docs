@@ -7,85 +7,74 @@ description: "The endpoint allows you to close a specified wallet using the acco
 ## Request Body
 
 <ParamField body="accountNumber" type="string" required>
-  The account number to be closed or deleted.
-  **Example:** "3023563113"
+	The account number to be closed or deleted. **Example:** "3023563113"
 </ParamField>
 
 <ParamField body="accountClosureReasonId" type="number" required>
-  The ID representing the reason for account closure.
-  **Example:** 0
+	The ID representing the reason for account closure. **Example:** 0
 </ParamField>
 
 <ParamField body="tellerId" type="number">
-  The ID of the teller processing the closure.
-  **Example:** 0
+	The ID of the teller processing the closure. **Example:** 0
 </ParamField>
 
 <ParamField body="closeOrDelete" type="boolean" required>
-  Specifies whether to close or delete the account.
-  - `true`: Delete the account
-  - `false`: Close the account
+	Specifies whether to close or delete the account. - `true`: Delete the account
+	- `false`: Close the account
 </ParamField>
 
 <ParamField body="customerOrAccount" type="boolean" required>
-  Specifies whether the operation is for a customer or an account.
-  - `true`: Customer
-  - `false`: Account
+	Specifies whether the operation is for a customer or an account. - `true`:
+	Customer - `false`: Account
 </ParamField>
 
-## Response
+<ResponseExample>
 
-```json
-✅ Success Response
-Status Code: 200 OK
-
+```json Success
 {
-  "code": "200",
-  "success": true,
-  "message": "Wallet closed successfully.",
-  "data": {
-    // Additional data fields if applicable
-  }
+	"code": "200",
+	"success": true,
+	"message": "You can close this account.",
+	"data": {
+		// Additional details if applicable
+	}
 }
-
 ```
 
-## ❌ Error Responses
-
-```json
-
-Status Code: 400 Bad Request
-
+```json 400 Bad Request
 {
-  "code": "400",
-  "success": false,
-  "message": "Invalid request data",
-  "data": null
+	"code": "400",
+	"success": false,
+	"message": "Invalid request data",
+	"data": null
 }
+```
 
-Status Code: 401 Unauthorized
-
+```json 401 Unauthorized
 {
-  "code": "401",
-  "success": false,
-  "message": "You do not have rights to access this account",
-  "data": null
+	"code": "401",
+	"success": false,
+	"message": "You do not have rights to access this account",
+	"data": null
 }
+```
 
-Status Code: 403 Forbidden
-
+```json 403 Forbidden
 {
-  "code": "403",
-  "success": false,
-  "message": "Access denied for this operation",
-  "data": null
+	"code": "403",
+	"success": false,
+	"message": "Access denied for this operation",
+	"data": null
 }
+```
 
-Status Code: 500 Internal Server Error
-
+```json 500 Internal Server Error
 {
-  "code": "500",
-  "success": false,
-  "message": "An unexpected error occurred",
-  "data": null
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
 }
+```
+
+</ResponseExample>

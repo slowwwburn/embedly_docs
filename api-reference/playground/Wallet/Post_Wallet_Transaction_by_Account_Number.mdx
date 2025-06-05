@@ -4,96 +4,80 @@ api: "PUT /wallets/wallet/transaction/account-number/post"
 description: "The endpoint posts a transaction to a specified wallet using the account number.."
 ---
 
-
 ## Request Body
 
 <ParamField body="id" type="number">
-  Internal identifier for the transaction.
-  **Example:** 0
+	Internal identifier for the transaction. **Example:** 0
 </ParamField>
 
 <ParamField body="productId" type="string" required>
-  Unique identifier for the product associated with the transaction.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the product associated with the transaction.
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="organizationId" type="string">
-  Unique identifier for the organization processing the transaction.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the organization processing the transaction.
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="amount" type="number" required>
-  The amount of the transaction.
-  **Example:** 200
+	The amount of the transaction. **Example:** 200
 </ParamField>
 
 <ParamField body="fee" type="number">
-  The fee charged for the transaction.
-  **Example:** 1.0
+	The fee charged for the transaction. **Example:** 1.0
 </ParamField>
 
 <ParamField body="postedDate" type="string" format="date-time">
-  The date and time when the transaction was posted.
-  **Example:** "2025-03-20T18:28:13.015Z"
+	The date and time when the transaction was posted. **Example:**
+	"2025-03-20T18:28:13.015Z"
 </ParamField>
 
 <ParamField body="valueDate" type="string" format="date-time">
-  The date and time when the transaction takes effect.
-  **Example:** "2025-03-20T18:28:13.015Z"
+	The date and time when the transaction takes effect. **Example:**
+	"2025-03-20T18:28:13.015Z"
 </ParamField>
 
 <ParamField body="transactionReference" type="string">
-  A unique reference identifier for the transaction.
-  **Example:** "Rf399596950"
+	A unique reference identifier for the transaction. **Example:** "Rf399596950"
 </ParamField>
 
 <ParamField body="walletId" type="string">
-  Unique identifier for the wallet involved in the transaction.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the wallet involved in the transaction. **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="customerId" type="string">
-  Unique identifier for the customer who owns the wallet.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the customer who owns the wallet. **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="isPosted" type="boolean">
-  Indicates whether the transaction has been posted.
-  **Example:** true
+	Indicates whether the transaction has been posted. **Example:** true
 </ParamField>
 
 <ParamField body="direction" type="string" required>
-  The direction of the transaction (CREDIT/DEBIT).
+	The direction of the transaction (CREDIT/DEBIT).
 </ParamField>
 
 <ParamField body="remarks" type="string">
-  Additional notes or description for the transaction.
-  **Example:** "Dog food"
+	Additional notes or description for the transaction. **Example:** "Dog food"
 </ParamField>
 
 <ParamField body="currency" type="string" required>
-  The currency code for the transaction.
-  **Example:** "USD"
+	The currency code for the transaction. **Example:** "USD"
 </ParamField>
 
 <ParamField body="batchReference" type="string">
-  Reference number for batch transactions.
-  **Example:** "5869999"
+	Reference number for batch transactions. **Example:** "5869999"
 </ParamField>
 
 <ParamField body="accountNumber" type="string">
-  The account number associated with the transaction.
-  **Example:** "3025831129"
+	The account number associated with the transaction. **Example:** "3025831129"
 </ParamField>
 
-
-## Sample Response
-
-✅ Success Response
-
-```json
-Status Code: 200 OK
-
+<ResponseExample>
+```json 200 Success
 {
   "code": "200",
   "success": true,
@@ -104,43 +88,39 @@ Status Code: 200 OK
 }
 ```
 
-## ❌ Error Responses
-
-```json
-Status Code: 400 Bad Request
-
+```json 400 Bad Request
 {
-  "code": "400",
-  "success": false,
-  "message": "Invalid request data",
-  "data": null
+	"code": "400",
+	"success": false,
+	"message": "Invalid request data",
+	"data": null
 }
-
-Status Code: 404 Not Found
-
-{
-  "code": "404",
-  "success": false,
-  "message": "Invalid account number and organization",
-  "data": null
-}
-
-Status Code: 401 Unauthorized
-
-{
-  "code": "401",
-  "success": false,
-  "message": "Unauthorized access",
-  "data": null
-}
-
-Status Code: 500 Internal Server Error
-
-{
-  "code": "500",
-  "success": false,
-  "message": "An unexpected error occurred",
-  "data": null
-}
-
 ```
+
+```json 404 Not Found
+{
+	"code": "404",
+	"success": false,
+	"message": "Invalid account number and organization",
+	"data": null
+}
+```
+
+```json 401 Unauthorized
+{
+	"code": "401",
+	"success": false,
+	"message": "Unauthorized access",
+	"data": null
+}
+```
+
+```json 500 Internal Server Error
+{
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
+}
+```
+</ResponseExample>
