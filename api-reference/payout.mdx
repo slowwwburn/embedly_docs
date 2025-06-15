@@ -23,4 +23,50 @@ https://payout-prod.embedly.ng/
 
 ## Overview
 
-Our Payout APIs allow you to seamlessly disburse funds to accounts across financial institutions directly from your platform. Whether you're sending loan disbursements, vendor payments, salary payouts, or refunds, our APIs support secure and efficient transfers—including interbank, intra-bank, and wallet-based options. With built-in account validation, real-time processing, and transaction status tracking, you can automate and scale your payout operations while delivering a smooth, reliable experience to your end users.
+Our Payout APIs allow you to seamlessly transfer funds out of your ecosystem to accounts across financial institutions directly from your platform. Whether you're sending loan disbursements, vendor payments, salary payouts, or refunds, our APIs support secure and efficient transfers—including interbank, intra-bank. With real-time processing, and transaction status tracking, you can automate and scale your payout operations while delivering a smooth, reliable experience to your end users.
+
+## How Does It Work?
+
+<ol>
+	<li>
+		Initiating a Transfer Request: To start a transfer, you need to specify the
+		account you want to send money from, the account you want to send money to,
+		and the amount you wish to transfer. You can also add a short note to
+		explain the reason for the transfer.
+	</li>
+	<Info>
+		Account numbers for wallets can be retrieved using the get wallet details
+		endpoint. However to reduce the amount of api calls you need to make, you
+		should store the account number for each wallet once the wallet is
+		successfully created.
+	</Info>
+	<li>
+		Checking Transfer Status: After a transaction has been successfully
+		initiated, you can check to see if it's been completed. The status will let
+		you know if the transfer is still processing, if it's been processed
+		successfully, or if there was an issue.
+	</li>
+</ol>
+
+## Common Questions
+
+<ul>
+	<li>
+		**How Much Can I Transfer?** The amount you can transfer depends on your
+		daily limit per the customer's kyc tier
+	</li>
+	<li>
+		**How Long Does It Take?** Transfers within the same bank are typically
+		processed instantly, while interbank transfers usually take at least an
+		hour.
+	</li>
+</ul>
+
+## Tips for Using the Service
+
+- Keep Track of Your Transfers: Always note the transaction
+  ID you receive after initiating a transfer. It helps in tracking and confirming your
+  transaction.
+- Double-Check Details: Before you confirm a transfer, make sure all the
+  details, like account numbers and amounts, are correct to avoid errors.
+- Understand Your Limits: Be aware of any daily limits on how much you can transfer.

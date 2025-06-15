@@ -1,0 +1,89 @@
+---
+title: "Going Live on Embedly"
+description: "Prepare your application to go live on Embedly. Follow these pre-going live activities to ensure a smooth transition from staging to production."
+---
+
+Before taking your application live in the Embedly production environment, it’s essential to complete several **pre-going live activities**. These steps ensure that your integration is secure, compliant, and fully tested, preventing issues when handling real data and transactions.
+
+---
+
+## Pre-Going Live Checklist
+
+<Steps>
+
+  <Step title="1: Finalize API Integration in Staging">
+    Before going live, ensure that your **API integration** is fully tested in the staging environment. The staging mirrors the production environment but uses mock data, allowing you to test without affecting live systems.
+
+    <Info>
+      Run through all key API calls—like creating customers, creating wallets, processing payments, and querying data—to ensure your integration behaves as expected. Pay close attention to **authentication**, **error handling**, and **data validation**.
+    </Info>
+  </Step>
+
+  <Step title="2: Conduct Security Audits">
+    Security is paramount when going live. Ensure your system meets industry-standard security practices, such as:
+
+    - **API Key management:** Safeguard your API keys, using secure storage and regular rotation.
+    - **Authentication:** Ensure secure authentication mechanisms are in place for users and administrators.
+
+    <Warning>
+      Failing to secure your integration can lead to data breaches, unauthorized access, and service disruptions. Perform regular security audits to safeguard sensitive information.
+    </Warning>
+  </Step>
+
+  <Step title="3: Complete KYC and Compliance Requirements">
+    Embedly requires all merchants to complete **Know Your Business (KYB)** and **compliance checks** before moving to production. Ensure that:
+
+    - You have provided accurate information about the business and its representatives.
+    - All required documents (such as government-issued IDs and business certificates) are uploaded.
+    - Your business is compliant with regional regulations (e.g., GDPR, PCI DSS).
+  </Step>
+
+  <Step title="4: Set Up Production API Key">
+    Once you’ve tested your integration in the staging, it’s time to switch to the **production environment**. To do this, you’ll need to:
+
+    - Retrieve your **production API key** from the Embedly Dashboard.
+    - Update your application’s configuration to use the production base URL and keys.
+
+    <Warning>
+      Do not use staging keys in the production environment. Make sure to update your credentials to production API keys before going live.
+    </Warning>
+  </Step>
+
+  <Step title="6: Enable Real-Time Monitoring and Alerts">
+    When your application goes live, it’s critical to have real-time monitoring and alerts set up to track transactions and system health. Ensure that:
+
+    - You’ve enabled **alerts** for errors, failed transactions, or system downtime.
+    - You have **transaction logging** enabled to monitor API requests, response times, and errors.
+
+    <Tooltip tip="Real-time monitoring allows you to quickly respond to issues that may arise after going live, ensuring minimal disruption.">
+      Why enable monitoring?
+    </Tooltip>
+
+  </Step>
+
+  <Step title="7: Prepare for Post-Go-Live Support">
+    Ensure you have a support plan in place for post-launch activities. This includes:
+
+    - **User support:** A strategy to handle customer inquiries and troubleshoot issues.
+    - **Technical support:** A team ready to handle technical issues with API integration, authentication, or transaction processing.
+    - **Monitoring ongoing compliance:** Ensure ongoing regulatory compliance and be ready to address new requirements.
+
+    <Info>
+      Staying proactive about customer and technical support can prevent disruptions and help maintain user trust post-launch.
+    </Info>
+  </Step>
+
+</Steps>
+
+---
+
+## Final Reminders
+
+- **Testing in Staging:** Always ensure your API works seamlessly in the staging before moving to production.
+- **Security:** Perform regular audits and use best practices for api key management.
+- **Compliance:** Complete all KYC requirements and ensure your business complies with local regulations.
+- **Support Plan:** Have a post-launch support strategy in place for both technical and customer support.
+
+<Check>
+Once you've completed the steps above, you're ready to go live with Embedly. Ensure you’ve carefully reviewed each step to guarantee a smooth and secure transition to the production environment.
+</Check>

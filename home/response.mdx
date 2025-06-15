@@ -1,0 +1,88 @@
+---
+title: "Response Codes"
+description: "When working with the Embedly API, you will encounter various response codes that indicate the outcome of your requests. These codes follow the ISO 8583 standard, commonly used in financial transactions. Understanding these codes is essential for handling API responses effectively."
+---
+# Detailed Response Code Table
+
+| **Response Code** | **Meaning**                           | **Description**                                             | **Expected Action**                                                                 |
+|-------------------|---------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| **00**            | Approved                              | Transaction was successful.                                 | Proceed as expected.                                                                |
+| **01**            | Status unknown                        | Status of the transaction is currently unknown.             | Wait for the settlement report to confirm the final status.                         |
+| **03**            | Invalid Sender                        | The sender's credentials are invalid.                       | Verify the sender’s credentials and retry the request.                              |
+| **05**            | Do not honor                          | Transaction should not be honored.                          | Investigate the sender’s account restrictions before retrying.                      |
+| **06**            | Dormant Account                       | The account is inactive or dormant.                         | Reactivate the account or use a different account.                                  |
+| **07**            | Invalid Account                       | The account number provided is invalid.                     | Check the account number and correct any errors before retrying.                    |
+| **08**            | Account Name Mismatch                 | Account name does not match the account number.             | Ensure the account name matches the account number provided.                        |
+| **09**            | Request processing in progress        | Request is still being processed.                           | Consider polling or waiting for the final status.                                   |
+| **12**            | Invalid transaction                   | Transaction type or details are invalid.                    | Review and correct the transaction details.                                         |
+| **13**            | Invalid Amount                        | The amount specified is not valid.                          | Ensure the transaction amount is correct.                                           |
+| **14**            | Invalid Batch Number                  | The batch number provided is invalid.                       | Verify and correct the batch number before retrying.                                |
+| **15**            | Invalid Session or Record ID          | The session or record ID is invalid.                        | Check the session or record ID and correct any errors.                              |
+| **16**            | Unknown Bank Code                     | The bank code provided is not recognized.                   | Verify the bank code and correct any errors.                                        |
+| **17**            | Invalid Channel                       | The specified channel is not valid for this transaction.    | Review the transaction channel and adjust accordingly.                              |
+| **18**            | Wrong Method Call                     | The API method call is not appropriate for this transaction.| Check the API documentation and use the correct method.                             |
+| **21**            | No action is taken                    | The transaction was not processed.                          | Determine the reason for no action and address it before retrying.                  |
+| **25**            | Unable to locate record               | The specified record could not be found.                    | Verify the record details and retry the request.                                    |
+| **26**            | Duplicate record                      | The record already exists.                                  | Ensure the request is not duplicating an existing record.                           |
+| **30**            | Format error                          | The transaction format is incorrect.                        | Review the request format and correct any errors.                                   |
+| **34**            | Suspected fraud                       | Transaction is flagged for suspected fraud.                 | Investigate the transaction for potential fraud before proceeding.                  |
+| **35**            | Contact sending bank                  | The transaction requires further verification by the sender's bank. | Advise the sender to contact their bank for further information.            |
+| **51**            | No sufficient funds                   | Sender’s account lacks sufficient funds.                    | Inform the sender to provide sufficient funds or use a different account.           |
+| **57**            | Transaction not permitted to sender   | Sender is not permitted to perform this transaction.        | Verify transaction permissions for the sender.                                      |
+| **58**            | Transaction not permitted on channel  | Transaction is not allowed on the specified channel.        | Review the channel’s permissions for this transaction.                              |
+| **61**            | Transfer limit exceeded               | Transaction exceeds the sender's transfer limit.            | Reduce the transaction amount or increase the sender’s transfer limit.              |
+| **63**            | Security violation                    | A security issue was detected with the transaction.         | Review security settings and ensure compliance with security protocols.             |
+| **65**            | Exceeds withdrawal frequency          | The transaction exceeds the allowed number of withdrawals.  | Advise the sender to adhere to the withdrawal frequency limits or contact support.   |
+| **68**            | Response received too late            | The response from the transaction was delayed.              | Investigate the cause of the delay and retry if necessary.                          |
+| **69**            | Unsuccessful Account/Amount block     | The attempt to block the account or amount was unsuccessful.| Verify the block request and retry the operation.                                   |
+| **70**            | Unsuccessful Account/Amount unblock   | The attempt to unblock the account or amount was unsuccessful. | Verify the unblock request and retry the operation.                             |
+| **71**            | Empty Mandate Reference Number        | The mandate reference number was not provided.              | Ensure that a valid mandate reference number is included in the request.            |
+| **91**            | Beneficiary Bank not available        | The beneficiary's bank is currently unavailable.            | Retry the transaction later or contact the bank for further details.                |
+| **92**            | Routing error                         | A routing error occurred in the transaction.                | Review the routing information and correct any errors before retrying.              |
+| **94**            | Duplicate transaction                 | The transaction has already been processed.                 | Ensure that your application is not duplicating requests.                           |
+| **96**            | System malfunction                    | A system error occurred, and the transaction could not be processed. | Retry the transaction later or investigate system issues.                           |
+| **97**            | Timeout waiting for a response        | The system timed out while waiting for a response.          | Retry the transaction after checking for network or system delays.                  |
+---
+
+# How to Use These Codes
+
+<Note>
+Understanding and properly handling response codes is critical for building reliable and user-friendly applications. Below are some key considerations for using these codes in your application logic.
+</Note>
+
+- **00 (Approved or completed successfully):** Indicates that the transaction was successful. Your application can proceed as expected.
+
+- **01 (Status unknown):** The transaction status is currently unknown. You should wait for the settlement report to confirm the final status.
+
+- **03, 05, 06, 07:** These codes typically indicate issues with the sender or the sender's account, such as invalid credentials or a dormant account.
+
+- **09 (Request processing in progress):** The request is still being processed. You may need to poll or wait for a final status.
+
+- **12, 13, 14, 15:** These codes indicate issues with the transaction details, such as an invalid amount, transaction type, or record ID.
+
+- **51 (No sufficient funds):** The sender’s account does not have enough funds to complete the transaction. This will typically require action on the sender's part.
+
+- **57, 58, 61:** These codes are related to transaction permissions and limits, such as exceeding withdrawal limits or attempting a restricted transaction.
+
+- **94 (Duplicate transaction):** This indicates that the transaction has already been processed. Ensure that your application is not unintentionally duplicating requests.
+
+- **96, 97:** These codes suggest technical issues such as a system malfunction or timeout. These often require retrying the request or investigating the system status.
+
+---
+
+# Best Practices
+
+<Tip>
+Implement robust error handling in your application to manage different response codes effectively. This includes retry mechanisms, user notifications, and logging for future analysis.
+</Tip>
+
+- **Handling Errors:** When you receive an error code, it’s important to implement appropriate error handling in your application. This could involve retrying the transaction, alerting the user, or logging the error for further investigation.
+
+- **Logging:** Keep logs of all response codes for auditing purposes. This can help in troubleshooting issues and improving the reliability of your application.
+
+- **User Feedback:** For codes that indicate user action is required (e.g., insufficient funds), ensure that your application provides clear and actionable feedback to the user.
+
+- **System Monitoring:** Regularly monitor your transactions for codes like 96 (System malfunction) or 97 (Timeout), as these can indicate underlying issues that need to be addressed promptly.
+
+---
+

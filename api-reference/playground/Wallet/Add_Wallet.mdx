@@ -4,44 +4,55 @@ api: "POST /wallets/add"
 description: "The endpoint is designed to create a new wallet for a customer."
 ---
 
+<Info>
+	**To improve performance on your system, the upon successful creation of a
+	wallet in favour of a customer, the returned walletId, accountNumber and
+	bankCode should be stored in your database**
+</Info>
+
 ## Request Body
 
 <ParamField body="id" type="string">
-	Unique identifier for the wallet. **Example:**
+	Your Unique identifier for the wallet. _(Must be a UUID)_ **Example:**
 	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="walletGroupId" type="string">
-	The ID of the wallet group this wallet belongs to. **Example:**
-	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	The ID of the wallet group this wallet belongs to. _(Must be a UUID)_
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6". `This is an optional
+	field`
 </ParamField>
 
 <ParamField body="customerId" type="string" required>
-	The ID of the customer who owns this wallet. **Example:**
+	The ID of the customer who owns this wallet. _(Must be a UUID)_ **Example:**
 	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="availableBalance" type="number">
-	The balance available for transactions. **Example:** 23444440
+	The balance available for transactions. **Example:** 0
 </ParamField>
 
 <ParamField body="ledgerBalance" type="number">
-	The total balance including pending transactions. **Example:** 500000
+	The total balance including pending transactions. **Example:** 0
 </ParamField>
 
 <ParamField body="walletRestrictionId" type="string">
-	ID referencing wallet restrictions. **Example:**
-	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	ID referencing wallet restrictions. _(Must be a UUID)_ **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6" `This is an optional field, the value
+	should be gotten from the get wallet restrictions endpoint in the wallet utils
+	section`
 </ParamField>
 
-<ParamField body="walletClassificationId" type="string">
-	ID referencing wallet classification. **Example:**
-	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+<ParamField body="walletClassificationId" type="string" required>
+	ID referencing wallet classification. _(Must be a UUID)_ **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6" `The value should be gotten from the
+	get wallet classification endpoint in the wallet utils section`
 </ParamField>
 
 <ParamField body="currencyId" type="string" required>
-	ID of the currency for this wallet. **Example:**
-	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	ID of the currency for this wallet. _(Must be a UUID)_ **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6" `The value should be gotten from the
+	get currency endpoint in the wallet utils section`
 </ParamField>
 
 <ParamField body="isInternal" type="boolean">
@@ -52,39 +63,45 @@ description: "The endpoint is designed to create a new wallet for a customer."
 	Whether this is the default wallet for the customer. **Example:** true
 </ParamField>
 
-<ParamField body="name" type="string" required>
-	Name of the wallet or wallet owner. **Example:** "Emmanuel Emah"
+<ParamField body="name" type="string">
+	Name of the wallet or wallet owner. **Example:** "Emmanuel Emah" `This is an
+	optional field`
 </ParamField>
 
 <ParamField body="overdraft" type="number">
-	Available overdraft amount, if any. **Example:** 0
+	Available overdraft amount, if any. **Example:** 0 `This is an optional field`
 </ParamField>
 
 <ParamField body="virtualAccount" type="object">
-	Virtual account details associated with the wallet.
+	Virtual account details associated with the wallet. `This is an optional
+	field`
 </ParamField>
 
 <Expandable title="virtualAccount properties">
 	<ParamField body="virtualAccount.accountNumber" type="string">
-		The virtual account number. **Example:** "0330000045"
+		The virtual account number. **Example:** "0330000045" `This is an optional
+		field`
 	</ParamField>
 
     <ParamField body="virtualAccount.bankCode" type="string">
-    	The bank code for the virtual account. **Example:** "504"
+    	The bank code for the virtual account. **Example:** "504" `This is an
+    	optional field`
     </ParamField>
 
     <ParamField body="virtualAccount.bankName" type="string">
-    	The name of the bank for the virtual account. **Example:** "Union"
+    	The name of the bank for the virtual account. **Example:** "Sterling" `This
+    	is an optional field`
     </ParamField>
 
 </Expandable>
 
 <ParamField body="mobNum" type="string">
-	Mobile number associated with the wallet. **Example:** "2345678880"
+	Mobile number associated with the wallet. **Example:** "2345678880" `This is
+	an optional field`
 </ParamField>
 
 <ParamField body="customerTypeId" type="string">
-	ID referencing the customer type. **Example:**
+	ID referencing the customer type. _(Must be a UUID)_ **Example:**
 	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 

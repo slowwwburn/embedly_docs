@@ -1,0 +1,105 @@
+---
+title: "Webhook"
+description: "Webhooks are a powerful feature that allows your application to receive real-time notifications about specific events that occur within the Embedly platform. By setting up webhooks, you can automate processes, update records, and trigger workflows in your application as soon as an event happens."
+---
+
+## What Are Webhooks?
+
+Webhooks are user-defined HTTP callbacks that are triggered by specific events. When one of those events is triggered, Embedly will send an HTTP POST request to the webhook URL you specify. This request contains details about the event, allowing your application to handle the event data in real-time.
+
+<Info>
+	Webhooks enable your application to respond to events as they happen, ensuring
+	that your system stays up-to-date without the need for constant polling.
+</Info>
+
+### Common Use Cases for Webhooks
+
+<CardGroup cols={2}>
+	<Card title="Payment Notifications">
+		Get notified when a payment is successful or fails, and update your records
+		accordingly.
+	</Card>
+	<Card title="Wallet Updates">
+		Receive updates when a wallet is updated, or deleted.
+	</Card>
+	<Card title="Transaction Events">
+		Monitor transactions in real-time, enabling immediate action or analysis.
+	</Card>
+	<Card title="Collection Events">
+		Get notified when a wallet is credited, enabling you to provide service
+		seamlessly.
+	</Card>
+</CardGroup>
+
+## Setting Up Webhooks on Embedly Dashboard
+
+To start using webhooks, you need to configure them through the Embedly Dashboard. Follow the steps below to set up your webhooks:
+
+<Steps>
+	<Step title="Log in to the Embedly Dashboard">
+		Begin by logging in to your Embedly dashboard.
+	</Step>
+	<Step title="Navigate to the Webhooks Section">
+		Once logged in, navigate to the APIs & Integration page
+	</Step>
+	<Step title="Configre Your Webhook">
+		<ul>
+			<li>
+				<strong>Click on "Edit":</strong> This will open a form where you can
+				enter your webhook url.
+			</li>
+			<li>
+				<strong>Enter the Webhook URL:</strong> Provide the URL where you want
+				to receive webhook notifications. Ensure that this URL is accessible
+				from the public internet.
+			</li>
+			<li>
+				<strong>Save the Webhook:</strong> Save the webhook configuration.
+			</li>
+		</ul>
+	</Step>
+</Steps>
+
+<Tip>
+	Ensure that your server responds quickly to webhook requests. Webhooks that do
+	not receive a `200 OK` response may be retried multiple times by Embedly.
+</Tip>
+
+Here’s the guide rewritten using the **Steps** component to clearly outline the process for handling webhooks in your application:
+
+## Handling Webhooks in Your Application
+
+When your application receives a webhook, it’s important to handle it efficiently and securely. Follow these steps to manage incoming webhooks:
+
+<Steps>
+  <Step title="Step 1: Parse the Incoming Request">
+      Webhooks are sent as HTTP POST requests with a JSON payload. 
+  </Step>
+
+  <Step title="Step 2: Verify the Webhook">
+    If you have set a secret key, you should verify the signature included in the webhook request headers. This verification ensures that the request is authentic and actually from Embedly.
+
+    ```http
+      POST /webhook-endpoint HTTP/1.1
+      Host: yourapplication.com
+      Content-Type: application/json
+      X-Auth-Signature: sha256(secret)
+    ```
+
+  </Step>
+
+  <Step title="Step 3: Respond to the Webhook">
+    Always respond to the webhook request with a `200 OK` status code once your application has processed the event. This response tells Embedly that the webhook was received and handled successfully.
+
+    ```http
+      HTTP/1.1 200 OK
+    ```
+
+  </Step>
+</Steps>
+
+<Warning>
+	Ensure your webhook endpoint is secure. Consider implementing rate limiting
+	and verifying the signature of incoming requests to prevent unauthorized
+	access.
+</Warning>

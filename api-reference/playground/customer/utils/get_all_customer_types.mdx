@@ -1,0 +1,47 @@
+---
+title: "Get All Customer types"
+api: "GET /customers/types/all"
+description: "This endpoint enables you to retrieve the Id of a specific customer."
+---
+
+# Get All Customer types
+
+<ResponseExample>
+
+```json 200 Success
+{
+	"code": "00",
+	"success": true,
+	"message": "Retrieved Successfully",
+	"data": [
+		{
+			"id": "0ed8b99b-8097-4e49-bd4c-ff0410c57d27",
+			"name": "Corporate"
+		},
+		{
+			"id": "f671da57-e281-4b40-965f-a96f4205405e",
+			"name": "Individual"
+		}
+	]
+}
+```
+
+```json 400 Bad Request
+{
+	"code": "400",
+	"success": false,
+	"message": "Invalid Admin Key",
+	"data": null
+}
+```
+
+```json 500 Internal Server Error
+{
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
+}
+```
+
+</ResponseExample>

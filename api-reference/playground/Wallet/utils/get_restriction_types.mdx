@@ -1,0 +1,52 @@
+---
+title: "Retrieve Wallet Restriction Types"
+api: "GET /wallets/get/restriction/types"
+description: "The endpoint retrieves a list of pre-configured wallet restriction types on the Embedly platform."
+---
+
+<ResponseExample>
+
+```json 200 Success
+{
+	"code": "00",
+	"success": true,
+	"message": "Retrieved Successfully",
+	"data": [
+		{
+			"id": "3fa68c68-4203-4487-a56f-222b128a9b56",
+			"name": "PNDC",
+			"description": "Post no Debit or Credit"
+		},
+		{
+			"id": "aedfca78-6d3b-4199-885b-03df87e1a1f0",
+			"name": "PND",
+			"description": "Post no Debit"
+		},
+		{
+			"id": "dc20754f-fcdd-4193-be9b-1e3f04b68379",
+			"name": "PNC",
+			"description": "Post no Credit"
+		}
+	]
+}
+```
+
+```json 401 Unauthorized
+{
+	"code": "401",
+	"success": false,
+	"message": "Invalid Key for admin APIs",
+	"data": null
+}
+```
+
+```json 500 Internal Server Error
+{
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
+}
+```
+
+</ResponseExample>

@@ -1,0 +1,19 @@
+---
+title: "Customer KYC Tier 2 Upgrade"
+api: "POST /api/v1/customers/kyc/tier2-upgrade"
+description: "This endpoint enables you to upgrade a customer's KYC to Tier 2"
+---
+
+<ParamField body="customerId" type="string" required>
+	The unique identifier of the customer whose KYC tier is being upgraded.
+	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ParamField body="identifierType" type="string" required>
+	The type of identifier being provided to complete customer KYC 2 upgrade
+	**Example:** `BVN` **Possible values:** `BVN | NIN`
+</ParamField>
+
+<ParamField body="identifierValue" type="string" required>
+	The unique value of the customer's KYC identifier. **Example:** `12345678909`
+</ParamField>

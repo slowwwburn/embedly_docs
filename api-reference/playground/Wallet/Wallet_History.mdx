@@ -1,39 +1,40 @@
 ---
 title: "Wallet History"
 api: "POST /wallets/history"
-description: "The endpoint displays the transaction history for a specific wallet within an organization over a specified time range."
+description: "The endpoint displays the transaction history for a specific wallet using the walletId over a specified time range."
 ---
 
 ## Request Body
 
 <ParamField body="customerId" type="string" required>
-  Unique identifier for the customer.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the customer. **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="organizationId" type="string" required>
-  Unique identifier for the organization.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the organization. **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="walletId" type="string" required>
-  Unique identifier for the wallet.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the wallet. **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 <ParamField body="from" type="string" format="date-time" required>
-  Start date and time for the query period.
-  **Example:** "2025-03-19T16:18:37.676Z"
+	Start date and time for the query period. **Example:**
+	"2025-03-19T16:18:37.676Z"
 </ParamField>
 
 <ParamField body="to" type="string" format="date-time" required>
-  End date and time for the query period.
-  **Example:** "2025-03-19T16:18:37.676Z"
+	End date and time for the query period. **Example:**
+	"2025-03-19T16:18:37.676Z"
 </ParamField>
 
-
 ## Response
+
 ✅ Success Response
+
 ```json
 
 Status Code: 200 OK
@@ -51,6 +52,7 @@ Status Code: 200 OK
 ```
 
 ## ❌ Error Responses
+
 ```json
 Status Code: 404 Not Found
 

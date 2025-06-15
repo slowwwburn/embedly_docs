@@ -1,0 +1,113 @@
+---
+title: "Security"
+description: "Security is critical when integrating with Embedly, ensuring that your data and the data of your users are protected at every step. Follow these security guidelines and best practices to safeguard your integration and maintain a secure connection with Embedly."
+---
+
+## Security Best Practices
+
+<Steps>
+
+  <Step title="1. Secure API Key Management">
+    **API keys** are used to authenticate your requests to Embedly, and it’s crucial to handle them securely:
+
+    - **Store Tokens Securely**: Use environment variables or a secure vault for storing your api key. Avoid hardcoding api key directly into your codebase.
+    - **Rotate your API Regularly**: Periodically rotate your api key to reduce the risk of unauthorized access.
+    - **Limit API key Scope**: Issue your api key with the minimum permissions necessary for your use case.
+
+    <Warning>
+      If an api key is exposed or compromised, refresh it immediately through the Embedly Dashboard to prevent unauthorized access.
+    </Warning>
+
+  </Step>
+
+  <Step title="2. Implement Strong User Authentication">
+    Ensure that both internal users (e.g., administrators) and external users (e.g., customers) are authenticated securely:
+
+    - **Use Multi-Factor Authentication (MFA)**: Require MFA for all admin access to the Embedly Dashboard.
+    - **Enforce Strong Passwords**: Implement password policies that require a combination of letters, numbers, and special characters.
+    - **Monitor Login Attempts**: Track failed login attempts and consider implementing account lockout mechanisms to prevent brute-force attacks.
+
+    <Tooltip tip="Multi-Factor Authentication (MFA) adds an extra layer of security by requiring users to provide more than one verification factor to access their accounts.">
+      What is MFA?
+    </Tooltip>
+
+    <Warning>
+      Weak authentication can expose your integration to unauthorized access. Always require strong passwords and MFA for secure access.
+    </Warning>
+
+  </Step>
+
+  <Step title="3. Monitor and Log API Activity">
+    Regularly monitoring your API activity helps you detect and respond to suspicious behavior:
+
+    - **Enable API Logs**: Use the Embedly Dashboard to enable detailed logging of API requests, responses, and errors.
+    - **Set Up Alerts**: Create alerts for abnormal activities like repeated failed login attempts, unusual transaction volumes, or access from unknown IP addresses.
+    - **Regularly Review Logs**: Perform periodic reviews of API logs to ensure that no unauthorized activity has occurred.
+
+    <Tooltip tip="Logging and monitoring help track API activity and can be critical for detecting and responding to security incidents.">
+      Why is logging important?
+    </Tooltip>
+
+    <Info>
+      API logging and monitoring provide visibility into how your integration is being used, allowing you to take action quickly if an issue arises.
+    </Info>
+
+  </Step>
+
+  <Step title="4. Implement Incident Response Procedures">
+    Preparing for potential security incidents helps minimize the impact on your business and users:
+
+    - **Define an Incident Response Plan**: Create a plan that outlines the steps to take if a security incident occurs, including whom to notify and how to contain the issue.
+    - **Train Your Team**: Ensure that your team is trained on the incident response procedures and knows how to use the tools available for security monitoring.
+    - **Conduct Regular Drills**: Run regular security drills to test your incident response plan and improve your team’s readiness.
+
+    <Tooltip tip="An incident response plan provides a structured approach to managing security incidents, reducing the time and impact of a breach.">
+      What is an incident response plan?
+    </Tooltip>
+
+    <Warning>
+      A slow or ineffective response to a security incident can result in significant data loss and damage to your reputation.
+    </Warning>
+
+  </Step>
+
+</Steps>
+
+---
+
+## Key Security Features
+
+- **API Logging**: Provides detailed insights into API usage, helping you monitor access and detect suspicious activity.
+- **Multi-Factor Authentication (MFA)**: Adds an extra layer of security for accessing sensitive areas like the Embedly Dashboard.
+
+<Check>
+	Following these security best practices will help you protect your integration
+	with Embedly and maintain the trust of your users.
+</Check>
+
+---
+
+## Security Tips for Developers
+
+<Tip>
+	Use environment variables or secure vaults for storing API keys and secrets,
+	keeping them out of source code repositories.
+</Tip>
+
+<Tip>
+	Regularly audit your API keys and user access levels to ensure that no
+	unnecessary permissions are granted.
+</Tip>
+
+---
+
+## Common Security Risks to Avoid
+
+- **Exposed API key**: Accidentally exposing your api key in public repositories can result in unauthorized access to your API. Always use `.env` files or secure storage solutions.
+- **Weak Authentication**: Not enforcing strong passwords or MFA can lead to unauthorized access. Implement robust authentication mechanisms for all users.
+- **Failure to Monitor API Activity**: Without proper logging and monitoring, you may not detect unauthorized access until it’s too late. Always enable and review logs.
+
+<Warning>
+	Neglecting security practices can put your business and your users' data at
+	risk. Always prioritize security when integrating with Embedly.
+</Warning>

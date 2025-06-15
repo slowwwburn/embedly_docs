@@ -1,0 +1,72 @@
+---
+title: "Retrieve Currencies"
+api: "GET /utilities/currencies/get"
+description: "The endpoint retrieves a list of available currencies on the Embedly platform."
+---
+
+<ResponseExample>
+
+```json 200 Success
+{
+	"code": "00",
+	"success": true,
+	"message": "Retrieved Successfully",
+	"data": [
+		{
+			"id": "6eeb54c8-24d7-11f0-a818-6045bd97b81d",
+			"name": "Canadian Dollars4",
+			"shortName": "CD4"
+		},
+		{
+			"id": "82647b29-1302-11f0-a8a9-6045bd97b81d",
+			"name": "RAND",
+			"shortName": "ZAR"
+		},
+		{
+			"id": "98d64583-fb7e-11ef-a8a9-6045bd97b81d",
+			"name": "Canadian Dollars",
+			"shortName": "CAD"
+		},
+		{
+			"id": "af8c9168-fdc5-11ef-a8a9-6045bd97b81d",
+			"name": "Canadian Dollars3",
+			"shortName": "CD3"
+		},
+		{
+			"id": "c8fe419f-fb7e-11ef-a8a9-6045bd97b81d",
+			"name": "Canadian Dollars2",
+			"shortName": "CD2"
+		},
+		{
+			"id": "d98ba5ab-fb78-11ef-a8a9-6045bd97b81d",
+			"name": "Tanzania Shillings",
+			"shortName": "TZS"
+		},
+		{
+			"id": "fd5e474d-bb42-4db1-ab74-e8d2a01047e9",
+			"name": "Nigeria Naira",
+			"shortName": "NGN"
+		}
+	]
+}
+```
+
+```json 401 Unauthorized
+{
+	"code": "401",
+	"success": false,
+	"message": "Invalid Key for admin APIs",
+	"data": null
+}
+```
+
+```json 500 Internal Server Error
+{
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
+}
+```
+
+</ResponseExample>

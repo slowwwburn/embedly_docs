@@ -1,0 +1,252 @@
+---
+title: "Customer KYC Tier 3 Upgrade"
+api: "POST /api/v1/customers/kyc/tier3-upgrade"
+description: "This endpoint enables you to upgrade a customer's KYC to Tier 3"
+---
+
+<ParamField body="CustomerId" type="string" required>
+	The Embedly unique identifier of the customer whose KYC tier is being
+	upgraded. **Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ParamField body="UtilityBillDocument" type="file" required>
+	The utility document of the customer's address.
+</ParamField>
+
+<ParamField body="BillType" type="string" required>
+	The type of utility bill being provided. **Example:** `ELECTRICITY`. Posssible
+	values: `ELECTRICITY | WATER | LAWMA`
+</ParamField>
+
+<ParamField body="Address.CustomerReference" type="string" required>
+	The Embedly unique identifier of the customer whose KYC tier is being
+	upgraded. **Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ParamField body="Address.Street" type="string" required>
+	The street where the customer resides
+</ParamField>
+
+<ParamField body="Address.LgaName" type="string" required>
+	The local government where the customer resides
+</ParamField>
+
+<ParamField body="Address.StateName" type="string" required>
+	The state where the customer resides
+</ParamField>
+
+<ParamField body="Address.Landmark" type="string" required>
+	A Landmark of the area where the customer resides
+</ParamField>
+
+<ParamField body="Address.City" type="string" required>
+	The city where the customer resides
+</ParamField>
+
+<ParamField body="Address.Firstname" type="string" required>
+	The first name of the customer whose KYC tier is being upgraded.
+</ParamField>
+
+<ParamField body="Address.Lastname" type="string" required>
+	The lastname of the customer whose KYC tier is being upgraded.
+</ParamField>
+
+<ParamField body="Address.Phone" type="string" required>
+	The phone number of the customer whose KYC tier is being upgraded.
+</ParamField>
+
+<ParamField body="Address.Dob" type="string" required>
+	The date of birth of the customer whose KYC tier is being upgraded.
+</ParamField>
+
+<ParamField body="Address.idType" type="string" required>
+	The unique identification type of the customer whose KYC tier is being
+	upgraded. **Example:** bvn. Possible values: `bvn | nin`
+</ParamField>
+
+<ParamField body="Address.idNumber" type="string" required>
+	The unique identification number of the customer.
+</ParamField>
+
+<ParamField body="Address.Gender" type="string" required>
+	The gender of the customer whose KYC tier is being upgraded. **Example:**
+	Male. Possible values: `Male | Female`
+</ParamField>
+
+<RequestExample>
+	```bash cURL 
+	curl -X 'POST' \
+	'https://waas-staging.embedly.ng/api/v1/customers/kyc/tier3-upgrade' \
+	-H 'accept: */*' \
+	-H 'x-api-key: BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm' \
+	-H 'Content-Type: multipart/form-data' \
+	-F 'BillType=' \
+	-F 'Address.StateName=' \
+	-F 'Address.City=' \
+	-F 'Address.Applicant.Lastname=' \
+	-F 'Address.Applicant.Gender=' \
+	-F 'Address.Applicant.Phone=' \
+	-F 'Address.Applicant.IdNumber=' \
+	-F 'UtilityBillDocument=' \
+	-F 'Address.Applicant.Dob=' \
+	-F 'Address.Landmark=' \
+	-F 'Address.CustomerReference=' \
+	-F 'Address.Applicant.Firstname=' \
+	-F 'Address.LgaName=' \
+	-F 'CustomerId=' \
+	-F 'Address.Applicant.IdType=' \
+	-F 'Address.Street='
+	```
+	
+	```python Python
+	import requests
+
+    url = "https://waas-staging.embedly.ng/api/v1/customers/kyc/tier3-upgrade"
+    headers = {
+    		"x-api-key": "BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm"
+    }
+
+    files = {
+    		"BillType": (None, ""),
+    		"Address.StateName": (None, ""),
+    		"Address.City": (None, ""),
+    		"Address.Applicant.Lastname": (None, ""),
+    		"Address.Applicant.Gender": (None, ""),
+    		"Address.Applicant.Phone": (None, ""),
+    		"Address.Applicant.IdNumber": (None, ""),
+    		"UtilityBillDocument": open("path/to/utility_bill.pdf", "rb"),
+    		"Address.Applicant.Dob": (None, ""),
+    		"Address.Landmark": (None, ""),
+    		"Address.CustomerReference": (None, ""),
+    		"Address.Applicant.Firstname": (None, ""),
+    		"Address.LgaName": (None, ""),
+    		"CustomerId": (None, ""),
+    		"Address.Applicant.IdType": (None, ""),
+    		"Address.Street": (None, "")
+    }
+
+    response = requests.post(url, headers=headers, files=files)
+    print(response.status_code, response.text)
+    ```
+
+    ```javascript Javascript
+    const axios = require("axios");
+    const FormData = require("form-data");
+    const fs = require("fs");
+
+    const form = new FormData();
+    form.append("BillType", "");
+    form.append("Address.StateName", "");
+    form.append("Address.City", "");
+    form.append("Address.Applicant.Lastname", "");
+    form.append("Address.Applicant.Gender", "");
+    form.append("Address.Applicant.Phone", "");
+    form.append("Address.Applicant.IdNumber", "");
+    form.append("UtilityBillDocument", fs.createReadStream("path/to/utility_bill.pdf"));
+    form.append("Address.Applicant.Dob", "");
+    form.append("Address.Landmark", "");
+    form.append("Address.CustomerReference", "");
+    form.append("Address.Applicant.Firstname", "");
+    form.append("Address.LgaName", "");
+    form.append("CustomerId", "");
+    form.append("Address.Applicant.IdType", "");
+    form.append("Address.Street", "");
+
+    axios.post("https://waas-staging.embedly.ng/api/v1/customers/kyc/tier3-upgrade", form, {
+    	headers: {
+    		...form.getHeaders(),
+    		"x-api-key": "BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm"
+    	}
+    })
+    .then(res => console.log(res.data))
+    .catch(err => console.error(err));
+    ```
+    ```go Go
+    package main
+
+    import (
+    		"bytes"
+    		"fmt"
+    		"io"
+    		"mime/multipart"
+    		"net/http"
+    		"os"
+    )
+
+    func main() {
+    	body := &bytes.Buffer{}
+    	writer := multipart.NewWriter(body)
+
+    	// Add form fields
+    	fields := []string{
+    			"BillType", "Address.StateName", "Address.City", "Address.Applicant.Lastname",
+    			"Address.Applicant.Gender", "Address.Applicant.Phone", "Address.Applicant.IdNumber",
+    			"Address.Applicant.Dob", "Address.Landmark", "Address.CustomerReference",
+    			"Address.Applicant.Firstname", "Address.LgaName", "CustomerId",
+    			"Address.Applicant.IdType", "Address.Street",
+    	}
+
+    	for _, field := range fields {
+    			_ = writer.WriteField(field, "")
+    	}
+
+    	// Add file
+    	file, _ := os.Open("path/to/utility_bill.pdf")
+    	defer file.Close()
+    	part, _ := writer.CreateFormFile("UtilityBillDocument", "utility_bill.pdf")
+    	io.Copy(part, file)
+
+    	writer.Close()
+
+    	req, _ := http.NewRequest("POST", "https://waas-staging.embedly.ng/api/v1/customers/kyc/tier3-upgrade", body)
+    	req.Header.Add("Content-Type", writer.FormDataContentType())
+    	req.Header.Add("x-api-key", "BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm")
+
+    	resp, _ := http.DefaultClient.Do(req)
+    	defer resp.Body.Close()
+    	respBody, _ := io.ReadAll(resp.Body)
+    	fmt.Println(string(respBody))
+
+    }
+    ```
+    ```java Java
+    import okhttp3.*;
+    import java.io.File;
+    import java.io.IOException;
+
+    public class Main {
+    	public static void main(String[] args) throws IOException {
+    		OkHttpClient client = new OkHttpClient();
+
+    		MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM)
+    			.addFormDataPart("BillType", "")
+    			.addFormDataPart("Address.StateName", "")
+    			.addFormDataPart("Address.City", "")
+    			.addFormDataPart("Address.Applicant.Lastname", "")
+    			.addFormDataPart("Address.Applicant.Gender", "")
+    			.addFormDataPart("Address.Applicant.Phone", "")
+    			.addFormDataPart("Address.Applicant.IdNumber", "")
+    			.addFormDataPart("UtilityBillDocument", "utility_bill.pdf",
+    					RequestBody.create(new File("path/to/utility_bill.pdf"), MediaType.parse("application/pdf")))
+    			.addFormDataPart("Address.Applicant.Dob", "")
+    			.addFormDataPart("Address.Landmark", "")
+    			.addFormDataPart("Address.CustomerReference", "")
+    			.addFormDataPart("Address.Applicant.Firstname", "")
+    			.addFormDataPart("Address.LgaName", "")
+    			.addFormDataPart("CustomerId", "")
+    			.addFormDataPart("Address.Applicant.IdType", "")
+    			.addFormDataPart("Address.Street", "");
+
+    		Request request = new Request.Builder()
+    			.url("https://waas-staging.embedly.ng/api/v1/customers/kyc/tier3-upgrade")
+    			.post(builder.build())
+    			.addHeader("x-api-key", "BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm")
+    			.build();
+
+    		Response response = client.newCall(request).execute();
+    		System.out.println(response.body().string());
+    	}
+    }
+    ```
+
+</RequestExample>

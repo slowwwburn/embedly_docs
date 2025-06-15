@@ -1,12 +1,59 @@
 ---
 title: "Overview"
-description: "The Customer Service offers a comprehensive solution for organizations to efficiently manage their customer relationships. This service is designed to enhance the customer onboarding process, provide seamless account creation, and ensure compliance with regulatory requirements through Know Your Customer (KYC) procedures."
+description: "The Customer Service offers a comprehensive solution for merchants to efficiently manage their customer relationships. This service is designed to enhance the customer onboarding process, provide seamless wallet creation, and ensure compliance with regulatory requirements through Know Your Customer (KYC) procedures."
 ---
 
 ## Customer Registration
 
-This service allows merchants create and manage their customers easily.
+This service allows merchants create and manage their customers easily, offering tailored solutions for individual customers.
+
+- **Benefit:** Merchants can create individual customer profiles with all relevant personal information. This facilitates a streamlined onboarding process, allowing for quick and accurate customer registration.
+- **Details:** Merchants can store personal details such as name, contact information, and identification numbers. This ensures that all customer data is organized and accessible for future interactions.
+- **Validation:** Individual BVN/NIN or both are validated at the point of creation to prevent duplicate customer data for merchants.
+
+## Customer Wallet
+
+Merchants can create wallet for the customers they have onboarded, ensuring that each customer has a dedicated wallet for transactions and other services.
+
+- **Benefit:** By allowing merchants to create wallets directly for their customers, this service reduces the time and complexity involved in wallet setup. It ensures that customers have immediate access to financial services and other merchantal offerings.
+- **Details:** merchants can create wallets based on the customer profiles they have established, ensuring that the wallet creation process is integrated with the customer onboarding workflow. This helps maintain a seamless experience for both the merchant and the customer.
+
+## Customer KYC
+
+To ensure compliance with regulatory requirements, this service enables merchants to conduct Know Your Customer (KYC) checks on the customers they have created.
+
+- **Benefit:** KYC processes are critical for verifying the identity of customers and ensuring that wallets are not being used for illicit activities. By offering KYC capabilities, this service helps merchants maintain compliance with legal standards and protect their business.
+- **Details:** Merchants can perform KYC checks on both individual and business customers, verifying identity documents, addresses, and other relevant information. Successful KYC completion allows merchants to relax any restrictions on the wallets created, enabling customers to fully utilize the services offered.
+
+### KYC requirements for Customer KYC Tier Upgrade
+
+| KYC Tier | Transaction Limit (Daily) | Transaction Limit (Cumulative) | Wallet Balance | Regulatory Requirements                                                                        |
+| -------- | ------------------------- | ------------------------------ | -------------- | ---------------------------------------------------------------------------------------------- |
+| Tier 1   | 50,000                    | 300,000                        | 300,000        | BVN or NIN                                                                                     |
+| Tier 2   | 100,000                   | 500,000                        | 500,000        | BVN and NIN                                                                                    |
+| Tier 3   | Unlimited                 | Unlimited                      | Unlimited      | <ul><li>BVN and NIN</li> <li>Address</li> <li>Proof of Address _(eg. Utility bill)_ </li></ul> |
+
+<Warning>
+	For each customer KYC tier, once the maximum balance a customer's wallet is
+	allowed to have is exceeded, the wallet is placed on PND. This means that all
+	debits from the affected wallet are blocked and a email would sent to inform
+	both the Merchant and Customer.
+</Warning>
+
+## Embedly Dashboard for Customer and wallet Management
+
+The Embedly dashboard provides merchants with a powerful tool for monitoring and managing their customer and wallet activities.
+
+#### Customer and wallet Visibility
+
+- **Benefit:** The dashboard displays a comprehensive list of all customers created by the merchant and the wallets generated in favor of those customers. This allows merchants to maintain a clear overview of their customer base and associated wallets.
+- **Details:** Merchants can easily access and review customer details and wallet information, ensuring that all relevant data is available at a glance.
+
+#### Transaction History Monitoring
+
+- **Benefit:** The Embedly dashboard also provides detailed transaction history for the wallets created. Merchants can monitor both inflows and outflows, giving them valuable insights into customer activity and financial health.
+- **Details:** Transaction history includes all deposits, withdrawals, and transfers, allowing merchants to track wallet movements and identify trends or anomalies in customer behavior.
 
 ## Conclusion
 
-This Customer Service provides a robust framework for organizations to manage customer relationships from creation to account setup and verification, with the added benefit of comprehensive monitoring through the Embedly dashboard. By leveraging this service, organizations can ensure a smooth, compliant, and efficient customer management process, enhancing their overall operational effectiveness and gaining valuable insights into customer activities.
+This Customer Service provides a robust framework for merchants to manage customer relationships from creation to wallet setup and verification, with the added benefit of comprehensive monitoring through the Embedly dashboard. By leveraging this service, merchants can ensure a smooth, compliant, and efficient customer management process, enhancing their overall operational effectiveness and gaining valuable insights into customer activities.

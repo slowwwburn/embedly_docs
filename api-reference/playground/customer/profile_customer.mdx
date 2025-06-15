@@ -10,6 +10,33 @@ Use this endpoint to create profile for an individual.
 
 ---
 
+## Additional Information
+
+<Info>
+	<ul>
+		<li>
+			To successfully create a customer profile on Embedly, the customer's
+			**BVN** (Bank Verification Number) or **NIN** (National Identity Number)
+			must be provided. This ensures the customer is KYCed for Tier 1 account
+			creation.
+		</li>
+		<li>
+			Optionally, you can provide both the customer's **BVN** (Bank Verification
+			Number) and **NIN** (National Identification Number). Supplying both
+			identifiers enables KYC up to Tier 2.
+		</li>
+	</ul>
+</Info>
+
+<Info>
+	It is standard practice to save the returned customerId once you have
+	successfully created a customer. This reduces the number of api calls you have
+	to make to embedly to perform certain actions thereby improving the speed of
+	your application
+</Info>
+
+---
+
 ## Request Parameters
 
 <ParamField body="id" type="string" required></ParamField>
@@ -41,17 +68,13 @@ Use this endpoint to create profile for an individual.
 	`1980-01-01`
 </ParamField>
 
-<ParamField body="customerTypeId" type="string" required></ParamField>
+<ParamField body="customerTypeId" type="string" required>
+	The type of customer. _(Must be a UUID)_ **Example:**
+	f671da57-e281-4b40-965f-a96f4205405e `The value should be gotten from the get
+	customer types endpoint in the customer utils section`
+</ParamField>
 
 <ParamField body="alias" type="string"></ParamField>
-
-<ParamField body="countryId" type="string" required></ParamField>
-
-<ParamField body="city" type="string" required></ParamField>
-
-<ParamField body="address" type="string" required></ParamField>
-
-<ParamField body="dateCreated" type="string" required></ParamField>
 
 <ResponseExample>
 

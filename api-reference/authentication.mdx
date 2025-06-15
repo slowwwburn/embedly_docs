@@ -13,21 +13,39 @@ Welcome to the Embedly API documentation! This page provides everything you need
 
 To access the full Embedly API services, you’ll need an API key. Follow these steps to retrieve it from your dashboard:
 
-1. **Log into Your Dashboard:** Visit the [embedly merchant dashboard](https://merchant-waas-dashboard.embedly.com) and sign in with your credentials.
-2. **Navigate to API Integration:** Go to the "API Keys" section in the sidebar.
-3. **Generate a New Key:** Click "Generate API Key" to create a new key for your application.
-4. **Copy Your API Key:** Save the generated key securely—you’ll need it for all API requests.
+#### Staging
 
-<Info>
-	The APIs on the staging environment are currently open and do not require an
-	API key for authentication. For testing purposes, you can use the default key
-	`BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm,
-	AdminTest(For Currency & Organization API) and
-	'BSK-GB9S3Ln7FUfGL1pWAOYDvLYnGyGeLRwfZ5A6e9pdTo6S8Xac25SAHp9VtNXeknMTtp50ncNyRezW`(For
-	nin-kyc for the customer). This is subject to change with prior notice, so we
-	recommend using your own API key to prepare for production. Use
-	02600494-1a3c-11f0-a818-6045bd97b81d as your OrganizationId for test.
-</Info>
+For testing on the staging environment, use the general credentials below.
+
+1. **OrganizationId:** `02600494-1a3c-11f0-a818-6045bd97b81d`
+
+2. **API Key:** `BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm`
+
+Alternatively, you can visit the Embedly staging dashboard [here](https://merchant-waas-dashboard-staging.embedly.ng/registration) and follow the steps below to retrieve your unique staging api key:
+
+1. **Navigate to Your Profile Settings Page:**  
+   Log in to your Embedly dashboard and go to the Profile Settings section to retrieve your <Tooltip tip="An organizationId is your idenitifation for your organization.">OrganizationId</Tooltip>.
+
+2. **Navigate to Your API Credentials Page:**  
+   Log in to your Embedly dashboard and go to the <Tooltip tip="API credentials consist of a client key and a secret key, both required for generating tokens.">APIs
+   & Integration</Tooltip> section to retrieve your <Tooltip tip="An api key is essential for API authentication.">api key</Tooltip>.
+
+#### Production
+
+To generate your apikey on production, follow these steps:
+
+1. **Navigate to Your Profile Settings Page:**  
+   Log in to your Embedly dashboard and go to the Profile Settings section to retrieve your <Tooltip tip="An organizationId is your idenitifation for your organization.">OrganizationId</Tooltip>.
+
+2. **Navigate to Your API Credentials Page:**  
+   Log in to your Embedly dashboard and go to the <Tooltip tip="API credentials consist of a client key and a secret key, both required for generating tokens.">APIs
+   & Integration</Tooltip> section to retrieve your <Tooltip tip="An api key is essential for API authentication.">api key</Tooltip>.
+
+   <Info>
+   	A pre-requisite to successfully retrieving your production credentials is
+   	uploading all required documentation and having them approved by the
+   	Embedly admin
+   </Info>
 
 ### Base URLs
 

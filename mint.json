@@ -33,6 +33,25 @@
 	],
 	"navigation": [
 		{
+			"group": "Home",
+			"pages": [
+				"home/introduction",
+				"home/onboarding",
+				"home/authentication",
+				"home/environments",
+				"home/response",
+				"home/webhook",
+				{
+					"group": "Going Live",
+					"pages": [
+						"home/live/going-live",
+						"home/live/checklist",
+						"home/live/security"
+					]
+				}
+			]
+		},
+		{
 			"group": "API Documentation",
 			"pages": [
 				{
@@ -46,21 +65,20 @@
 						"api-reference/playground/customer/profile_customer",
 						"api-reference/playground/customer/Get_Id",
 						"api-reference/playground/customer/get_all_customers",
-						"api-reference/playground/customer/get_all_customer_types",
 						"api-reference/playground/customer/update_customer",
 						{
 							"group": "KYC",
 							"pages": [
-								"api-reference/playground/customer/kyc/create_customers_kyc",
-								"api-reference/playground/customer/kyc/kyc_nin",
-								"api-reference/playground/customer/kyc/kyc_face_nin"
+								"api-reference/playground/customer/kyc/get_customer_tier",
+								"api-reference/playground/customer/kyc/tier2_upgrade",
+								"api-reference/playground/customer/kyc/tier3_upgrade"
 							]
 						},
 						{
 							"group": "Utils",
 							"pages": [
 								"api-reference/playground/customer/utils/get_countries",
-								"api-reference/playground/customer/utils/get_currency"
+								"api-reference/playground/customer/utils/get_all_customer_types"
 							]
 						}
 					]
@@ -94,20 +112,21 @@
 					"pages": [
 						"api-reference/Wallet",
 						"api-reference/playground/Wallet/Add_Wallet",
-						"api-reference/playground/Wallet/Close_Wallet",
 						"api-reference/playground/Wallet/Wallet_History",
-						"api-reference/playground/Wallet/Wallet_Account_Number_History",
-						"api-reference/playground/Wallet/Close_Wallet_by_Account",
-						"api-reference/playground/Wallet/Search_Wallet_by_Email",
-						"api-reference/playground/Wallet/Search_Wallet_by_Mobile",
+						"api-reference/playground/Wallet/Close_Wallet",
 						"api-reference/playground/Wallet/Customer_Wallet",
-						"api-reference/playground/Wallet/Account_Closure_Reasons",
-						"api-reference/playground/Wallet/Retrieve_Wallet_ID",
-						"api-reference/playground/Wallet/Post_Wallet_Transaction_by_Account_Number",
 						"api-reference/playground/Wallet/Reverse_Wallet_Transaction",
 						"api-reference/playground/Wallet/Wallet_to_Wallet",
 						"api-reference/playground/Wallet/Restrict_Wallet_by_Account",
-						"api-reference/playground/Wallet/Restrict_Wallet"
+						"api-reference/playground/Wallet/Restrict_Wallet",
+						{
+							"group": "Utils",
+							"pages": [
+								"api-reference/playground/Wallet/utils/get_currency",
+								"api-reference/playground/Wallet/utils/get_restriction_types",
+								"api-reference/playground/Wallet/utils/Account_Closure_Reasons"
+							]
+						}
 					]
 				},
 				{
