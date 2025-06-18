@@ -1,0 +1,33 @@
+---
+title: "Customer KYC Tier 2 Upgrade-nin"
+api: "POST customers/kyc/customer/nin/customerId/{CusId}/nin/{nin}/verify"
+description: "This endpoint enables you to upgrade a customer's KYC to Tier 2 using nin"
+---
+
+
+<ParamField body="customerId" type="string" required>
+	The unique identifier of the customer whose KYC tier is being upgraded.
+	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ParamField body="nin" type="string" required>
+	The unique value of the customer's nin. **Example:** `12345678909`
+</ParamField>
+
+<ParamField body="verify" type="string" required>
+	 **Example:** `1`
+</ParamField>
+
+<ParamField body="firstname" type="string" required>
+	The firstname of the customer.
+	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ParamField body="lastname" type="string" required>
+	The lastname of the customer.
+	**Example:** `Jude`
+</ParamField>
+
+<ParamField body="dob" type="string" required>
+	The customer's dob. **Example:** "1999-10-27T09"
+</ParamField>
