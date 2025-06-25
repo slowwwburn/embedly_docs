@@ -74,6 +74,12 @@ Use this endpoint to create profile for an individual.
 	customer types endpoint in the customer utils section`
 </ParamField>
 
+<ParamField body="countryId" type="string" required>
+	The unique identifier of the customer's nationality. _(Must be a UUID)_
+	**Example:** f671da57-e281-4b40-965f-a96f4205405e `The value should be gotten
+	from the get countries endpoint in the customer utils section`
+</ParamField>
+
 <ParamField body="alias" type="string"></ParamField>
 
 <ResponseExample>

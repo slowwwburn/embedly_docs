@@ -4,29 +4,41 @@ api: "GET /wallets/get/wallet/{walletId}"
 description: "The endpoint retrieves the details of a specific wallet using its unique wallet ID."
 ---
 
-
 ## Path Parameters
 
 <ParamField body="id" type="string" required>
-  Unique identifier for the wallet.
-  **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+	Unique identifier for the wallet. **Example:**
+	"3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
 ## Response
 
 ```json
 {
-  "code": "200",
-  "success": true,
-  "message": "Wallet details retrieved successfully.",
-  "data": {
-    "walletId": "eee",
-    "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "availableBalance": 5000,
-    "ledgerBalance": 7500,
-    "currency": "USD",
-    "status": "active"
-  }
+	"code": "00",
+	"success": true,
+	"message": "Retrieved Successfully",
+	"data": {
+		"id": "ed2876a2-3a17-11f0-97d7-7c1e52753c35",
+		"walletGroupId": "b012627c-41f2-11f0-97d7-7c1e52753c35",
+		"customerId": "21a345ab-3a11-11f0-97d7-7c1e52753c35",
+		"availableBalance": 1400,
+		"ledgerBalance": 1400,
+		"walletRestrictionId": null,
+		"walletClassificationId": "2c02427d-90a2-46fa-afce-a9c2cc720a09",
+		"currencyId": "45852f0c-84fa-410c-b66c-1ffec56e5cd8",
+		"isInternal": false,
+		"isDefault": true,
+		"name": "Oghenetega Esedere",
+		"overdraft": null,
+		"virtualAccount": {
+			"accountNumber": "9710067201",
+			"bankCode": "232",
+			"bankName": "Sterling Bank"
+		},
+		"mobNum": null,
+		"customerTypeId": "00000000-0000-0000-0000-000000000000"
+	}
 }
 ```
 
@@ -36,9 +48,9 @@ Status Code: 400 Bad Request
 
 ```json
 {
-  "code": "400",
-  "success": false,
-  "message": "Invalid Wallet ID specified",
-  "data": null
+	"code": "400",
+	"success": false,
+	"message": "Invalid Wallet ID specified",
+	"data": null
 }
 ```
