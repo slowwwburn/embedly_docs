@@ -72,9 +72,13 @@ Use this endpoint to create profile for an individual.
 	get customer types endpoint in the customer utils section`
 </ParamField>
 
-<ParamField body="address" type="string" required></ParamField>
+<ParamField body="address" type="string" required>
+	The customer's residential street. **Example:** `20 Marina`
+</ParamField>
 
-<ParamField body="city" type="string" required></ParamField>
+<ParamField body="city" type="string" required>
+	The customer's residential city. **Example:** `Lagos`
+</ParamField>
 
 <ParamField body="countryId" type="string" required>
 	The unique identifier of the customer's nationality. _(Must be a UUID)_
