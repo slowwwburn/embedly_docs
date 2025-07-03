@@ -8,32 +8,20 @@ description: "This endpoint enables you to create a customer profile"
 
 Use this endpoint to create profile for an individual.
 
----
-
-## Additional Information
-
 <Info>
-	<ul>
-		<li>
-			To successfully create a customer profile on Embedly, the customer's
-			**BVN** (Bank Verification Number) or **NIN** (National Identity Number)
-			must be provided. This ensures the customer is KYCed for Tier 1 account
-			creation.
-		</li>
-		<li>
-			Optionally, you can provide both the customer's **BVN** (Bank Verification
-			Number) and **NIN** (National Identification Number). Supplying both
-			identifiers enables KYC up to Tier 2.
-		</li>
-	</ul>
+	Once a customer profile is created, you are required to provide the customer's
+	BVN and NIN via the KYC endpoints. 
+	
+	**Please note**: A customer must attain a KYC
+	Tier 1 status before an open wallet can be created for them.
 </Info>
 
-<Info>
+<Warn>
 	It is standard practice to save the returned customerId once you have
 	successfully created a customer. This reduces the number of api calls you have
 	to make to embedly to perform certain actions thereby improving the speed of
 	your application
-</Info>
+</Warn>
 
 ---
 

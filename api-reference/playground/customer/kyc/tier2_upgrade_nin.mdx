@@ -1,30 +1,27 @@
 ---
-title: "Customer KYC Tier 2 Upgrade-nin"
-api: "POST customers/kyc/customer/nin/customerId/{CusId}/nin/{nin}/verify"
-description: "This endpoint enables you to upgrade a customer's KYC to Tier 2 using nin"
+title: "Customer KYC Upgrade-nin"
+api: "POST customers/kyc/customer/nin"
+description: "This endpoint enables you to upgrade a customer's KYC using nin"
 ---
 
-
-<ParamField body="customerId" type="string" required>
+<ParamField query="customerId" type="string" required>
 	The unique identifier of the customer whose KYC tier is being upgraded.
-	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6` **This is a query
+	parameter**
 </ParamField>
 
-<ParamField body="nin" type="string" required>
-	The unique value of the customer's nin. **Example:** `12345678909`
-</ParamField>
-
-<ParamField body="verify" type="string" required>
-	 **Example:** `1`
+<ParamField query="nin" type="string" required>
+	The unique value of the customer's nin. **Example:** `12345678909` **This is a
+	query parameter**
 </ParamField>
 
 <ParamField body="firstname" type="string" required>
-	The firstname of the customer.
+	The firstname of the customer as stated against the customer's nin.
 	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
 </ParamField>
 
 <ParamField body="lastname" type="string" required>
-	The lastname of the customer.
+	The lastname of the customer as stated against the customer's nin.
 	**Example:** `Jude`
 </ParamField>
 
