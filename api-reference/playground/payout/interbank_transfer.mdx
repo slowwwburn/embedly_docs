@@ -4,6 +4,19 @@ api: "POST https://payout-staging.embedly.ng/api/Payout/inter-bank-transfer"
 description: "This endpoint initiates a bank funds transfer."
 ---
 
+<Info>
+### **Transaction Reference (transactionRef)**
+
+When a payout transaction is successfully submitted, a `transactionRef` is included in the response payload under the `data` object.
+
+#### **Key Considerations:**
+
+- **Store the `transactionRef` securely** on your end. It acts as the unique identifier for that specific transaction.
+- The `transactionRef` can be used to **confirm the status** of the transaction at a later time.
+- It is also essential for **mapping webhook notifications** to the correct payout transaction—especially for tracking successful debits.
+
+</Info>
+
 <ParamField body="destinationBankCode" type="string" required>
 	**Example:** `000010`
 </ParamField>
@@ -32,6 +45,7 @@ description: "This endpoint initiates a bank funds transfer."
 <ResponseExample>
   ```json
   {
+		"data": "EMB2433478798576453242131324",
     "statusCode": 200,
     "message": "Successfully initiated payout",
     "succeeded": true

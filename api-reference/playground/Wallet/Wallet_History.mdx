@@ -31,36 +31,37 @@ description: "The endpoint displays the transaction history for a specific walle
 	"2025-03-19T16:18:37.676Z"
 </ParamField>
 
-## Response
+<ResponseExample>
 
-✅ Success Response
-
-```json
-
-Status Code: 200 OK
-
+```json 200 Success
 {
-  "success": true,
-  "status": "success",
-  "data": {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john.doe@example.com"
-  },
-  "timestamp": "2023-09-20T14:30:45Z"
+	"success": true,
+	"status": "success",
+	"data": {
+		"id": 1,
+		"name": "John Doe",
+		"email": "john.doe@example.com"
+	},
+	"timestamp": "2023-09-20T14:30:45Z"
 }
 ```
 
-## ❌ Error Responses
-
-```json
-Status Code: 404 Not Found
-
+```json 400 Bad Request
 {
-  "code": "404",
-  "success": false,
-  "message": "Wallet not found",
-  "data": null
+	"code": "400",
+	"success": false,
+	"message": "Bad Request
+	"data": null
 }
-
 ```
+
+```json 404 Not Found
+{
+	"code": "404",
+	"success": false,
+	"message": "Wallet not found",
+	"data": null
+}
+```
+
+</ResponseExample>
