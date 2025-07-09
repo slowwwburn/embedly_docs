@@ -10,12 +10,108 @@ description: "The Wallet Service provides organizations with a seamless and effi
 
 ## Wallet Management
 
-The Wallet API empowers organizations to efficiently create, manage, and oversee customer wallets, offering a streamlined approach to financial operations..
+The Wallet API empowers organizations to efficiently create, manage, and oversee customer wallets, offering a streamlined approach to financial operations.
+Embedly supports **Open** and **Closed** wallet types to meet varying regulatory, security, and operational needs. Each type has unique features and setup requirements.
 
 <Info>
 	Please note that this service can only be used to manage wallets created by
 	you as an orgnisation
 </Info>
+
+## Wallet types
+
+### Open Wallet
+
+Open Wallets function similarly to traditional bank accounts. They support full transaction capabilities, including movement of funds to and from external financial institutions.
+
+#### Common use-cases
+
+<ul>
+	<li>Receiving funds into an Embedly wallet</li>
+	<li>Send funds to other wallets across platforms</li>
+	<li>Initiating **payouts** to external bank accounts</li>
+	<li>Atm withdrawals, POS payments and Online payments</li>
+</ul>
+
+#### Flow
+
+```
+
+									[Create Customer]
+											|
+											v
+								[Verify KYC - NIN / BVN]
+											|
+											v
+								[Create customer Wallet]
+									|				|
+									v				v
+				[Intra-Wallet Transfer]		 [Payout to Bank Account]
+```
+
+### Closed Wallet
+
+Closed Wallet are restricted to **internal transactions** within your own ecosystem or embedly's ecosystem.
+
+<Warning>
+	Closed wallets do not support sending funds to external bank accounts or
+	third-party wallets. However, they can be funded from any traditional nigerian
+	account.
+</Warning>
+
+Closed Wallets are ideal for use cases where value is stored, exchanged, or redeemed **exclusively** within the boundaries of your platform. Since funds never leave the system, Closed Wallets are exempt from KYC requirements on production, making them easier to implement and manage.
+
+#### Common use cases
+
+<ul>
+	<li>Loyalty or rewards systems</li>
+	<li>E-commerce wallets</li>
+	<li>In-app value storage (e.g. points or tokens)</li>
+</ul>
+
+#### Flow
+
+```
+								[Create Customer]
+       									|
+       									v
+								  [Add Wallet]
+       									|
+       									v
+						[Fund Wallet via Third-Party App]
+      									|
+       									v
+							[Wallet-to-Wallet Transfer]
+```
+
+### Merchant Profiling & Environment Behavior
+
+By default, on the **production environment**, every customer you create must be KYC-verified up to **at least Tier 1** before you can create a wallet for that customer.
+
+> Even after KYC and wallet creation, **payout transactions** will remain restricted unless your organization is profiled for the appropriate wallet type.
+
+To enable **wallet payout transactions** or to **exempt individual customer KYC requirements** (for Closed Wallets), your organization must be explicitly profiled for either an **Open** or **Closed** wallet.
+
+---
+
+### 📩 How to Request Wallet Profiling
+
+To get profiled, send an email with the details below:
+
+#### ✅ Email Details
+
+- **To:** `support@embedly.ng`
+- **Subject:** `Wallet Profiling Request – Open or Closed`
+
+#### ✉️ Include the following in your email body:
+
+- Your **Organization Name**
+- Your **Organization ID**
+- Desired **Wallet Type**: `Open` or `Closed`
+
+  > On **staging**, customer KYC is required to create wallets. However, all wallets can be used to test payout endpoints **without needing to request wallet profiling via email**.
+
+---
 
 ## Endpoints
 

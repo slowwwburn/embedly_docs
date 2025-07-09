@@ -1,0 +1,31 @@
+---
+title: "Customer Address Verification Status"
+api: "Get /customers/kyc/get-pending-address-verification/customer/{customerId}"
+description: "This endpoint enables you to retrieve the status of a previously submitted address verification for customer"
+---
+
+<ParamField path="customerId" type="string" required>
+	The Embedly unique identifier of the customer whose KYC tier is being
+	upgraded. **Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ResponseExample>
+```json 200 Success
+{
+	"data": {
+		"status": "successful",
+		"message": "Address successfully verified.",
+		"timestamp": "2025-07-09T10:13:19.266Z",
+		"data": {
+			"verified": true,
+			"houseAddress": "8 PROFESSOR GABRIEL OLUSANYA ST, LEKKI PHASE",
+			"houseOwner": "Neem",
+			"confidenceLevel": 66,
+			"discoCode": "EKO"
+		}
+	},
+	"status": 200,
+	"message": ""
+}
+```
+</ResponseExample>

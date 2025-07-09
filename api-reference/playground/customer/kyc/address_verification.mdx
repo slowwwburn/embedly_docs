@@ -1,0 +1,45 @@
+---
+title: "Customer Address Verification (Tier 3 upgrade)"
+api: "POST /customers/kyc/address-verification"
+description: "This endpoint enables you to complete address verification for customer in order to upgrade the customer's KYC to Tier 3"
+---
+
+{
+"customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+"meterNumvber": "string",
+"houseAddress": "string"
+}
+
+<ParamField body="customerId" type="string" required>
+	The Embedly unique identifier of the customer whose KYC tier is being
+	upgraded. **Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ParamField body="meterNumber" type="file" required>
+	The utility document of the customer's address.
+</ParamField>
+
+<ParamField body="houseAddress" type="string" required>
+	The address of the customer whose kyc is to be upgraded.
+</ParamField>
+
+<ResponseExample>
+```json 200 Success
+{
+	"data": {
+		"status": "successful",
+		"message": "Address successfully verified.",
+		"timestamp": "2025-07-09T10:13:19.266Z",
+		"data": {
+			"verified": true,
+			"houseAddress": "8 PROFESSOR GABRIEL OLUSANYA ST, LEKKI PHASE",
+			"houseOwner": "Neem",
+			"confidenceLevel": 66,
+			"discoCode": "EKO"
+		}
+	},
+	"status": 200,
+	"message": ""
+}
+```
+</ResponseExample>

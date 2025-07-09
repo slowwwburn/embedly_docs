@@ -84,39 +84,15 @@
 					]
 				},
 				{
-					"group": "Product",
-					"pages": [
-						"api-reference/Product",
-						"api-reference/playground/Product/Add_Product",
-						"api-reference/playground/Product/Get_Product",
-						"api-reference/playground/Product/Update_Product",
-						"api-reference/playground/Product/Activate_Id",
-						"api-reference/playground/Product/Deactivate_Id"
-					]
-				},
-				{
-					"group": "ProductLimit",
-					"pages": [
-						"api-reference/ProductLimit",
-						"api-reference/playground/ProductLimit/Product_Currency_Limit",
-						"api-reference/playground/ProductLimit/ProductLimit_Customer_Currency",
-						"api-reference/playground/ProductLimit/Product_Limit_Default",
-						"api-reference/playground/ProductLimit/Customer_Limit_Patch",
-						"api-reference/playground/ProductLimit/Product_Limit_Patch",
-						"api-reference/playground/ProductLimit/ProductLimit_Add",
-						"api-reference/playground/ProductLimit/Customer_Limit"
-					]
-				},
-				{
 					"group": "Wallet",
 					"pages": [
 						"api-reference/Wallet",
 						"api-reference/playground/Wallet/Add_Wallet",
-						"api-reference/playground/Wallet/Wallet_History",
-						"api-reference/playground/Wallet/Close_Wallet",
-						"api-reference/playground/Wallet/Customer_Wallet",
-						"api-reference/playground/Wallet/Reverse_Wallet_Transaction",
+						"api-reference/playground/Wallet/Retrieve_Wallet_ID",
 						"api-reference/playground/Wallet/Wallet_to_Wallet",
+						"api-reference/playground/Wallet/Wallet_History",
+						"api-reference/playground/Wallet/Reverse_Wallet_Transaction",
+						"api-reference/playground/Wallet/Close_Wallet",
 						"api-reference/playground/Wallet/Restrict_Wallet_by_Account",
 						"api-reference/playground/Wallet/Restrict_Wallet",
 						{
@@ -149,6 +125,30 @@
 						"api-reference/playground/payout/name_enquiry",
 						"api-reference/playground/payout/interbank_transfer",
 						"api-reference/playground/payout/check_status"
+					]
+				},
+				{
+					"group": "Product",
+					"pages": [
+						"api-reference/Product",
+						"api-reference/playground/Product/Add_Product",
+						"api-reference/playground/Product/Get_Product",
+						"api-reference/playground/Product/Update_Product",
+						"api-reference/playground/Product/Activate_Id",
+						"api-reference/playground/Product/Deactivate_Id"
+					]
+				},
+				{
+					"group": "ProductLimit",
+					"pages": [
+						"api-reference/ProductLimit",
+						"api-reference/playground/ProductLimit/Product_Currency_Limit",
+						"api-reference/playground/ProductLimit/ProductLimit_Customer_Currency",
+						"api-reference/playground/ProductLimit/Product_Limit_Default",
+						"api-reference/playground/ProductLimit/Customer_Limit_Patch",
+						"api-reference/playground/ProductLimit/Product_Limit_Patch",
+						"api-reference/playground/ProductLimit/ProductLimit_Add",
+						"api-reference/playground/ProductLimit/Customer_Limit"
 					]
 				},
 				{
