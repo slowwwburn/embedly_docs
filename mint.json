@@ -128,7 +128,6 @@
 					]
 				},
 				{
-<<<<<<< Updated upstream
 					"group": "Product",
 					"pages": [
 						"api-reference/Product",
@@ -150,13 +149,14 @@
 						"api-reference/playground/ProductLimit/Product_Limit_Patch",
 						"api-reference/playground/ProductLimit/ProductLimit_Add",
 						"api-reference/playground/ProductLimit/Customer_Limit"
-=======
+					]
+				},
+				{
 					"group": "Checkout",
 					"pages": [
 						"api-reference/checkout",
 						"api-reference/playground/checkout/create_checkout_wallet",
 						"api-reference/playground/checkout/get_checkout_wallet"
->>>>>>> Stashed changes
 					]
 				},
 				{
