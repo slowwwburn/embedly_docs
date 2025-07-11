@@ -1,6 +1,6 @@
 ---
 title: "Create Checkout Wallet"
-api: "POST https://checkout-staging.embedly.ng/api/v1/CheckoutWallet/checkout"
+api: "POST https://checkout-staging.embedly.ng/api/v1/checkoutwallet/checkout"
 description: "This endpoint creates a checkout wallet."
 ---
 
@@ -8,9 +8,21 @@ description: "This endpoint creates a checkout wallet."
 	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
 </ParamField>
 
-
 <ResponseExample>
-  ```
-  
+  ```200 Success
+  {
+    "statusCode": 200,
+    "message": "Checkout wallet generated successfully",
+    "data": {
+        "id": "b929bd22-6da0-4b5a-8c37-871ddce94a62",
+        "walletNumber": "2225655477",
+        "merchantId": "02600494-1a3c-11f0-a818-6045bd97b81d",
+        "walletName": "Embedly Check Demo",
+        "status": "Active",
+        "createdAt": "2025-07-11T17:40:33.9829245Z",
+        "expiresAt": "2025-07-11T18:10:33.9829466Z",
+        "reactivatedAt": null
+    }
+}
 ```
 </ResponseExample>

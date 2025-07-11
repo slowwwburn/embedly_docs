@@ -169,7 +169,8 @@
 	"api": {
 		"baseUrl": [
 			"https://waas-staging.embedly.ng/api/v1/",
-			"https://payout-staging.embedly.ng/api/payouts"
+			"https://payout-staging.embedly.ng/api/payouts",
+			"https://checkout-staging.embedly.ng/api/checkoutwallet"
 		],
 		"auth": {
 			"method": "key",
