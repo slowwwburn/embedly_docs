@@ -9,9 +9,9 @@ Embedly Checkout service enable you to create temporary, one-time-use wallets th
 
 Each checkout wallet is:
 
-* **Single-use** – Designed for one transaction only
-* **Time-bound** – Expires after a set period
-* **Event-driven** – Created in response to a specific action or event
+- **Single-use** – Designed for one transaction only
+- **Time-bound** – Expires after a set period
+- **Event-driven** – Created in response to a specific action or event
 
 This approach enhances security, minimizes risk, and gives you greater control over the transaction flow.
 
@@ -28,7 +28,7 @@ https://checkout-staging.embedly.ng/
 The base URL for all checkout API requests on the production environment is:
 
 ```http
-https://checkout-prod.embedly.ng/
+To be communicated at a later time.
 ```
 
 </Info>
@@ -45,13 +45,17 @@ For testing on the staging environment, use the general credentials below.
 
 <ol>
 	<li>
-		Creating a Checkout Wallet: This generates a temporary wallet tied to a specific transaction or purpose.
+		Creating a Checkout Wallet: This generates a temporary wallet tied to a
+		specific transaction or purpose.
 	</li>
 	<Info>
-		Each checkout wallet is designed to receive a single payment and can be monitored. This simplifies reconciliation and improves user experience.
+		Each checkout wallet is designed to receive a single payment and can be
+		monitored. This simplifies reconciliation and improves user experience.
 	</Info>
 	<li>
-		Retrieving Wallets by Organization: With your organization's ID, you are able to view all generated checkout wallets. This helps in tracking active, expired, or used wallets and managing customer payments.
+		Retrieving Wallets by Organization: With your organization's ID, you are
+		able to view all generated checkout wallets. This helps in tracking active,
+		expired, or used wallets and managing customer payments.
 	</li>
 </ol>
 
@@ -59,10 +63,13 @@ For testing on the staging environment, use the general credentials below.
 
 <ul>
 	<li>
-		<strong>How Long Does a Checkout Wallet Last?</strong> The lifespan of a checkout wallet is 30 minutes.
+		<strong>How Long Does a Checkout Wallet Last?</strong> The lifespan of a
+		checkout wallet is 30 minutes.
 	</li>
 	<li>
-		<strong>Is a Customer Required to Create an Account?</strong> No, checkout wallets are designed to collect payments from customers without requiring full wallet onboarding.
+		<strong>Is a Customer Required to Create an Account?</strong> No, checkout
+		wallets are designed to collect payments from customers without requiring
+		full wallet onboarding.
 	</li>
 </ul>
 
@@ -75,5 +82,3 @@ For testing on the staging environment, use the general credentials below.
 - Monitor for Expiry: If the customer hasn’t paid within the 30-minute window, you’ll need to generate a new checkout wallet. Consider setting up automated reminders or fallback actions.
 
 - Regularly Sync Wallet Status: Use the Get All Checkout Wallets endpoint to check for payments, expired wallets, or unused entries to keep your records up to date.
-
-
