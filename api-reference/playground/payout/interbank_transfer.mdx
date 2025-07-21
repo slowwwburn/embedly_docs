@@ -20,43 +20,50 @@ When a payout transaction is successfully submitted, a `transactionRef` is inclu
 <ParamField body="destinationBankCode" type="string" required>
 	**Example:** `000010`
 </ParamField>
+
 <ParamField body="destinationAccountNumber" type="string" required>
 	**Example:** `1111111111`
 </ParamField>
+
 <ParamField body="destinationAccountName" type="string" required>
 	**Example:** `Bruce Banner`
 </ParamField>
+
 <ParamField body="sourceAccountNumber" type="string" required>
 	**Example:** `9666055662`
 </ParamField>
+
 <ParamField body="sourceAccountName" type="string" required>
 	**Example:** `Tony Stark`
 </ParamField>
+
 <ParamField body="remarks" type="string" required>
 	**Example:** `Hello World`
 </ParamField>
+
 <ParamField body="amount" type="integer" required>
-	**Example:** `1000000000`
+	**Example:** `100000`
 </ParamField>
+
 <ParamField body="currencyId" type="string" required>
 	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
 </ParamField>
-</ParamField>
+
 <ParamField body="customerTransactionReference" type="string">
 	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
 </ParamField>
-</ParamField>
+
 <ParamField body="webhookUrl" type="string" required>
 	**Example:** `http://sample.com/hook`
 </ParamField>
 
 <ResponseExample>
-  ```json
-  {
-		"data": "EMB2433478798576453242131324",
-    "statusCode": 200,
-    "message": "Successfully initiated payout",
-    "succeeded": true
-  }
+```json
+{
+	"data": "EMB2433478798576453242131324",
+	"statusCode": 200,
+	"message": "Successfully initiated payout",
+	"succeeded": true
+}
 ```
 </ResponseExample>

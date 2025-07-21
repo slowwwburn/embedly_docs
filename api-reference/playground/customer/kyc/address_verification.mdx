@@ -4,12 +4,6 @@ api: "POST /customers/kyc/address-verification"
 description: "This endpoint enables you to complete address verification for customer in order to upgrade the customer's KYC to Tier 3"
 ---
 
-{
-"customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-"meterNumvber": "string",
-"houseAddress": "string"
-}
-
 <ParamField body="customerId" type="string" required>
 	The Embedly unique identifier of the customer whose KYC tier is being
 	upgraded. **Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
