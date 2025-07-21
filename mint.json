@@ -160,6 +160,15 @@
 					]
 				},
 				{
+					"group": "Card",
+					"pages": [
+						"api-reference/cards",
+						"api-reference/playground/cards/afrigo/issue_card",
+						"api-reference/playground/cards/afrigo/activate_card",
+						"api-reference/playground/cards/afrigo/update_card_info"
+					]
+				},
+				{
 					"group": "Webhook",
 					"pages": ["api-reference/webhooks"]
 				}
@@ -170,7 +179,8 @@
 		"baseUrl": [
 			"https://waas-staging.embedly.ng/api/v1/",
 			"https://payout-staging.embedly.ng/api/payouts",
-			"https://checkout-staging.embedly.ng/api/checkoutwallet"
+			"https://checkout-staging.embedly.ng/api/checkoutwallet",
+			"https://waas-card-middleware-api-staging.embedly.ng"
 		],
 		"auth": {
 			"method": "key",

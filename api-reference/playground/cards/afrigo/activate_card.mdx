@@ -1,0 +1,17 @@
+---
+title: "Activate Afrigo Card"
+api: "POST https://waas-card-middleware-api-staging.embedly.ng/api/v1/cards/afrigo/issue-card"
+description: "This endpoint is to be used in activating an afrigo card issued to a customer."
+---
+
+<ParamField body="accountNumber" type="string" required>
+	This is the account number mapped to a customer’s embedly wallet. **Example:**
+	`12345678901
+</ParamField>
+<ParamField body="cardNumber" type="string" required>
+	This is the card number issued to the customer and mapped to the account
+	number above. **Example:** `123456789012`
+</ParamField>
+<ParamField body="pin" type="string" required>
+	This is the random pin choosen by the customer. **Example:** `1234`
+</ParamField>

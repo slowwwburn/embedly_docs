@@ -1,0 +1,46 @@
+---
+title: "Issue Afrigo Card"
+api: "POST https://waas-card-middleware-api-staging.embedly.ngapi/v1/cards/afrigo/issue-card"
+description: "This endpoint issues an afrigo card to a customer."
+---
+
+<ParamField body="accountNumber" type="string" required>
+	This is the accountNumber mapped to a customer's embedly wallet. **Example:**
+	`1234567890`
+</ParamField>
+
+<ParamField body="pickupMethod" type="string" required>
+	Method of delivery to you the merchant **Example:** `C`, **Possible values:**
+	`C or M where C means counter and M means mail`
+</ParamField>
+
+<ParamField body="cardType" type="string" required>
+	The type of card to be provisioned for the customer **Example:** `00` Only 00
+	(Debit cards) can be requested at this moment.
+</ParamField>
+
+<ParamField body="idType" type="string" required>
+	The type of identification provided by the customer. **Example:** `00`
+
+| Possible Values | Description        |
+| --------------- | ------------------ |
+| 00              | Passport           |
+| 01              | NationalID Card    |
+| 02              | Foreign ID Card    |
+| 03              | Diplomatic ID Card |
+| 04              | Military ID card   |
+| 05              | Driver’s license   |
+
+</ParamField>
+
+<ParamField body="idNo" type="string" required>
+	The value of the customer's id. **Example:** `A12345678`
+</ParamField>
+
+<ParamField body="email" type="string" required>
+	The customer's email address. **Example:** `john@doe.com`
+</ParamField>
+
+<ParamField body="address" type="string" required>
+	The customer's residential address. **Example:** `20 Marina, Lagos State`
+</ParamField>

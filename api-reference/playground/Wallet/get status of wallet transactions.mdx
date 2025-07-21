@@ -1,0 +1,51 @@
+---
+title: "Wallet to Wallet Check Status"
+api: "PUT /wallets/wallet/transaction/wallet-to-wallet/status/{transactionReference}"
+description: "The endpoint facilitates requerying transfer requests between emedly wallets."
+---
+
+<ParamField body="transactionReference" type="string" required>
+	The source account number for the transfer. **Example:** "retw33344556670900"
+</ParamField>
+
+<ResponseExample>
+
+```json 200 OK
+{
+	"code": "200",
+	"success": true,
+	"message": "Transaction completed successfully.",
+	"data": {
+		// Additional transaction details if applicable
+	}
+}
+```
+
+```json 401 Unauthorized
+{
+	"code": "401",
+	"success": false,
+	"message": "x-api-key is missing in the header",
+	"data": null
+}
+```
+
+```json 400 Bad Request
+{
+	"code": "400",
+	"success": false,
+	"message": "Invalid request data",
+	"data": null
+}
+```
+
+```json 500 Internal Server Error
+{
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
+}
+```
+
+</ResponseExample>
