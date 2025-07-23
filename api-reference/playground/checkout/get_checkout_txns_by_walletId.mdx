@@ -1,0 +1,27 @@
+---
+title: Get checkout wallet transactions
+api: "GET https://checkout-staging.embedly.ng/api/v1/checkout-wallet/{walletId}/transactions"
+description: "Endpoint for getting all checkout wallets under an organization using the Organization Id"
+---
+
+<ParamField path="walletId" type="string" required>
+	The unique idenitifier of the checkout wallet. Exmaple:
+	`3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ParamField query="organizationId" type="string" default="1">
+	The unique idenitifier for your organization on Embedly. **Example:**
+	`3fa85f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
+
+<ResponseExample>
+  ```json 200 Success
+  {
+    "statusCode": 200,
+    "message": "success",
+    "data": [
+       
+    ]
+}
+```
+</ResponseExample>

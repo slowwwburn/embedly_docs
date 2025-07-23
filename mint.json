@@ -158,7 +158,8 @@
 					"pages": [
 						"api-reference/checkout",
 						"api-reference/playground/checkout/create_checkout_wallet",
-						"api-reference/playground/checkout/get_checkout_wallet"
+						"api-reference/playground/checkout/get_checkout_wallet",
+						"api-reference/playground/checkout/get_checkout_txns_by_walletId"
 					]
 				},
 				{
