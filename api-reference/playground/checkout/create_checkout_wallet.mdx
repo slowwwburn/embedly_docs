@@ -5,29 +5,34 @@ description: "This endpoint creates a checkout wallet."
 ---
 
 <ParamField body="organizationId" type="string" required>
-	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
+	**Example:** `02600494-1a3c-11f0-a818-6045bd97b81d`
 </ParamField>
 
 <ParamField body="expectedAmount" type="number" required>
 	**Example:** `20000`
 </ParamField>
 
+<ParamField body="organizationPrefixMappingId" type="number" required>
+	**Example:** `8b4432bc-f3c7-4055-b5e5-e232707e79af`
+</ParamField>
+
 <ResponseExample>
-  ```json 200 Success
-  {
-    "statusCode": 200,
-    "message": "Checkout wallet generated successfully",
-    "data": {
-      "id": "b929bd22-6da0-4b5a-8c37-871ddce94a62",
-      "walletNumber": "2225655477",
+```json 200 Success
+{
+  "statusCode": 200,
+  "message": "Checkout wallet reactivated successfully",
+  "data": {
+      "id": "bfce68af-4b43-4827-abb8-985a2d3b8a79",
+      "walletNumber": "2225657965",
       "organizationId": "02600494-1a3c-11f0-a818-6045bd97b81d",
-      "expectedAmount": 20000,
       "walletName": "Embedly Check Demo",
-      "status": "Active",
-      "createdAt": "2025-07-11T17:40:33.9829245Z",
-      "expiresAt": "2025-07-11T18:10:33.9829466Z",
-      "reactivatedAt": null
-    }
+      "status": "Reactivated",
+      "createdAt": "2025-07-14T16:47:32.297357Z",
+      "expiresAt": "2025-07-24T14:28:01.1254478Z",
+      "reactivatedAt": "2025-07-24T13:58:01.1254127Z",
+      "expectedAmount": 20000,
+      "checkoutRef": "CHK202507241358013544205"
+  }
 }
 ```
 </ResponseExample>
