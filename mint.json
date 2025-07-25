@@ -90,6 +90,7 @@
 						"api-reference/Wallet",
 						"api-reference/playground/Wallet/Add_Wallet",
 						"api-reference/playground/Wallet/Retrieve_Wallet_ID",
+						"api-reference/playground/Wallet/Wallet_by_Account_Number",
 						"api-reference/playground/Wallet/Wallet_to_Wallet",
 						"api-reference/playground/Wallet/get_wallet_transactions_status",
 						"api-reference/playground/Wallet/Wallet_History",
@@ -157,6 +158,7 @@
 					"group": "Checkout",
 					"pages": [
 						"api-reference/checkout",
+						"api-reference/playground/checkout/get_org_prefix_mappings",
 						"api-reference/playground/checkout/create_checkout_wallet",
 						"api-reference/playground/checkout/get_checkout_wallet",
 						"api-reference/playground/checkout/get_checkout_txns_by_walletId"

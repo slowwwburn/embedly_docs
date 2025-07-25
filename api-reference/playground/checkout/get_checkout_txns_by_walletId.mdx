@@ -15,13 +15,77 @@ description: "Endpoint for getting all checkout wallets under an organization us
 </ParamField>
 
 <ResponseExample>
-  ```json 200 Success
-  {
-    "statusCode": 200,
-    "message": "success",
-    "data": [
-       
+```json 200 Success
+{
+  "statusCode": 200,
+  "message": "success",
+  "data": {
+    "id": "bfce68af-4b43-4827-abb8-985a2d3b8a79",
+    "walletNumber": "2225657965",
+    "organizationId": "02600494-1a3c-11f0-a818-6045bd97b81d",
+    "walletName": "Embedly Check Demo",
+    "status": "Active",
+    "createdAt": "2025-07-14T16:47:32.297357Z",
+    "expiresAt": "2025-07-25T09:35:27.174221Z",
+    "usedAt": null,
+    "expiredAt": "2025-07-24T10:15:53.525163Z",
+    "reactivatedAt": "2025-07-24T13:58:01.125412Z",
+    "expectedAmount": 20000.00,
+    "walletHistories": [
+      {
+        "id": "587fdce3-1b36-49ce-8d47-e2e57f2ceab1",
+        "checkoutRef": "CHK202507250905272309844",
+        "expectedAmount": 20000.00,
+        "generatedAt": "2025-07-25T09:05:27.23471Z",
+        "usedAt": null,
+        "status": "Active",
+        "transactionId": null
+      },
+      {
+        "id": "d231dfba-0974-4781-8601-8ec6be493924",
+        "checkoutRef": "CHK202507241358013544205",
+        "expectedAmount": 20000.00,
+        "generatedAt": "2025-07-24T13:58:01.358551Z",
+        "usedAt": null,
+        "status": "Active",
+        "transactionId": null
+      }
+    ],
+    "transactions": [
+      {
+        "id": "7472eb59-b29f-41c3-82e5-2dc76bd212a0",
+        "amount": 20000.00,
+        "senderAccountNumber": "0025653548",
+        "senderName": "non cupidatat",
+        "recipientAccountNumber": "9710001629",
+        "recipientName": "et laboris incididunt aute",
+        "organizationSettlementAccount": "9710001629",
+        "status": "Failed",
+        "reference": "proident anim do dolore Duis",
+        "createdAt": "2025-07-23T11:44:07.309542Z",
+        "completedAt": "2025-07-23T11:44:14.856737Z",
+        "sessionId": "123456789009876543211234567890",
+        "reversalId": null,
+        "reversalAttemptedAt": null
+      },
+      {
+        "id": "324c48fa-b057-45e3-8a73-94b69137b87b",
+        "amount": 2000.00,
+        "senderAccountNumber": "0098960218",
+        "senderName": "ME",
+        "recipientAccountNumber": "9710001629",
+        "recipientName": "Granular Press",
+        "organizationSettlementAccount": "9710001629",
+        "status": "ReversalFailed",
+        "reference": "65738239gbdjd",
+        "createdAt": "2025-07-23T16:36:27.874168Z",
+        "completedAt": "2025-07-23T16:36:29.884113Z",
+        "sessionId": "000002783902020874534535728373893",
+        "reversalId": "37564ca8-ee82-4800-ab4e-069a4f43ec16",
+        "reversalAttemptedAt": "2025-07-23T16:36:29.884117Z"
+      },
     ]
-}
+  }
+} 
 ```
 </ResponseExample>
