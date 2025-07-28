@@ -36,7 +36,7 @@ app.post('/your-url/webhook', (req, res) => {
 <Info>
 The below is the field name of the signature header to verify the authenticity of the request. This is important for security, ensuring that the data comes from us and hasn't been tampered with.
 
-`x-embedly-signature : sha512(notification payload)`
+`**x-embedly-signature : sha512(notification payload, api_key)**`
 
 </Info>
 
@@ -51,26 +51,28 @@ app.post("/webhook", jsonParserWithRaw, (req, res) => {
 		return res.status(400).json({ error: "Missing signature or body" });
 	}
 
-	const hmac = crypto.createHmac("sha512", api_key);
-	hmac.update(rawBody, "utf8");
-	const computedSignature = hmac.digest("hex");
+    const hmac = crypto.createHmac("sha512", api_key);
+    hmac.update(rawBody, "utf8");
+    const computedSignature = hmac.digest("hex");
 
 
-	if (computedSignature !== signature) {
-		return res.status(401).json({
-			status: "error",
-			message: "Invalid signature",
-		});
-	}
+    if (computedSignature !== signature) {
+    	return res.status(401).json({
+    		status: "error",
+    		message: "Invalid signature",
+    	});
+    }
 
-	res.status(200).json({
-		status: "success",
-		message: "Webhook received and verified",
-		data: req.body,
-		timestamp: new Date().toISOString(),
-	});
+    res.status(200).json({
+    	status: "success",
+    	message: "Webhook received and verified",
+    	data: req.body,
+    	timestamp: new Date().toISOString(),
+    });
+
 });
-```
+
+````
 
 ```go Go
 func webhookHandler(w http.ResponseWriter, r *http.Request) {
@@ -91,7 +93,7 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	mac := hmac.New(sha512.New, []byte(SHARED_SECRET))
+	mac := hmac.New(sha512.New, []byte(api_key))
 	mac.Write(bodyBytes)
 	computedSignature := hex.EncodeToString(mac.Sum(nil))
 
@@ -122,7 +124,8 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
 }
-```
+````
+
 </CodeGroup>
 
 | Field Name           | Description                                                                                    |

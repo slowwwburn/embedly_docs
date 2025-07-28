@@ -35,14 +35,33 @@ description: "The endpoint displays the transaction history for a specific walle
 
 ```json 200 Success
 {
+	"code": "00",
 	"success": true,
-	"status": "success",
+	"message": "Fetched Successfully",
 	"data": {
-		"id": 1,
-		"name": "John Doe",
-		"email": "john.doe@example.com"
-	},
-	"timestamp": "2023-09-20T14:30:45Z"
+		"walletHistories": [
+			{
+				"id": "cf931239-6b95-11f0-8d44-4af84d9ff6f1",
+				"walletId": "be342aca-4de7-11f0-a6de-7c1e52753c35",
+				"productId": "ed67af6f-6895-11f0-8d44-4af84d9ff6f1",
+				"remarks": "NIP-",
+				"amount": 900,
+				"debitCreditIndicator": "D",
+				"balance": 40,
+				"transactionReference": "EMBa95822675312343a687fe4b41336bbfea",
+				"transactionId": "EMBa95822675312343a687fe4b41336bbfea",
+				"isActive": true,
+				"dateCreated": "2025-07-28T09:32:42",
+				"mobileNumber": "09030355073",
+				"accountNumber": "9710131061",
+				"name": null
+			}
+		],
+		"totalCount": 1,
+		"totalPages": 1,
+		"currentPage": 1,
+		"pageSize": 50
+	}
 }
 ```
 
