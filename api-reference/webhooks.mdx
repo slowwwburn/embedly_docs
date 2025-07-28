@@ -43,90 +43,86 @@ The below is the field name of the signature header to verify the authenticity o
 ## Sample code for payload verification
 
 <CodeGroup>
-	```javascript JavaScript
-	app.post("/webhook", jsonParserWithRaw, (req, res) => {
-    const signature = req.headers["x-embedly-signature"];
-    const rawBody = req.rawBody; 
-    if (!signature || !rawBody) {
-			return res.status(400).json({ error: "Missing signature or body" });
-    }
+```javascript JavaScript
+app.post("/webhook", jsonParserWithRaw, (req, res) => {
+	const signature = req.headers["x-embedly-signature"];
+	const rawBody = req.rawBody; 
+	if (!signature || !rawBody) {
+		return res.status(400).json({ error: "Missing signature or body" });
+	}
 
-    const hmac = crypto.createHmac("sha512", SHARED_SECRET);
-    hmac.update(rawBody, "utf8");
-    const computedSignature = hmac.digest("hex");
+	const hmac = crypto.createHmac("sha512", api_key);
+	hmac.update(rawBody, "utf8");
+	const computedSignature = hmac.digest("hex");
 
 
-    if (computedSignature !== signature) {
-    		return res.status(401).json({
-    			status: "error",
-    			message: "Invalid signature",
-    		});
-    }
+	if (computedSignature !== signature) {
+		return res.status(401).json({
+			status: "error",
+			message: "Invalid signature",
+		});
+	}
 
-    res.status(200).json({
-    		status: "success",
-    		message: "Webhook received and verified",
-    		data: req.body,
-    		timestamp: new Date().toISOString(),
-    });
+	res.status(200).json({
+		status: "success",
+		message: "Webhook received and verified",
+		data: req.body,
+		timestamp: new Date().toISOString(),
+	});
+});
+```
 
-    });
+```go Go
+func webhookHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
 
-    ```
+	signature := r.Header.Get("x-embedly-signature")
+	bodyBytes, err := io.ReadAll(r.Body)
+	if err != nil {
+		http.Error(w, "Error reading request body", http.StatusBadRequest)
+		return
+	}
 
-    ```go Go
-    func webhookHandler(w http.ResponseWriter, r *http.Request) {
-    	if r.Method != "POST" {
-    		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-    		return
-    	}
+	if signature == "" || len(bodyBytes) == 0 {
+		http.Error(w, "Missing signature or body", http.StatusBadRequest)
+		return
+	}
 
-    	signature := r.Header.Get("x-embedly-signature")
-    	bodyBytes, err := io.ReadAll(r.Body)
-    	if err != nil {
-    		http.Error(w, "Error reading request body", http.StatusBadRequest)
-    		return
-    	}
+	mac := hmac.New(sha512.New, []byte(SHARED_SECRET))
+	mac.Write(bodyBytes)
+	computedSignature := hex.EncodeToString(mac.Sum(nil))
 
-    	if signature == "" || len(bodyBytes) == 0 {
-    		http.Error(w, "Missing signature or body", http.StatusBadRequest)
-    		return
-    	}
+	if computedSignature != signature {
+		response := map[string]interface{}{
+			"status":  "error",
+			"message": "Invalid signature",
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusUnauthorized)
+		json.NewEncoder(w).Encode(response)
+		return
+	}
 
-    	// Compute HMAC
-    	mac := hmac.New(sha512.New, []byte(SHARED_SECRET))
-    	mac.Write(bodyBytes)
-    	computedSignature := hex.EncodeToString(mac.Sum(nil))
+	var bodyData interface{}
+	if err := json.Unmarshal(bodyBytes, &bodyData); err != nil {
+		http.Error(w, "Error parsing JSON body", http.StatusBadRequest)
+		return
+	}
 
-    	if computedSignature != signature {
-    		response := map[string]interface{}{
-    			"status":  "error",
-    			"message": "Invalid signature",
-    		}
-    		w.Header().Set("Content-Type", "application/json")
-    		w.WriteHeader(http.StatusUnauthorized)
-    		json.NewEncoder(w).Encode(response)
-    		return
-    	}
+	response := map[string]interface{}{
+		"status":    "success",
+		"message":   "Webhook received and verified",
+		"data":      bodyData,
+		"timestamp": time.Now().Format(time.RFC3339),
+	}
 
-    	var bodyData interface{}
-    	if err := json.Unmarshal(bodyBytes, &bodyData); err != nil {
-    		http.Error(w, "Error parsing JSON body", http.StatusBadRequest)
-    		return
-    	}
-
-    	response := map[string]interface{}{
-    		"status":    "success",
-    		"message":   "Webhook received and verified",
-    		"data":      bodyData,
-    		"timestamp": time.Now().Format(time.RFC3339),
-    	}
-
-    	w.Header().Set("Content-Type", "application/json")
-    	json.NewEncoder(w).Encode(response)
-    }
-    ```
-
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+```
 </CodeGroup>
 
 | Field Name           | Description                                                                                    |
@@ -161,7 +157,7 @@ The below is the field name of the signature header to verify the authenticity o
 		"dateOfTransaction": "0001-01-01T00:00:00"
 	}
 }
-````
+```
 
 ```json Inflow
 {
