@@ -178,7 +178,7 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-```json Checkout
+```json Checkout Success
 {
 	"event": "checkout.payment.success",
 	"data": {
@@ -193,6 +193,47 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 		"recipientName": "Granular Press",
 		"reference": "65738239gbdjd",
 		"createdAt": "2025-07-24T15:48:10.6768368Z"
+	}
+}
+```
+
+```json Checkout Failed
+{
+	"event": "checkout.payment.failed",
+	"data": {
+		"transactionId": "d2e64708-8590-472b-96e1-32818462faed",
+		"walletId": "0cc1d748-ca0c-467e-aba6-0cfb5854815a",
+		"checkoutRef": "CHK202507311930109835503",
+		"amount": 1000,
+		"status": "failed",
+		"message": "Reversal in progress",
+		"error": "Transfer failed: incoming amount less than the wallet expected amount",
+		"senderAccountNumber": "0098960218",
+		"senderName": "Tester Testing",
+		"recipientAccountNumber": "2222474481",
+		"recipientName": "Granular Press",
+		"reference": "ed81c701-0b73-4c26-a211-d566674c4b23",
+		"createdAt": "2025-07-31T19:30:25.7250438Z"
+	}
+}
+```
+
+```json Checkout Reversed
+{
+	"event": "checkout.reversal.success",
+	"data": {
+		"transactionId": "be51fe87-827b-4178-b23a-642aea11b18b",
+		"walletId": "39e0ea6f-7544-4bec-946a-f53588b31d40",
+		"checkoutRef": "CHK202507311934231852383",
+		"amount": 1000,
+		"status": "reversed",
+		"message": "Reversal completed successfully",
+		"senderAccountNumber": "0098960218",
+		"senderName": "Tester Testing",
+		"recipientAccountNumber": "2222492581",
+		"recipientName": "Granular Press",
+		"reference": "REVERSAL_20250731210417791_e2d8fb7d_c75a39d6-4d9f-4d6b-86ae-7d60c0371adb",
+		"createdAt": "2025-07-31T21:04:17.7914339Z"
 	}
 }
 ```

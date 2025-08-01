@@ -1,0 +1,132 @@
+---
+title: "Get Organization Wallet Transactions"
+api: "GET /wallets/history/organization/transactions"
+description: "This endpoint retrieves transactions done from wallets created under your organization."
+---
+
+<ParamField query="customerId" type="string" required>
+	**Example:** `02600494-1a3c-11f0-a818-6045bd97b81d`
+</ParamField>
+
+<ParamField query="onlyOrganization" type="boolean" required>
+	**Example:** `true`
+</ParamField>
+
+<ParamField query="startDate" type="number" required>
+	**Example:** `1`
+</ParamField>
+
+<ParamField query="endDate" type="number" required>
+	**Example:** `10`
+</ParamField>
+
+<ParamField query="pageNumber" type="number" required>
+	**Example:** `1`
+</ParamField>
+
+<ParamField query="pageSize" type="number" required>
+	**Example:** `10`
+</ParamField>
+
+<ResponseExample>
+```json 200 Success
+{
+  "code": "00",
+  "success": true,
+  "message": "Fetched Successfully",
+  "data": {
+    "walletHistories": [
+      {
+        "id": "ce81d2d6-6d50-11f0-8d44-4af84d9ff6f1",
+        "walletId": "648c8830-4139-11f0-97d7-7c1e52753c35",
+        "productId": "ed67af6f-6895-11f0-8d44-4af84d9ff6f1",
+        "remarks": "Fee:NIP-",
+        "amount": 10,
+        "debitCreditIndicator": "D",
+        "balance": 0,
+        "transactionReference": "EMBe284eec6fc6345fa9ebe7c3179a4b096",
+        "transactionId": "EMBe284eec6fc6345fa9ebe7c3179a4b096",
+        "isActive": true,
+        "dateCreated": "2025-07-30T14:23:47",
+        "mobileNumber": "",
+        "accountNumber": "9710074015",
+        "name": "Crow"
+      },
+       {
+        "id": "ce818eac-6d50-11f0-8d44-4af84d9ff6f1",
+        "walletId": "648c8830-4139-11f0-97d7-7c1e52753c35",
+        "productId": "ed67af6f-6895-11f0-8d44-4af84d9ff6f1",
+        "remarks": "NIP-",
+        "amount": 500,
+        "debitCreditIndicator": "D",
+        "balance": 0,
+        "transactionReference": "EMBe284eec6fc6345fa9ebe7c3179a4b096",
+        "transactionId": "EMBe284eec6fc6345fa9ebe7c3179a4b096",
+        "isActive": true,
+        "dateCreated": "2025-07-30T14:23:47",
+        "mobileNumber": "",
+        "accountNumber": "9710074015",
+        "name": "Crow"
+      },
+                 {
+        "id": "22ddbab6-6891-11f0-8d44-4af84d9ff6f1",
+        "walletId": "648c8830-4139-11f0-97d7-7c1e52753c35",
+        "productId": "22d69399-6891-11f0-8d44-4af84d9ff6f1",
+        "remarks": "Transfer from VICTOR DAVID IMAH",
+        "amount": 1000,
+        "debitCreditIndicator": "D",
+        "balance": 0,
+        "transactionReference": "100004250724132133137475990025",
+        "transactionId": "100004250724132133137475990025",
+        "isActive": true,
+        "dateCreated": "2025-07-24T13:21:41",
+        "mobileNumber": "",
+        "accountNumber": "9710074015",
+        "name": "Crow"
+      }
+    ],
+    "totalCount": 30,
+    "totalPages": 1,
+    "currentPage": 1,
+    "pageSize": 50
+  }
+}
+```
+
+```json 400 Bad Request
+{
+	"code": "400",
+	"success": false,
+	"message": "Invalid request data",
+	"data": null
+}
+```
+
+```json 401 Unauthorized
+{
+	"code": "401",
+	"success": false,
+	"message": "You do not have rights to access this account",
+	"data": null
+}
+```
+
+```json 403 Forbidden
+{
+	"code": "403",
+	"success": false,
+	"message": "Access denied for this operation",
+	"data": null
+}
+```
+
+```json 500 Internal Server Error
+{
+	"code": "500",
+	"success": false,
+	"message": "An unexpected error occurred",
+	"data": null
+}
+```
+
+</ResponseExample>

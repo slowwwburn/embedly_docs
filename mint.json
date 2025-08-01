@@ -92,6 +92,7 @@
 						"api-reference/playground/Wallet/Get_Wallet_by_Id",
 						"api-reference/playground/Wallet/Get_Wallet_by_Account",
 						"api-reference/playground/Wallet/Wallet_to_Wallet",
+						"api-reference/playground/Wallet/Get_Org_Wallet_Txn",
 						"api-reference/playground/Wallet/get_wallet_transactions_status",
 						"api-reference/playground/Wallet/Wallet_History",
 						"api-reference/playground/Wallet/Reverse_Wallet_Transaction",
