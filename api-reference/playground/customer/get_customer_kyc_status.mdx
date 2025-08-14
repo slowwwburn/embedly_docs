@@ -1,0 +1,27 @@
+---
+title: Get Customer KYC Property Status
+api: "GET customers/customer-verification-properties/{customerId}"
+description: "This endpoint enables you see the status a customer's kyc properties - **bvn, nin and address**"
+---
+
+<ParamField path="customerId" type="string" required>
+	This is the unique identifier for your customer on the embeldy platform
+</ParamField>
+
+<ResponseExample>
+```json 200 Success
+{
+  "data": {
+    "customerId": "3a11-11f0-97d7-7c1e52753c35",
+    "hasBvn": true,
+    "hasNin": true,
+    "hasAddressVerification": true,
+    "customerTierId": 3,
+    "bvnValue": "1234567890",
+    "ninValue": "1234567890"
+  },
+  "status": 200,
+  "message": ""
+}
+```
+</ResponseExample>
