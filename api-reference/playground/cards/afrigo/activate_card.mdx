@@ -4,6 +4,49 @@ api: "POST https://waas-card-middleware-api-staging.embedly.ng/api/v1/cards/afri
 description: "This endpoint is to be used in activating an afrigo card issued to a customer."
 ---
 
+<Warning>
+When activating cards on behalf of your customers, ensure that the PIN chosen by the customer is **encrypted before sending via API**.
+
+🔐 **Encryption Standard**
+
+- **Algorithm:** RSA
+- **Key:** Contact the admin to obtain the RSA public key for production use
+- **Padding:** PKCS#1 v1.5
+- **Encoding:** UTF-8 for input, Base64 for output
+
+⚠️ **Important Notes**
+
+- Always use the **latest RSA public key** shared by the platform.
+- Do **not** attempt to decrypt the PIN — only the platform (with its private key) can do so.
+- Use PKCS#1 v1.5 padding, not OAEP.
+
+**Example**
+
+```csharp
+public static string Encrypt(string userPin, string publicKeyContent)
+{
+	using var rsa = RSA.Create();
+
+	// Try PEM format first, then raw base64
+	try
+	{
+		rsa.ImportFromPem(publicKeyContent);
+	}
+	catch
+	{
+		// Handle raw base64 key
+		var keyBytes = Convert.FromBase64String(publicKeyContent);
+		rsa.ImportRSAPublicKey(keyBytes, out _);
+	}
+
+	var dataBytes = Encoding.UTF8.GetBytes(userPin);
+	var encrypted = rsa.Encrypt(dataBytes, RSAEncryptionPadding.Pkcs1);
+	return Convert.ToBase64String(encrypted);
+}
+```
+
+</Warning>
+
 <ParamField body="accountNumber" type="string" required>
 	This is the account number mapped to a customer’s embedly wallet. **Example:**
 	`12345678901
@@ -15,5 +58,6 @@ description: "This endpoint is to be used in activating an afrigo card issued to
 </ParamField>
 
 <ParamField body="pin" type="string" required>
-	This is the random pin choosen by the customer. **Example:** `1234`
+	This is the random pin choosen by the customer. **Example:** `encrypted
+	string`
 </ParamField>
