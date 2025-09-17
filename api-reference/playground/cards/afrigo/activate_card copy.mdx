@@ -1,0 +1,20 @@
+---
+title: "Map Physical Afrigo Card to Customer"
+api: "POST https://waas-card-middleware-api-staging.embedly.ng/api/v1/operations/cards/afrigo/card-relink"
+description: "This endpoint is to be used in mapping a customer wallet to a readily available afrigo card"
+---
+
+<ParamField body="accountNumber" type="string" required>
+	This is the account number mapped to a customer’s embedly wallet. **Example:**
+	`12345678901
+</ParamField>
+
+<ParamField body="cardNumber" type="string" required>
+	This is the card number on the unmapped physical card to be mapped to the
+	account. provided number above. **Example:** `123456789012`
+</ParamField>
+
+<ParamField body="organizationId" type="string" required>
+	This unique identifier of the organization making the api request.
+	**Example:** `5f64-5717-4562-b3fc-2c963f66afa6`
+</ParamField>
