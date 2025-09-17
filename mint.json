@@ -66,6 +66,7 @@
 						"api-reference/playground/customer/Get_Id",
 						"api-reference/playground/customer/get_all_customers",
 						"api-reference/playground/customer/update_customer",
+						"api-reference/playground/customer/update_customer_contact",
 						"api-reference/playground/customer/get_customer_kyc_status",
 						{
 							"group": "KYC",
@@ -171,7 +172,8 @@
 						"api-reference/cards",
 						"api-reference/playground/cards/afrigo/issue_card",
 						"api-reference/playground/cards/afrigo/activate_card",
-						"api-reference/playground/cards/afrigo/update_card_info"
+						"api-reference/playground/cards/afrigo/update_card_info",
+						"api-reference/playground/cards/afrigo/relink_card"
 					]
 				},
 				{
