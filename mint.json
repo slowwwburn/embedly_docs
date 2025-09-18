@@ -62,18 +62,38 @@
 					"group": "Customer",
 					"pages": [
 						"api-reference/customers",
-						"api-reference/playground/customer/profile_customer",
-						"api-reference/playground/customer/Get_Id",
-						"api-reference/playground/customer/get_all_customers",
-						"api-reference/playground/customer/update_customer",
-						"api-reference/playground/customer/update_customer_contact",
-						"api-reference/playground/customer/get_customer_kyc_status",
 						{
-							"group": "KYC",
+							"group": "Individual",
 							"pages": [
-								"api-reference/playground/customer/kyc/tier2_upgrade_nin",
-								"api-reference/playground/customer/kyc/tier2_upgrade_bvn",
-								"api-reference/playground/customer/kyc/address_verification"
+								"api-reference/playground/customer/individual/profile_customer",
+								"api-reference/playground/customer/individual/Get_Id",
+								"api-reference/playground/customer/individual/get_all_customers",
+								"api-reference/playground/customer/individual/update_customer",
+								"api-reference/playground/customer/individual/update_customer_contact",
+								"api-reference/playground/customer/individual/get_customer_kyc_status",
+								{
+									"group": "KYC",
+									"pages": [
+										"api-reference/playground/customer/individual/kyc/tier2_upgrade_nin",
+										"api-reference/playground/customer/individual/kyc/tier2_upgrade_bvn",
+										"api-reference/playground/customer/individual/kyc/address_verification"
+									]
+								}
+							]
+						},
+						{
+							"group": "Corporate",
+							"pages": [
+								"api-reference/playground/customer/corporate/profile_customer",
+								"api-reference/playground/customer/corporate/get_customer",
+								"api-reference/playground/customer/corporate/update_customer",
+								"api-reference/playground/customer/corporate/add_director",
+								"api-reference/playground/customer/corporate/get_director",
+								"api-reference/playground/customer/corporate/get_directors",
+								"api-reference/playground/customer/corporate/update_director",
+								"api-reference/playground/customer/corporate/add_documents",
+								"api-reference/playground/customer/corporate/update_documents",
+								"api-reference/playground/customer/corporate/get_documents"
 							]
 						},
 						{
@@ -90,6 +110,7 @@
 					"pages": [
 						"api-reference/Wallet",
 						"api-reference/playground/Wallet/Add_Wallet",
+						"api-reference/playground/Wallet/Add_Corporate_wallet",
 						"api-reference/playground/Wallet/Get_Wallet_by_Id",
 						"api-reference/playground/Wallet/Get_Wallet_by_Account",
 						"api-reference/playground/Wallet/Wallet_to_Wallet",
