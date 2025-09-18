@@ -4,16 +4,6 @@ api: "POST /corporate/customers"
 description: "This endpoint enables you to create a corporate customer profile"
 ---
 
-# Create Customer
-
-Use this endpoint to create profile for a corporate.
-
-<Info>
-	Once a customer profile is created, you are required to provide the customer's
-	BVN and NIN via the KYC endpoints. **Please note**: A customer must attain a
-	KYC Tier 1 status before an open wallet can be created for them.
-</Info>
-
 <Warn>
 	It is standard practice to save the returned customerId once you have
 	successfully created a customer. This reduces the number of api calls you have

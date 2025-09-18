@@ -1,7 +1,7 @@
 ---
-title: "Update Corporate Customer"
+title: "Update Corporate Customer Director"
 api: "PUT /corporate/customers/{customerId}/directors/{directorId}"
-description: "This endpoint enables you to create a corporate customer profile"
+description: "This endpoint enables you to update a corporate customer director details"
 ---
 
 ---
@@ -15,6 +15,51 @@ description: "This endpoint enables you to create a corporate customer profile"
 <ParamField path="directorId" type="string" required>
 	The unique identifier mapped to a corporate customer's director. **Example:**
 	`01234567-0001`
+</ParamField>
+
+<ParamField body="firstName" type="string">
+	The first name of the individual. **Example:** `John`
+</ParamField>
+
+<ParamField body="lastName" type="string">
+	The last name of the individual. **Example:** `Doe`
+</ParamField>
+
+<ParamField body="middleName" type="string" optional>
+	The middle name of the individual. **Example:** `Michael`
+</ParamField>
+
+<ParamField body="email" type="string">
+	The individual's email address. **Example:** `john.doe@example.com`
+</ParamField>
+
+<ParamField body="phoneNumber" type="string">
+	The individual's phone number. **Example:** `08012345678`
+</ParamField>
+
+<ParamField body="dateOfBirth" type="string">
+	The individual's date of birth in `YYYY-MM-DD` format. **Example:**
+	`1980-01-01`
+</ParamField>
+
+<ParamField body="address" type="string">
+	The residential address of the individual. **Example:** `12 Adeola Odeku
+	Street, Victoria Island, Lagos`
+</ParamField>
+
+<ParamField body="bvn" type="string">
+	The Bank Verification Number (BVN) of the individual. **Example:**
+	`12345678901`
+</ParamField>
+
+<ParamField body="nin" type="string">
+	The National Identification Number (NIN) of the individual. **Example:**
+	`12345678901`
+</ParamField>
+
+<ParamField body="meterNumber" type="string" optional>
+	The individual's electricity meter number, if applicable. **Example:**
+	`1234567890`
 </ParamField>
 
 <ResponseExample>

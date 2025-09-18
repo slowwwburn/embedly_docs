@@ -8,46 +8,35 @@ description: "This endpoint enables you to upload documents for a corporate cust
 
 ## Request Parameters
 
-<ParamField body="firstName" type="string" required>
-	The first name of the director. **Example:** `John`
+<ParamField body="cac" type="string" required>
+	The CAC (Certificate of Incorporation) document of the business. **Example:**
+	`base64-encoded-string`
 </ParamField>
 
-<ParamField body="lastName" type="string" required>
-	The last name (surname) of the director. **Example:** `Doe`
+<ParamField body="tin" type="string" required>
+	The Tax Identification Number (TIN) document of the business. **Example:**
+	`base64-encoded-string`
 </ParamField>
 
-<ParamField body="middleName" type="string" optional>
-	The middle name of the director. **Example:** `Michael`
+<ParamField body="boardResolution" type="string" required>
+	The Board Resolution document authorizing account or service usage.
+	**Example:** `base64-encoded-string`
 </ParamField>
 
-<ParamField body="email" type="string" required>
-	The director's email address. **Example:** `john.doe@example.com`
+<ParamField body="utilityBill" type="string" required>
+	A recent utility bill serving as proof of address for the business.
+	**Example:** `base64-encoded-string`
 </ParamField>
 
-<ParamField body="phoneNumber" type="string" required>
-	The director's phone number. **Example:** `08012345678`
+<ParamField body="memart" type="string" required>
+	The Memorandum and Articles of Association (MEMART) document of the business.
+	**Example:** `base64-encoded-string`
 </ParamField>
 
-<ParamField body="dateOfBirth" type="string" required>
-	The director's date of birth in `YYYY-MM-DD` format. **Example:** `1980-01-01`
+<ParamField body="scuml" type="string" required>
+	The SCUML (Special Control Unit Against Money Laundering) certificate of the
+	business. **Example:** `base64-encoded-string`
 </ParamField>
-
-<ParamField body="address" type="string" required>
-	The residential address of the director. **Example:** `123 Broad Street, Lagos`
-</ParamField>
-
-<ParamField body="bvn" type="string" required>
-	The director's Bank Verification Number (BVN). **Example:** `22345678901`
-</ParamField>
-
-<ParamField body="nin" type="string" optional>
-	The director's National Identification Number (NIN). **Example:** `12345678901`
-</ParamField>
-
-<ParamField body="meterNumber" type="string" optional>
-	The electricity meter number linked to the director. **Example:** `62498765432`
-</ParamField>
-
 
 <ResponseExample>
 
