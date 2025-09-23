@@ -17,6 +17,11 @@ description: "This endpoint creates a checkout wallet."
 	the 'Get Organization Prefix Mapping Endpoint'
 </ParamField>
 
+<ParamField body="expiryDurationMinutes" type="number" required>
+	This is the duration in minutes for which the wallet is to be active
+	**Example:** `30`.
+</ParamField>
+
 <ResponseExample>
 ```json 200 Success
 {
