@@ -4,6 +4,11 @@ api: "POST https://checkout-staging.embedly.ng/api/v1/checkout-wallet"
 description: "This endpoint creates a checkout wallet."
 ---
 
+<Info>
+	When a checkout wallet is generated without an 'expiryDurationMinutes', the
+	system default of 30 minutes is applied to that wallet.
+</Info>
+
 <ParamField body="organizationId" type="string" required>
 	**Example:** `02600494-1a3c-11f0-a818-6045bd97b81d`
 </ParamField>
@@ -17,7 +22,7 @@ description: "This endpoint creates a checkout wallet."
 	the 'Get Organization Prefix Mapping Endpoint'
 </ParamField>
 
-<ParamField body="expiryDurationMinutes" type="number" required>
+<ParamField body="expiryDurationMinutes" type="number">
 	This is the duration in minutes for which the wallet is to be active
 	**Example:** `30`.
 </ParamField>
