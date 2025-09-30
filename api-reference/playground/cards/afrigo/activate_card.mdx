@@ -5,7 +5,7 @@ description: "This endpoint is to be used in activating an afrigo card issued to
 ---
 
 <Warning>
-When activating cards on behalf of your customers, ensure that the PIN chosen by the customer is **encrypted before sending via API**.
+When activating cards on behalf of your customers, ensure that the CARD NUMBER is passed in the format `first 6 digits ****** last 4 digits` and PIN chosen by the customer is **encrypted before sending via API**.
 
 🔐 **Encryption Standard**
 
@@ -16,6 +16,7 @@ When activating cards on behalf of your customers, ensure that the PIN chosen by
 
 ⚠️ **Important Notes**
 
+- Always pass the Card number as a partially masked value (first 6 digits, 6 stars and last 4 digits).
 - Always use the **latest RSA public key** shared by the platform.
 - Do **not** attempt to decrypt the PIN — only the platform (with its private key) can do so.
 - Use PKCS#1 v1.5 padding, not OAEP.
@@ -49,7 +50,7 @@ public static string Encrypt(string userPin, string publicKeyContent)
 
 <ParamField body="accountNumber" type="string" required>
 	This is the account number mapped to a customer’s embedly wallet. **Example:**
-	`12345678901
+	`123456******1234
 </ParamField>
 
 <ParamField body="cardNumber" type="string" required>
