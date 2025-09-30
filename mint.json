@@ -192,9 +192,7 @@
 					"pages": [
 						"api-reference/cards",
 						"api-reference/playground/cards/afrigo/issue_card",
-						"api-reference/playground/cards/afrigo/activate_card",
-						"api-reference/playground/cards/afrigo/update_card_info",
-						"api-reference/playground/cards/afrigo/relink_card"
+						"api-reference/playground/cards/afrigo/activate_card"
 					]
 				},
 				{
