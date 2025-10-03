@@ -4,6 +4,11 @@ api: "POST customers/kyc/premium-kyc"
 description: "This endpoint enables you to upgrade a customer's KYC using bvn"
 ---
 
+<ParamField query="verify" type="string" required>
+	**Example:** `1` **This is a
+	query parameter**
+</ParamField>
+
 <ParamField body="customerId" type="string" required>
 	The unique identifier of the customer whose KYC tier is being upgraded.
 	**Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
