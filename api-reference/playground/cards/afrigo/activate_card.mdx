@@ -5,23 +5,29 @@ description: "This endpoint is to be used in activating an afrigo card issued to
 ---
 
 <Warning>
-When activating cards on behalf of your customers, ensure that the CARD NUMBER is passed in the format `first 6 digits ****** last 4 digits` and PIN chosen by the customer is **encrypted before sending via API**.
+When activating cards on behalf of your customers, you must follow the rules below to ensure data security and compliance.
 
-🔐 **Encryption Standard**
+**Card Number Format**
+
+- Always pass the card number in a partially masked format:
+  First 6 digits + 8 asterisks (\***\*) + last 4 digits**
+  Example: `123456********7890`
+
+**Encryption Standard**
 
 - **Algorithm:** RSA
 - **Key:** Contact the admin to obtain the RSA public key for production use
 - **Padding:** PKCS#1 v1.5
 - **Encoding:** UTF-8 for input, Base64 for output
 
-⚠️ **Important Notes**
+**Important Notes**
 
-- Always pass the Card number as a partially masked value (first 6 digits, 6 stars and last 4 digits).
-- Always use the **latest RSA public key** shared by the platform.
-- Do **not** attempt to decrypt the PIN — only the platform (with its private key) can do so.
-- Use PKCS#1 v1.5 padding, not OAEP.
+- Only send the masked card number — never transmit the full card number.
+- The PIN must always be encrypted using the platform’s RSA public key before sending via API.
+- Do not attempt to decrypt the PIN — decryption is performed only by the platform using its private key.
+- Always ensure you are using the latest RSA public key provided by the platform.
 
-**Example**
+**PIN Encryption Example**
 
 ```csharp
 public static string Encrypt(string userPin, string publicKeyContent)
@@ -55,7 +61,7 @@ public static string Encrypt(string userPin, string publicKeyContent)
 
 <ParamField body="cardNumber" type="string" required>
 	This is the card number issued to the customer and mapped to the account
-	number above. **Example:** `123456********1234`
+	number above. **Example:** `123456********7890`
 </ParamField>
 
 <ParamField body="pin" type="string" required>
