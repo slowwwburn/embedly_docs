@@ -1,6 +1,5 @@
 ---
-title: Webhooks
-description:
+title: "Webhooks"
 ---
 
 ## Overview
@@ -19,8 +18,7 @@ It’s like getting a text message when a delivery arrives, instead of refreshin
 4. If, verification is successful process the transaction data on your end — e.g., mark an order as paid - and respond to the notfication with a light response like 00 Success.
 
 <Info>
-	If we receive an error response from your webhook url, our system would
-	automatically retry sending you that notification 4 times.
+  If we receive an error response from your webhook url, our system would automatically retry sending you that notification 4 times.
 </Info>
 
 Here is simple example of a webhook URL
@@ -34,15 +32,15 @@ app.post('/your-url/webhook', (req, res) => {
 ```
 
 <Info>
-The below is the field name of the signature header to verify the authenticity of the request. This is important for security, ensuring that the data comes from us and hasn't been tampered with.
+  The below is the field name of the signature header to verify the authenticity of the request. This is important for security, ensuring that the data comes from us and hasn't been tampered with.
 
-`**x-embedly-signature : sha512(notification payload, api_key)**`
-
+  `**x-embedly-signature : sha512(notification payload, api_key)**`
 </Info>
 
 ## Sample code for payload verification
 
 <CodeGroup>
+
 ```javascript JavaScript
 app.post("/webhook", jsonParserWithRaw, (req, res) => {
 	const signature = req.headers["x-embedly-signature"];
@@ -71,8 +69,8 @@ app.post("/webhook", jsonParserWithRaw, (req, res) => {
     });
 
 });
+```
 
-````
 
 ```go Go
 func webhookHandler(w http.ResponseWriter, r *http.Request) {
@@ -124,7 +122,7 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
 }
-````
+```
 
 </CodeGroup>
 
@@ -142,6 +140,7 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 | DC                   | "C" for credit (money in), "D" for debit (money out). In this context, it will usually be "C". |
 
 <RequestExample>
+
 ```json Payout
 {
 	"event": "payout",
@@ -162,6 +161,7 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
+
 ```json Inflow
 {
 	"event": "nip",
@@ -178,63 +178,25 @@ func webhookHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
+
 ```json Checkout Success
 {
-	"event": "checkout.payment.success",
-	"data": {
-		"transactionId": "8d79fdc1-8e09-4914-85c4-4bc8e256b650",
-		"walletId": "7f8ac489-a9e7-4fb5-a192-7ea859f9e4af",
-		"checkoutRef": "CHK202507241246121093911",
-		"amount": 3000,
-		"status": "success",
-		"senderAccountNumber": "0098960218",
-		"senderName": "ME",
-		"recipientAccountNumber": "0098960218",
-		"recipientName": "Granular Press",
-		"reference": "65738239gbdjd",
-		"createdAt": "2025-07-24T15:48:10.6768368Z"
-	}
-}
-```
-
-```json Checkout Failed
-{
-	"event": "checkout.payment.failed",
-	"data": {
-		"transactionId": "d2e64708-8590-472b-96e1-32818462faed",
-		"walletId": "0cc1d748-ca0c-467e-aba6-0cfb5854815a",
-		"checkoutRef": "CHK202507311930109835503",
-		"amount": 1000,
-		"status": "failed",
-		"message": "Reversal in progress",
-		"error": "Transfer failed: incoming amount less than the wallet expected amount",
-		"senderAccountNumber": "0098960218",
-		"senderName": "Tester Testing",
-		"recipientAccountNumber": "2222474481",
-		"recipientName": "Granular Press",
-		"reference": "ed81c701-0b73-4c26-a211-d566674c4b23",
-		"createdAt": "2025-07-31T19:30:25.7250438Z"
-	}
-}
-```
-
-```json Checkout Reversed
-{
-	"event": "checkout.reversal.success",
-	"data": {
-		"transactionId": "be51fe87-827b-4178-b23a-642aea11b18b",
-		"walletId": "39e0ea6f-7544-4bec-946a-f53588b31d40",
-		"checkoutRef": "CHK202507311934231852383",
-		"amount": 1000,
-		"status": "reversed",
-		"message": "Reversal completed successfully",
-		"senderAccountNumber": "0098960218",
-		"senderName": "Tester Testing",
-		"recipientAccountNumber": "2222492581",
-		"recipientName": "Granular Press",
-		"reference": "REVERSAL_20250731210417791_e2d8fb7d_c75a39d6-4d9f-4d6b-86ae-7d60c0371adb",
-		"createdAt": "2025-07-31T21:04:17.7914339Z"
-	}
+    "event": "checkout.payment.success",
+    "data": {
+        "transactionId": "f958ce5d-4878-4e4d-ab64-6e8a6209ed6e",
+        "walletId": "9bea6e3e-2e55-46c4-a624-b47b0c8c8053",
+        "checkoutRef": "CHK202510172015590962305",
+        "amount": 200.00,
+        "status": "success",
+        "message": "Payment received successfully",
+        "senderAccountNumber": "0098960218",
+        "senderName": "OLALEKAN YUSUF BALOGUN",
+        "senderBankCode": "000001",
+        "recipientAccountNumber": "9550016702",
+        "recipientName": "Crow Pilot Checkout",
+        "reference": "000001251017211645a630c9aa9405",
+        "createdAt": "2025-10-17T20:18:38.0815347Z"
+    }
 }
 ```
 
