@@ -10,15 +10,13 @@ description: "To interact with the Embedly API, you’ll need to authenticate yo
 For testing on the staging environment, use the general credentials below.
 
 1. **OrganizationId:** `02600494-1a3c-11f0-a818-6045bd97b81d`
-
-2. **API Key:** `BSK-ONJx5zqEZ8M4RSEF3t1DVFPYQqvU22T54pdfzKm6xixaqVQ74gvTc63YTXmDdf2okVcPd6iSDWJm`
+2. **API Key:** `BSK-sqg0f3hCF3sC2KGtNBVsfxbOFFaiOgCEraaCYmg6G0EsqUQ9ihAbeIE2FkAvFlBtIv4kecDVsy4H`
 
 Alternatively, you can visit the Embedly staging dashboard [here](https://merchant-waas-dashboard-staging.embedly.ng/registration) and follow the steps below to retrieve your unique staging api key:
 
-1. **Navigate to Your Profile Settings Page:**  
+1. **Navigate to Your Profile Settings Page:**\
    Log in to your Embedly dashboard and go to the Profile Settings section to retrieve your <Tooltip tip="An organizationId is your idenitifation for your organization.">OrganizationId</Tooltip>.
-
-2. **Navigate to Your API Credentials Page:**  
+2. **Navigate to Your API Credentials Page:**\
    Log in to your Embedly dashboard and go to the <Tooltip tip="API credentials consist of a client key and a secret key, both required for generating tokens.">APIs
    & Integration</Tooltip> section to retrieve your <Tooltip tip="An api key is essential for API authentication.">api key</Tooltip>.
 
@@ -26,50 +24,43 @@ Alternatively, you can visit the Embedly staging dashboard [here](https://mercha
 
 To generate your apikey on production, follow these steps:
 
-1. **Navigate to Your Profile Settings Page:**  
+1. **Navigate to Your Profile Settings Page:**\
    Log in to your Embedly dashboard and go to the Profile Settings section to retrieve your <Tooltip tip="An organizationId is your idenitifation for your organization.">OrganizationId</Tooltip>.
-
-2. **Navigate to Your API Credentials Page:**  
+2. **Navigate to Your API Credentials Page:**\
    Log in to your Embedly dashboard and go to the <Tooltip tip="API credentials consist of a client key and a secret key, both required for generating tokens.">APIs
    & Integration</Tooltip> section to retrieve your <Tooltip tip="An api key is essential for API authentication.">api key</Tooltip>.
 
    <Info>
-   	A pre-requisite to successfully retrieving your production credentials is
-   	uploading all required documentation and having them approved by the
-   	Embedly admin
+     A pre-requisite to successfully retrieving your production credentials is uploading all required documentation and having them approved by the Embedly admin
    </Info>
 
 ---
 
 <Warning>
-   You must also always pass in the **headers** of all your api request the correct api key as `x-api-key: {{you api key}}` based on the environment you are calling.
+  You must also always pass in the **headers** of all your api request the correct api key as `x-api-key: {{you api key}}` based on the environment you are calling.
 </Warning>
 
 ## Base URL
 
 When making API requests, you'll need to use the appropriate base URL depending on the environment:
 
-- **Production Environment:**  
+- **Production Environment:**\
   Use this URL for live, production-level operations:
 
   ```http
   https://waas-prod.embedly.ng/api/v1
   ```
-
-- **Sandbox environment:**  
+- **Sandbox environment:**\
   Use this URL for testing and development purposes. The sandbox environment mirrors the production environment but is intended for safe testing without affecting real data:
+
   ```http
   https://waas-staging.embedly.ng/api/v1
   ```
 
 <Info>
-	Ensure that you are using the correct base URL for your environment to avoid
-	unintended data manipulation or errors. For testing, always start with the
-	sandbox environment before moving to production.
+  Ensure that you are using the correct base URL for your environment to avoid unintended data manipulation or errors. For testing, always start with the sandbox environment before moving to production.
 </Info>
 
 <Warning>
-	For security reasons, ensure that your token is stored securely and never
-	shared publicly. Tokens should be refreshed regularly to maintain secure
-	access to the API.
+  For security reasons, ensure that your token is stored securely and never shared publicly. Tokens should be refreshed regularly to maintain secure access to the API.
 </Warning>
