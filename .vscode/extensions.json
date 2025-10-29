@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "mintlify.mintlify-snippets"
+        "myml.vscode-markdown-plantuml-preview",
+        "esbenp.prettier-vscode",
+        "jebbs.plantuml"
     ]
 }

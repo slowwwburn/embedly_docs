@@ -1,91 +1,66 @@
 ---
-title: Get checkout wallet transactions
+title: "Get checkout wallet transactions"
 api: "GET https://checkout-staging.embedly.ng/api/v1/checkout-wallet/{walletId}/transactions"
 description: "Endpoint for getting all checkout wallets under an organization using the Organization Id"
 ---
 
 <ParamField path="walletId" type="string" required>
-	The unique idenitifier of the checkout wallet. Exmaple:
-	`3fa85f64-5717-4562-b3fc-2c963f66afa6`
+  The unique idenitifier of the checkout wallet. Exmaple: `3fa85f64-5717-4562-b3fc-2c963f66afa6`
 </ParamField>
 
-<ParamField query="organizationId" type="string" default="1">
-	The unique idenitifier for your organization on Embedly. **Example:**
-	`3fa85f64-5717-4562-b3fc-2c963f66afa6`
+<ParamField query="organizationId" default="1" type="string">
+  The unique idenitifier for your organization on Embedly. **Example:** `3fa85f64-5717-4562-b3fc-2c963f66afa6`
 </ParamField>
 
 <ResponseExample>
+
 ```json 200 Success
 {
-  "statusCode": 200,
-  "message": "success",
-  "data": {
-    "id": "bfce68af-4b43-4827-abb8-985a2d3b8a79",
-    "walletNumber": "2225657965",
-    "organizationId": "02600494-1a3c-11f0-a818-6045bd97b81d",
-    "walletName": "Embedly Check Demo",
-    "status": "Active",
-    "createdAt": "2025-07-14T16:47:32.297357Z",
-    "expiresAt": "2025-07-25T09:35:27.174221Z",
-    "usedAt": null,
-    "expiredAt": "2025-07-24T10:15:53.525163Z",
-    "reactivatedAt": "2025-07-24T13:58:01.125412Z",
-    "expectedAmount": 20000.00,
-    "walletHistories": [
-      {
-        "id": "587fdce3-1b36-49ce-8d47-e2e57f2ceab1",
-        "checkoutRef": "CHK202507250905272309844",
+    "statusCode": 200,
+    "message": "success",
+    "data": {
+        "id": "4e5e4451-654f-4bdd-9636-4f68ea52fa1e",
+        "walletNumber": "2222412513",
+        "organizationId": "02600494-1a3c-11f0-a818-6045bd97b81d",
+        "walletName": "Org Test",
+        "status": "Used",
+        "createdAt": "2025-10-29T09:16:30.606152Z",
+        "expiresAt": "2025-10-29T09:46:30.606152Z",
+        "usedAt": "2025-10-29T09:16:41.769188Z",
+        "expiredAt": null,
+        "reactivatedAt": null,
         "expectedAmount": 20000.00,
-        "generatedAt": "2025-07-25T09:05:27.23471Z",
-        "usedAt": null,
-        "status": "Active",
-        "transactionId": null
-      },
-      {
-        "id": "d231dfba-0974-4781-8601-8ec6be493924",
-        "checkoutRef": "CHK202507241358013544205",
-        "expectedAmount": 20000.00,
-        "generatedAt": "2025-07-24T13:58:01.358551Z",
-        "usedAt": null,
-        "status": "Active",
-        "transactionId": null
-      }
-    ],
-    "transactions": [
-      {
-        "id": "7472eb59-b29f-41c3-82e5-2dc76bd212a0",
-        "amount": 20000.00,
-        "senderAccountNumber": "0025653548",
-        "senderName": "non cupidatat",
-        "recipientAccountNumber": "9710001629",
-        "recipientName": "et laboris incididunt aute",
-        "organizationSettlementAccount": "9710001629",
-        "status": "Failed",
-        "reference": "proident anim do dolore Duis",
-        "createdAt": "2025-07-23T11:44:07.309542Z",
-        "completedAt": "2025-07-23T11:44:14.856737Z",
-        "sessionId": "123456789009876543211234567890",
-        "reversalId": null,
-        "reversalAttemptedAt": null
-      },
-      {
-        "id": "324c48fa-b057-45e3-8a73-94b69137b87b",
-        "amount": 2000.00,
-        "senderAccountNumber": "0098960218",
-        "senderName": "ME",
-        "recipientAccountNumber": "9710001629",
-        "recipientName": "Granular Press",
-        "organizationSettlementAccount": "9710001629",
-        "status": "ReversalFailed",
-        "reference": "65738239gbdjd",
-        "createdAt": "2025-07-23T16:36:27.874168Z",
-        "completedAt": "2025-07-23T16:36:29.884113Z",
-        "sessionId": "000002783902020874534535728373893",
-        "reversalId": "37564ca8-ee82-4800-ab4e-069a4f43ec16",
-        "reversalAttemptedAt": "2025-07-23T16:36:29.884117Z"
-      },
-    ]
-  }
-} 
+        "walletHistories": [
+            {
+                "id": "eb1a7058-5ac2-4dd5-9be2-d5f5a7fa6b30",
+                "checkoutRef": "CHK202510290916306114570",
+                "expectedAmount": 20000.00,
+                "generatedAt": "2025-10-29T09:16:30.611608Z",
+                "usedAt": "2025-10-29T09:16:41.798649Z",
+                "status": "Used",
+                "transactionId": "b2381adf-23f1-43d3-bffc-be9f24637220"
+            }
+        ],
+        "transactions": [
+            {
+                "id": "b2381adf-23f1-43d3-bffc-be9f24637220",
+                "amount": 20000.00,
+                "senderAccountNumber": "3333002345",
+                "senderName": "Nkemakolam Ekeh",
+                "recipientAccountNumber": "2222412513",
+                "recipientName": "Org Test",
+                "organizationSettlementAccount": "9710001442",
+                "status": "Completed",
+                "reference": "07f0a353-bd08-4afc-abfd-c8ba5320947c",
+                "createdAt": "2025-10-29T09:16:41.075592Z",
+                "completedAt": "2025-10-29T09:16:41.400539Z",
+                "sessionId": "000001100913103301927365890002",
+                "reversalId": null,
+                "reversalAttemptedAt": null
+            }
+        ]
+    }
+}
 ```
+
 </ResponseExample>
